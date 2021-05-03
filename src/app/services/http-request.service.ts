@@ -11,7 +11,7 @@ import {NotificationUtil} from '../../utils';
 })
 export class HttpRequestService {
 
-  private API_URL = environment.apiUrl;
+  private API_URL = 'http://localhost/bizsolutions-dashboard/src/api';
 
   constructor(private http: HttpClient) {
   }
