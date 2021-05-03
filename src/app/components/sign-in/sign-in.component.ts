@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
+import {HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import { SigninService } from '../../services/signin.service';
+import { RouteService } from '../../services/route.service';
+import { Authorization } from '../../../models/authorization';
+import { first } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import {NotificationUtil} from '../../../utils';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,9 +16,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  private API_URL = environment.apiUrl;
+
+  signInFormGroup = this.fb.group({
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
+  });
+  isLoggingIn = false;
+  errorMessage = '';
+
+  constructor(private fb: FormBuilder, private routeService: RouteService, private signinService: SigninService,
+              private http: HttpClient) {}
 
   ngOnInit(): void {
   }
 
+  signIn(): void {
+    const formData: any = new FormData();
+    formData.append('email', this.signInFormGroup.get('email').value);
+    formData.append('password', this.signInFormGroup.get('password').value);
+    this.http.post(this.API_URL + '/signin.php',
+      formData, {responseType: 'text'}).subscribe(
+      (response) => {
+        this.isLoggingIn = false;
+        NotificationUtil.success('Success');
+        this.routeService.navigate('/');
+        }, (httpErrorResponse: HttpErrorResponse) => {
+          NotificationUtil.error('Error! Wrong Email or Password!');
+          this.isLoggingIn = false;
+        }
+    );
+  }
 }

@@ -1,24 +1,57 @@
-<a class="nav-link" href="/">Home</a>
-<div class="container custom-form-container">
-  <div class="row justify-content-center">
-    <div class="col-md-4 custom-form">
-      <form>
-        <div class="text-center mt-3 mb-2">
-          <span>SIGN IN</span>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" id="email" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" class="form-control">
-        </div>
-        <div class="form-group text-center mt-5">
-          <button type="button" class="btn btn-primary btn-lg">Login</button>
-        </div>
-      </form>
+<main class="form-signin">
+  <form [formGroup]="signInFormGroup" (ngSubmit)="signIn()" autocomplete="off" >
+    <div class="text-center">
+      <a href="/">
+      <img class="mb-4" src="../../../assets/images/bootstrap-logo.svg" alt="" width="72" height="57">
+      </a>
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <div *ngIf="errorMessage" class="text-center mt-3 mb-2">
+        <span class="text-danger">{{errorMessage}}</span>
+      </div>
     </div>
-  </div>
-</div>
-
+    <div class="form-floating">
+      <input type="email" class="form-control" formControlName="email" id="email" placeholder="name@example.com">
+      <label for="email">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password">
+      <label for="password">Password</label>
+    </div>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" [disabled]="!signInFormGroup.valid || isLoggingIn" type="submit">
+      <span *ngIf="!isLoggingIn">Sign In</span>
+      <span *ngIf="isLoggingIn" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
+        <span class="sr-only">Loading...</span>
+      </span>
+    </button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+  </form>
+<!--  <form [formGroup]="signInFormGroup" (ngSubmit)="signIn()">-->
+<!--    <div *ngIf="errorMessage" class="text-center mt-3 mb-2">-->
+<!--      <span class="text-danger">{{errorMessage}}</span>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="email">Email</label>-->
+<!--      <input type="text" formControlName="email" id="email" class="form-control">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="password">Password</label>-->
+<!--      <input type="password" formControlName="password" id="password" class="form-control">-->
+<!--    </div>-->
+<!--    <div class="form-group text-center mt-5">-->
+<!--      <button type="submit" [disabled]="!signInFormGroup.valid || isLoggingIn" class="btn-submit">-->
+<!--        <span *ngIf="!isLoggingIn">Sign In</span>-->
+<!--        <span *ngIf="isLoggingIn" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">-->
+<!--                            <span class="sr-only">Loading...</span>-->
+<!--                        </span>-->
+<!--      </button>-->
+<!--    </div>-->
+<!--    <div class="form-group text-center mt-4">-->
+<!--      <a [routerLink]="['/forgot-password']" class="custom-btn-default">Forgot Password</a>-->
+<!--    </div>-->
+<!--  </form>-->
+</main>
