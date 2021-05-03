@@ -1,23 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ProductsComponent } from './modules/products/products.component';
+import { CheckoutComponent } from './modules/checkout/checkout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    ProductsComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
