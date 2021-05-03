@@ -26,6 +26,7 @@
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/vanillatoasts/vanillatoasts.css",
+              "src/assets/vendor/aos/aos.css",
               "src/assets/vendor/bootstrap-icons/bootstrap-icons.css",
               "src/assets/vendor/glightbox/css/glightbox.min.css",
               "src/assets/vendor/boxicons/css/boxicons.min.css",
