@@ -3,7 +3,6 @@ import { FormControl, FormGroup, FormBuilder, Validators, NgForm } from '@angula
 import {HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { SigninService } from '../../services/signin.service';
 import { RouteService } from '../../services/route.service';
-import { Authorization } from '../../../models/authorization';
 import { first } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import {NotificationUtil} from '../../../utils';
@@ -16,7 +15,7 @@ import {environment} from '../../../environments/environment';
 })
 export class SignUpComponent implements OnInit {
 
-  private API_URL = environment.apiUrl;
+  API_URL = 'http://localhost/bizsolutions-dashboard/src/api';
 
   signUpFormGroup = this.fb.group({
     email: new FormControl('', Validators.required),
