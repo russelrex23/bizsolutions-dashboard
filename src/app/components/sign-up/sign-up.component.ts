@@ -15,7 +15,7 @@ import {environment} from '../../../environments/environment';
 })
 export class SignUpComponent implements OnInit {
 
-  API_URL = 'http://localhost/bizsolutions-dashboard/src/api';
+  API_URL = 'https://bizsolutions.app/src/api';
 
   signUpFormGroup = this.fb.group({
     email: new FormControl('', Validators.required),
