@@ -30,9 +30,11 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html,
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #444444;
+  height: 100%;
+  align-items: center;
+  background-color: #f5f5f5;
 }
 
 a {
@@ -1807,4 +1809,15 @@ section {
 
 #vanillatoasts-container {
   z-index: 3;
+}
+
+.
+element.style {
+}
+.vanillatoasts-error {
+  border-bottom: 2px solid #DB2B1D;
+}
+
+.vanillatoasts-toast {
+  background: aquamarine !important;
 }

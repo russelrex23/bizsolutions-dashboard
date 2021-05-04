@@ -31,6 +31,7 @@ export class SignInComponent implements OnInit {
   }
 
   signIn(): void {
+    this.isLoggingIn = true;
     const formData: any = new FormData();
     formData.append('email', this.signInFormGroup.get('email').value);
     formData.append('password', this.signInFormGroup.get('password').value);
@@ -39,7 +40,7 @@ export class SignInComponent implements OnInit {
       (response) => {
         this.isLoggingIn = false;
         NotificationUtil.success('Success');
-        this.routeService.navigate('/');
+        this.routeService.navigate('/dashboard');
         }, (httpErrorResponse: HttpErrorResponse) => {
           NotificationUtil.error('Error! Wrong Email or Password!');
           this.isLoggingIn = false;

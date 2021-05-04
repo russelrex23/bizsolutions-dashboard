@@ -23,7 +23,7 @@ export class SignUpComponent implements OnInit {
     contact: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required)
   });
-  isLoggingIn = false;
+  isSigningUp = false;
   errorMessage = '';
 
   constructor(private fb: FormBuilder, private routeService: RouteService, private signinService: SigninService,
@@ -33,6 +33,7 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp(): void {
+    this.isSigningUp = true;
     const formData: any = new FormData();
     formData.append('email', this.signUpFormGroup.get('email').value);
     formData.append('password', this.signUpFormGroup.get('password').value);
@@ -41,8 +42,7 @@ export class SignUpComponent implements OnInit {
     this.http.post(this.API_URL + '/signup.php',
       formData, {responseType: 'text'}).subscribe(
       (response) => {
-        console.log(response);
-        this.isLoggingIn = false;
+        this.isSigningUp = false;
         NotificationUtil.success('Registration successful');
         this.routeService.navigate('/sign-in');
       }, (httpErrorResponse: HttpErrorResponse) => {
@@ -51,7 +51,7 @@ export class SignUpComponent implements OnInit {
         } else {
           NotificationUtil.error('Error! Wrong Email or Password!');
         }
-        this.isLoggingIn = false;
+        this.isSigningUp = false;
       }
     );
   }
