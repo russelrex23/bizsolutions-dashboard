@@ -15,7 +15,7 @@ import {environment} from '../../../environments/environment';
 })
 export class SignInComponent implements OnInit {
 
-  API_URL = 'https://bizsolutions.app/src/api';
+  private API_URL = environment.apiUrl;
 
   signInFormGroup = this.fb.group({
     email: new FormControl('', Validators.required),
