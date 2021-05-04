@@ -24,34 +24,10 @@
     </div>
     <button class="w-100 btn btn-lg btn-primary" [disabled]="!signInFormGroup.valid || isLoggingIn" type="submit">
       <span *ngIf="!isLoggingIn">Sign In</span>
-      <span *ngIf="isLoggingIn" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">
-        <span class="sr-only">Loading...</span>
-      </span>
+      <div  *ngIf="isLoggingIn"  class="spinner-border text-dark" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </button>
     <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
   </form>
-<!--  <form [formGroup]="signInFormGroup" (ngSubmit)="signIn()">-->
-<!--    <div *ngIf="errorMessage" class="text-center mt-3 mb-2">-->
-<!--      <span class="text-danger">{{errorMessage}}</span>-->
-<!--    </div>-->
-<!--    <div class="form-group">-->
-<!--      <label for="email">Email</label>-->
-<!--      <input type="text" formControlName="email" id="email" class="form-control">-->
-<!--    </div>-->
-<!--    <div class="form-group">-->
-<!--      <label for="password">Password</label>-->
-<!--      <input type="password" formControlName="password" id="password" class="form-control">-->
-<!--    </div>-->
-<!--    <div class="form-group text-center mt-5">-->
-<!--      <button type="submit" [disabled]="!signInFormGroup.valid || isLoggingIn" class="btn-submit">-->
-<!--        <span *ngIf="!isLoggingIn">Sign In</span>-->
-<!--        <span *ngIf="isLoggingIn" class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true">-->
-<!--                            <span class="sr-only">Loading...</span>-->
-<!--                        </span>-->
-<!--      </button>-->
-<!--    </div>-->
-<!--    <div class="form-group text-center mt-4">-->
-<!--      <a [routerLink]="['/forgot-password']" class="custom-btn-default">Forgot Password</a>-->
-<!--    </div>-->
-<!--  </form>-->
 </main>

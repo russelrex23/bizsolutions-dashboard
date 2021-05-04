@@ -5,6 +5,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { CheckoutComponent } from './modules/checkout/checkout.component';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -20,8 +21,8 @@ const routes: Routes = [
     component: SignUpComponent
   },
   {
-    path: 'checkout',
-    component: CheckoutComponent
+    path: 'dashboard',
+    component: DashboardComponent
   }
 ];
 
