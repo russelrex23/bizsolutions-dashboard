@@ -1,3 +1,238 @@
-.container-300{
-  height: 300px;
+.header-image{
+  width: 100%;
+  height: 656.5px;
+  left: 0px;
+  top: 0px;
+  background-image:url('../../../assets/images/landing/Rectangle01.png');
+  background-size: 100% 100%;
 }
+
+.container-head{
+  height: 657px;
+  background-image: url("../../../assets/images/landing/Rectangle01.png");
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+
+.me-n2{
+  margin-right: -2rem;
+}
+
+.ms-n2{
+  margin-left: -2rem;
+}
+
+.header-texts{
+  font-family: Overpass, serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 31px;
+  color: #CCFFFF;
+}
+
+.sign-up-button{
+  background: linear-gradient(103.88deg, #27ACE7 8.14%, #4BEBCF 93.22%);
+  color: #CCFFFF;
+  border-radius: 16px;
+  font-family: Overpass, serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 31px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.03em;
+  height: 48px;
+  width: 120px;
+
+}
+
+.topnav a:hover:before, .topnav li:hover > a:before, .topnav .active:before {
+  visibility: visible;
+  width: 100%;
+}
+
+.topnav a:hover, .topnav .active, .topnav li:hover > a {
+  background: -webkit-linear-gradient(103.88deg, #27ACE7 8.14%, #4BEBCF 93.22%);
+  text-shadow: 0px 1px 6px 0px rgba(225, 255, 255, 0.5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.topnav a:hover{
+  /*background: -webkit-linear-gradient(103.88deg, #27ACE7 8.14%, #4BEBCF 93.22%);*/
+  background: black;
+  text-shadow: 0px 1px 6px 0px rgba(225, 255, 255, 0.5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.topnav > ul > li > a:after {
+  display:block;
+  content: '';
+  padding-bottom:3px;
+  background:
+    linear-gradient(to left,  #27ACE7, #4BEBCF),
+    linear-gradient(to left,  #27ACE7, #4BEBCF);
+  background-size:100% 2px;
+  background-position:bottom 0 left 0,bottom 5px left 0;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  border-radius: 2px;
+}
+
+.topnav > ul > li > a:after{ transform-origin: 100% 50%; }
+.topnav > ul > li > a:hover:after{ transform: scaleX(1); transform-origin:   0% 50%; }
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(75, 235, 207, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(75, 235, 207);
+}
+
+@media (min-width: 1024px) {
+  .m-md-header{
+    margin-right: 10rem;
+    margin-left: 10rem;
+    margin-top: 5rem;
+  }
+
+  .product-height{
+    height: 2000px;
+  }
+}
+
+@media (max-width: 768px) {
+  .w-sm-80{
+    width: 80%!important;
+  }
+  .m-sm-header{
+    margin: 3rem;
+  }
+  .product-height{
+    height: 3600px;
+  }
+}
+
+.welcome{
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.05em;
+  color: #CCFFFF;
+}
+
+.sub-welcome{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 31px;
+  color: #CCFFFF;
+}
+
+.get-started{
+  height: 48px;
+  width: 228px;
+  left: 0px;
+  top: 0px;
+  border-radius: 16px;
+  background: linear-gradient(103.88deg, #27ACE7 8.14%, #4BEBCF 93.22%);
+  /* shadow/333 */
+
+  color: #CCFFFF;
+  box-shadow: 0px 11px 14px -10px rgba(51, 51, 51, 0.3);
+}
+
+.about-section-title {
+  text-align: center;
+}
+
+.about-us-content{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 31px;
+  text-align: center;
+  color: #261A30;
+}
+
+
+/*--------------------------------------------------------------
+# Products Section
+--------------------------------------------------------------*/
+
+.product-section{
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  background-image:url('../../../assets/images/landing/Rectangle 20.png');
+  background-size: 100% 100%;
+}
+
+.products .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.products .content ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 35px;
+}
+
+.products .product-desc ul {
+  list-style-type: circle;
+  padding: 0;
+}
+
+.products .product-desc ul li{
+  display: list-item;
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 10px;
+  color: #CCFFFF;
+}
+
+.product-title{
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.05em;
+  color: #CCFFFF;
+}
+
+.product-sub-title{
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  background: -webkit-linear-gradient(103.88deg, #27ACE7 8.14%, #4BEBCF 93.22%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+hr.divider {
+  height: 2px;
+  background: linear-gradient(to right, #4EEAE2, #CCFFFF, #4EEAE2);
+  width: 50%;
+  margin: auto;
+}
+
+/*--------------------------------------------------------------
+# End Products Section
+--------------------------------------------------------------*/

@@ -1,700 +1,195 @@
-<!-- ======= Top Bar ======= -->
-<section id="topbar" class="d-flex align-items-center">
-  <div class="container d-flex justify-content-center justify-content-md-between">
-    <div class="contact-info d-flex align-items-center">
-      <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-      <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+
+<!-- ======= Header ======= -->
+<div class="header-image">
+  <nav class="navbar navbar-expand-lg justify-content-center">
+    <div class="container-fluid m-md-5 m-sm-0">
+          <a class="w-50 w-sm-80" href="/">
+            <img src="assets/images/landing/Subtract.png">
+            <img src="assets/images/landing/bizsolutions.png">
+          </a>
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse topnav collapse w-100" id="navbarSupportedContent">
+        <ul class="navbar-nav w-100 justify-content-center">
+          <li class="nav-item me-4">
+            <a class="nav-link active header-texts" href="/">Home</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link header-texts" href="#about">About</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link header-texts" href="#products">Products</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link header-texts" href="#team">Team</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link header-texts" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+          <li class="nav-item me-4">
+            <a class="nav-link scrollto header-texts" href="/sign-in">Login</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-lg sign-up-button" (click)="goToSignUp()">Sign up</button>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="social-links d-none d-md-flex align-items-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+  </nav>
+
+  <section id="welcome" class="welcome section-bg m-md-header m-sm-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="welcome">Welcome to <span class="fw-bolder">BizSolutions</span></h1>
+          <p class="sub-welcome mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum convallis tincidunt.
+          </p>
+          <button class="btn btn-lg get-started mt-3">Get Started</button>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 contentr">
+          <img src="assets/images/landing/GCash.png" class="img-fluid" alt="">
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+<!-- ======= Header ======= -->
+
+<!-- ======= About Us Section ======= -->
+<section id="about">
+  <div class="container d-flex align-items-center justify-content-center">
+    <div class="about-section-title">
+      <h1 class="mb-4">ABOUT US</h1>
+      <p class="about-us-content">
+        Phasellus aliquet lectus id efficitur mollis. Sed lacinia purus sed dapibus tempor. <br> Integer eleifend purus non condimentum vestibulum. <br><br>
+        Curabitur fermentum nec mi sed porta. In posuere ultrices rhoncus.<br> Nam rhoncus nibh a eros consectetur pellentesque in vitae ipsum. Sed varius semper dui quis <br> laoreet. Fusce scelerisque faucibus malesuada. <br><br>
+        Mauris semper scelerisque felis, vel maximus ex vestibulum eu. Nunc sit amet <br> ligula mi. Maecenas finibus volutpat nulla a porttitor. In egestas purus nec sem <br>feugiat, et ullamcorper nibh ultricies. <br><br>
+        Cras in quam eget justo vestibulum ullamcorper eu eget ante. Curabitur convallis <br> dui nisi, a maximus eros tincidunt ac.<br><br>
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ======= Header ======= -->
-<header id="header" class="d-flex align-items-center">
-  <div class="container d-flex align-items-center justify-content-between">
+<!-- ======= End About Us Section ======= -->
 
-    <h1 class="logo"><a href="/">BizSolutions<span>.</span></a></h1>
-    <!-- Uncomment below if you prefer to use an image logo -->
-    <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
 
-    <nav id="navbar" class="navbar">
-      <ul>
-        <li><a class="nav-link scrollto active" href="/">Home</a></li>
-        <li><a class="nav-link scrollto" href="#about">About</a></li>
-        <li><a class="nav-link scrollto" href="#products">Products</a></li>
-        <li><a class="nav-link scrollto" href="#team">Team</a></li>
-        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        <li><a class="nav-link scrollto" href="/sign-up">Register</a></li>
-        <li><a class="nav-link scrollto" href="/sign-in">Login</a></li>
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
+<!-- ======= Products Section ======= -->
 
-  </div>
-</header><!-- End Header -->
-
-<!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center">
-  <div class="container" data-aos="zoom-out" data-aos-delay="100">
-    <h1>Welcome to <span>BizSolutions</span></h1>
-    <h2>CONTENT HERE!</h2>
-    <div class="d-flex">
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
-      <a href="#" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-    </div>
-  </div>
-</section><!-- End Hero -->
-
-<main id="main">
-
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about section-bg">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>About</h2>
-        <h3>Find Out More <span>About Us</span></h3>
-        <p>CONTENT HERE!</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-          <img src="assets/img/about.jpg" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <h3>CONTENT HERE!</h3>
-          <p class="fst-italic">
-            CONTENT HERE!
-          </p>
+<section id="products" class="products">
+<div class="product-section product-height">
+  <nav class="navbar navbar-expand-lg justify-content-center mb-5">
+    <div class="container-fluid">
+      <div class="row m-md-header m-sm-header">
+        <div class="col-lg-7 content mt-5">
+          <h1 class="welcome">OUR PRODUCTS</h1>
           <ul>
-            <li>
-              <i class="bx bx-store-alt"></i>
+            <li class="align-items-center mt-5">
+              <img src="assets/images/landing/Security.png" class="img-fluid me-3" alt="">
               <div>
-                <h5>CONTENT HERE!</h5>
-                <p>CONTENT HERE!</p>
+                <h1 class="product-title">Lender Compliance Program</h1>
+                <p class="product-sub-title">PERSONAL</p>
               </div>
             </li>
-            <li>
-              <i class="bx bx-images"></i>
+          </ul>
+          <div class="product-desc">
+            <ul class="ms-5">
+              <li>
+                Increase your credit scores to meet lender requirement
+              </li>
+              <li>
+                Remove negative items in your credit file
+              </li>
+              <li>
+                Ensure accuracy of your information in your credit file
+              </li>
+            </ul>
+          </div>
+          <button class="btn btn-lg get-started mt-3 ms-5">learn more</button>
+        </div>
+        <div class="col-lg-5 content mt-5">
+          <img src="assets/images/landing/cell.png" class="img-fluid" alt="" style="height: 437.86px;width: 100%;">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <hr class="divider">
+
+  <nav class="navbar navbar-expand-lg justify-content-center mt-5 mb-5">
+    <div class="container-fluid">
+      <div class="row m-md-header m-sm-header">
+        <div class="col-lg-5 content">
+          <img src="assets/images/landing/corporate.png" class="img-fluid" alt="" style="height: 437.86px;width: 100%;">
+        </div>
+        <div class="col-lg-7 content">
+          <ul>
+            <li class="align-items-center mt-5">
+              <img src="assets/images/landing/Security.png" class="img-fluid me-3" alt="">
               <div>
-                <h5>CONTENT HERE!</h5>
-                <p>CONTENT HERE!</p>
+                <h1 class="product-title">Lender Compliance Program</h1>
+                <p class="product-sub-title">CORPORATE</p>
               </div>
             </li>
           </ul>
-          <p>
-            CONTENT HERE!
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End About Section -->
-
-  <!-- ======= Clients Section ======= -->
-  <section id="clients" class="clients section-bg">
-    <div class="container" data-aos="zoom-in">
-
-      <div class="row">
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-          <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-          <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-          <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-          <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-          <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-          <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Clients Section -->
-
-  <!-- ======= Services Section ======= -->
-  <section id="products" class="products">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>Products</h2>
-        <h3>Check our <span>Products</span></h3>
-        <p>CONTENT HERE!</p>
-      </div>
-
-      <div class="row" *ngIf="isProduct">
-        <div class="col-lg-4 col-md-6 align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-file"></i></div>
-            <h4><a href="">Personal Credit Program</a></h4>
-            <p>CONTENT HERE!</p>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary mt-5" (click)="showLcpPersonal()">Learn More</button>
+          <div class="product-desc">
+            <ul class="ms-5">
+              <li>
+                Ensure that your business name and industry meets lender compliance
+              </li>
+              <li>
+                Build Corporate Credit to where your company will qualify for NO PG Funding
+              </li>
+              <li>
+                Get assistance in establishing your brand
+              </li>
+            </ul>
           </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-file"></i></div>
-            <h4><a href="">Corporate Credit Program</a></h4>
-            <p>CONTENT HERE!</p>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary mt-5" (click)="showLcpCorporate()">Learn More</button>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-file"></i></div>
-            <h4><a href="">Strategic Funding</a></h4>
-            <p>CONTENT HERE!</p>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary mt-5" (click)="showStrategic()">Learn More</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row row-cols-12 row-cols-md-12 mb-3 text-center" data-aos="zoom-in" data-aos-delay="100" *ngIf="!isProduct && !isAuth && isLcpPersonal">
-        <div class="d-grid gap-2 d-md-block text-start mb-3">
-          <button class="btn btn-lg btn-dark" type="button" (click)="showProduct()">BACK</button>
-        </div>
-        <div class="col-12 d-flex justify-content-center">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3 text-white bg-primary border-primary">
-              <h4 class="my-0 fw-normal">Lender Compliance Program – Personal</h4>
-            </div>
-            <div class="card-body">
-          <span class="fw-bolder">LCP CORPORATE EDITION - ENROLLMENT FEE
-            <br>(See Payment Plan Matrix below)
-          </span>
-              <hr class="border border-2 border-dark">
-              <span class="fw-bolder">
-            By enrolling in the Lender Compliance Program - Corporate, we will perform some or all of the following:
-          </span>
-              <hr class="border border-2 border-dark">
-              <ul class="list-group list-group-flush text-center">
-                <li class="list-group-item">Work to remove any previous addresses reporting on the file</li>
-                <li class="list-group-item">Ensure your current address is reporting correctly across all 3 credit bureaus</li>
-                <li class="list-group-item">Add primary tradelines to all 3 credit bureaus to meet the criterion of having a minimum of 4 open primary tradelines</li>
-                <li class="list-group-item">Add a revolving Primary Tradeline with a minimum $5,000 credit limit to meet this criterion</li>
-                <li class="list-group-item">Remove any inquiries that did not result in credit being issued  from all 3 credit reports</li>
-                <li class="list-group-item">Target and remove any derogatory items reporting on all 3 credit bureaus</li>
-                <li class="list-group-item">Target and attempt to update or reverse any late pays reporting on all 3 credit bureaus</li>
-                <li class="list-group-item">Perform Data Suppression techniques to remove bankruptcies and or any other public records</li>
-                <li class="list-group-item">Increase credit scores so that they meet lender requirements</li>
-                <li class="list-group-item">Ensure that you meet all DTI requirements and advise how much income is needed in order to qualify for funding based on all outstanding debt</li>
-                <li class="list-group-item">Ensure that your Average Age of Accounts (AAoA) meets lender requirements and calculating the amount of age that's needed, and provide a solution to meet this criterion.  </li>
-              </ul>
-              <br>
-              <button type="button" class="w-25 p-3 btn btn-lg btn-primary" (click)="showAuth()">Get Started</button>
-              <br>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row row-cols-12 row-cols-md-12 mb-3 text-center" data-aos="zoom-in" data-aos-delay="100" *ngIf="!isProduct && isLcpCorporate">
-        <div class="d-grid gap-2 d-md-block text-start mb-3">
-          <button class="btn btn-lg btn-dark" type="button" (click)="showProduct()">BACK</button>
-        </div>
-        <div class="col-12 d-flex justify-content-center">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3 text-white bg-primary border-primary">
-              <h4 class="my-0 fw-normal">Lender Compliance Program – Corporate</h4>
-            </div>
-            <div class="card-body">
-          <span class="fw-bolder">LCP CORPORATE EDITION - ENROLLMENT FEE
-            <br>(See Payment Plan Matrix below)
-          </span>
-              <hr class="border border-2 border-dark">
-              <span class="fw-bolder">
-            By enrolling in the Lender Compliance Program - Corporate, we will perform some or all of the following:
-          </span>
-              <hr class="border border-2 border-dark">
-              <ul class="list-group list-group-flush text-center">
-                <li class="list-group-item">*EVERYTHING in the Lender Compliance Program - PERSONAL</li>
-                <li class="list-group-item">“Done-For-You” Corporate Credit Building</li>
-                <li class="list-group-item">Ensure that your business name and industry meets lender compliance</li>
-                <li class="list-group-item">Set up a lender compliant business address </li>
-                <li class="list-group-item">Set up Business Phone</li>
-                <li class="list-group-item">Register Business in the National 411 Database</li>
-                <li class="list-group-item">Set up your EIN (if necessary)</li>
-                <li class="list-group-item">Set up your Corporate Bank Account</li>
-                <li class="list-group-item">Set up your Merchant Account</li>
-                <li class="list-group-item">Set up your D&B, Equifax, and Experian Business Profiles</li>
-                <li class="list-group-item">Design Company Logo</li>
-                <li class="list-group-item">Set up Website Domain</li>
-                <li class="list-group-item">Set up Business Email to meet lender compliance</li>
-                <li class="list-group-item">Design and Develop Corporate Website</li>
-                <li class="list-group-item">Set up and Provide 12 mos of Website Hosting</li>
-                <li class="list-group-item">Set up and Design Social Media Websites</li>
-                <li class="list-group-item">Target and remove any derogatory items reporting on all 3 business credit bureaus</li>
-                <li class="list-group-item">Target and attempt to update or reverse any late pays reporting on all 3 business credit bureaus</li>
-                <li class="list-group-item">Done-For-You Concierge Services</li>
-                <li class="list-group-item">Monitor the status of your file 24/7/365 - 360 degree visibility</li>
-                <li class="list-group-item">Corporate Funding Concierge - We serve as your very own corporate funding concierge providing you direct access to the Strategic Funding Program.</li>
-                <li class="list-group-item">Build Corporate Credit to where your company will qualify for NO PG Funding</li>
-              </ul>
-              <br>
-              <button type="button" class="w-25 p-3 btn btn-lg btn-primary" (click)="showAuth()">Get Started</button>
-              <br>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row row-cols-12 row-cols-md-12 mb-3 text-center" data-aos="zoom-in" data-aos-delay="100" *ngIf="!isProduct && isStrategic">
-        <div class="d-grid gap-2 d-md-block text-start mb-3">
-          <button class="btn btn-lg btn-dark" type="button" (click)="showProduct()">BACK</button>
-        </div>
-        <div class="col-12 justify-content-center">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3 text-white bg-primary border-primary">
-              <h4 class="my-0 fw-normal">Strategic Funding Solutions</h4>
-            </div>
-            <div class="card-body">
-          <span class="fw-bolder">CONTENT HERE!
-          </span>
-              <hr class="border border-2 border-dark">
-              <span class="fw-bolder">
-            CONTENT HERE!
-          </span>
-              <hr class="border border-2 border-dark">
-              <ul class="list-group list-group-flush text-center">
-                <li class="list-group-item">CONTENT HERE!</li>
-                <li class="list-group-item">CONTENT HERE!</li>
-                <li class="list-group-item">CONTENT HERE!</li>
-                <li class="list-group-item">CONTENT HERE!</li>
-              </ul>
-              <br>
-                <button type="button" class="w-25 p-3 btn btn-lg btn-primary" (click)="showAuth()">Get Started</button>
-              <br>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row row-cols-12 row-cols-md-12 mb-3 text-center" data-aos="zoom-in" data-aos-delay="100" *ngIf="isAuth">
-        <div class="d-grid gap-2 d-md-block text-start mb-3">
-          <button class="btn btn-lg btn-dark" type="button" (click)="showProduct()">BACK</button>
-        </div>
-        <div class="col-12 justify-content-center">
-          <div class="row justify-content-center mb-3">
-            <br>
-            <a href="/sign-in"><button type="button" class="w-25 p-3 btn btn-lg btn-primary">Sign in</button></a>
-            <br>
-          </div>
-          <div class="row justify-content-center">
-            <br>
-            <a href="/sign-up"><button type="button" class="w-25 p-3 btn btn-lg btn-primary">Register As New Client</button></a>
-            <br>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Services Section -->
-
-  <!-- ======= Testimonials Section ======= -->
-  <section id="testimonials" class="testimonials">
-    <div class="container" data-aos="zoom-in">
-
-      <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-              <h3>Bert Williams</h3>
-              <h4>Ceo &amp; Founder</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                CONTENT HERE!
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div><!-- End testimonial item -->
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-              <h3>Sara Wilsson</h3>
-              <h4>Designer</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-              <h3>Jena Karlis</h3>
-              <h4>Store Owner</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-              <h3>Matt Brandon</h3>
-              <h4>Freelancer</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-              <h3>John Larson</h3>
-              <h4>Entrepreneur</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div><!-- End testimonial item -->
-
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-
-    </div>
-  </section><!-- End Testimonials Section -->
-
-  <!-- ======= Team Section ======= -->
-  <section id="team" class="team section-bg">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>Team</h2>
-        <h3>Our Hardworking <span>Team</span></h3>
-        <p>CONTENT HERE!</p>
-      </div>
-
-      <div class="row">
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-          <div class="member">
-            <div class="member-img">
-              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info">
-              <h4>CONTENT HERE!</h4>
-              <span>CONTENT HERE!</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-          <div class="member">
-            <div class="member-img">
-              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info">
-              <h4>CONTENT HERE!</h4>
-              <span>CONTENT HERE!</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-          <div class="member">
-            <div class="member-img">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info">
-              <h4>CONTENT HERE!</h4>
-              <span>CONTENT HERE!</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-          <div class="member">
-            <div class="member-img">
-              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="member-info">
-              <h4>CONTENT HERE!</h4>
-              <span>CONTENT HERE!</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Team Section -->
-
-  <!-- ======= Frequently Asked Questions Section ======= -->
-  <section id="faq" class="faq section-bg">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>F.A.Q</h2>
-        <h3>Frequently Asked <span>Questions</span></h3>
-        <p>CONTENT HERE!</p>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-xl-10">
-          <ul class="faq-list">
-
-            <li>
-              <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">CONTENT HERE!<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">CONTENT HERE!<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">CONTENT HERE!<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">CONTENT HERE!<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">CONTENT HERE!<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">CONTENT HERE!<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-              <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Frequently Asked Questions Section -->
-
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-title">
-        <h2>Contact</h2>
-        <h3><span>Contact Us</span></h3>
-        <p>CONTENT HERE!</p>
-      </div>
-
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-6">
-          <div class="info-box mb-4">
-            <i class="bx bx-map"></i>
-            <h3>Our Address</h3>
-            <p>A108 Adam Street, New York, NY 535022</p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="info-box  mb-4">
-            <i class="bx bx-envelope"></i>
-            <h3>Email Us</h3>
-            <p>contact@example.com</p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="info-box  mb-4">
-            <i class="bx bx-phone-call"></i>
-            <h3>Call Us</h3>
-            <p>+1 5589 55488 55</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="col-lg-6 ">
-          <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-        </div>
-
-        <div class="col-lg-6">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-            <div class="row">
-              <div class="col form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-              </div>
-              <div class="col form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Contact Section -->
-
-</main><!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<footer id="footer">
-
-  <div class="footer-newsletter">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <h4>Join Our Newsletter</h4>
-          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          <form action="" method="post">
-            <input type="email" name="email"><input type="submit" value="Subscribe">
-          </form>
+          <button class="btn btn-lg get-started mt-3 ms-5">learn more</button>
         </div>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <div class="footer-top">
-    <div class="container">
-      <div class="row">
+  <hr class="divider">
 
-        <div class="col-lg-3 col-md-6 footer-contact">
-          <h3>BizSolutions<span>.</span></h3>
-          <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
-          </p>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Useful Links</h4>
+  <nav class="navbar navbar-expand-lg justify-content-center mt-5">
+    <div class="container-fluid">
+      <div class="row m-md-header m-sm-header">
+        <div class="col-lg-7 content">
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            <li class="align-items-center mt-5">
+              <img src="assets/images/landing/Arrow.png" class="img-fluid me-3" alt="">
+              <div>
+                <h1 class="product-title">Strategic Funding Solutions</h1>
+              </div>
+            </li>
           </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Our Social Networks</h4>
-          <p>CONTENT HERE!</p>
-          <div class="social-links mt-3">
-            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <div class="product-desc">
+            <ul class="ms-5">
+              <li>
+                Obtain funding products that match your business goals.
+              </li>
+              <li>
+                Start up unsecured funding
+              </li>
+              <li>
+                Real estate financing
+              </li>
+            </ul>
           </div>
+          <button class="btn btn-lg get-started mt-3 ms-5">learn more</button>
         </div>
-
+        <div class="col-lg-5 content">
+          <img src="assets/images/landing/strategic.png" class="img-fluid" alt="" style="height: 437.86px;width: 100%;">
+        </div>
       </div>
     </div>
-  </div>
-</footer><!-- End Footer -->
+  </nav>
+</div>
+</section>
+<!-- ======= End Products Section ======= -->
