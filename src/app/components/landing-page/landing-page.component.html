@@ -1,70 +1,69 @@
+<nav class="navbar navbar-expand-lg justify-content-center fixed-top bg-top-nav">
+  <div class="container-fluid">
+    <a class="w-50 w-sm-80" href="/">
+      <img src="assets/images/landing/Subtract.png">
+      <img src="assets/images/landing/bizsolutions.png">
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse topnav collapse w-100 sm-dropdown" id="navbarSupportedContent">
+      <ul class="navbar-nav w-100 justify-content-center">
+        <li class="nav-item me-4 ms-3">
+          <a class="nav-link scrollto header-texts active" href="#welcome">Home</a>
+        </li>
+        <li class="nav-item me-4 ms-3">
+          <a class="nav-link scrollto header-texts" href="#about">About</a>
+        </li>
+        <li class="nav-item me-4 ms-3">
+          <a class="nav-link scrollto header-texts" href="#products">Products</a>
+        </li>
+        <li class="nav-item me-4 ms-3">
+          <a class="nav-link scrollto header-texts" href="#team">Team</a>
+        </li>
+        <li class="nav-item me-4 ms-3">
+          <a class="nav-link scrollto header-texts" href="#contact">Contact</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+        <li class="nav-item me-4 ms-3">
+          <a class="nav-link scrollto header-texts" href="/sign-in">Login</a>
+        </li>
+        <li class="nav-item me-4 ms-3">
+          <button class="btn btn-lg sign-up-button" (click)="goToSignUp()">Sign up</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <!-- ======= Header ======= -->
-<div class="header-image">
-  <nav class="navbar navbar-expand-lg justify-content-center">
-    <div class="container-fluid m-md-5 m-sm-0">
-          <a class="w-50 w-sm-80" href="/">
-            <img src="assets/images/landing/Subtract.png">
-            <img src="assets/images/landing/bizsolutions.png">
-          </a>
-      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse topnav collapse w-100" id="navbarSupportedContent">
-        <ul class="navbar-nav w-100 justify-content-center">
-          <li class="nav-item me-4">
-            <a class="nav-link active header-texts" href="/">Home</a>
-          </li>
-          <li class="nav-item me-4">
-            <a class="nav-link header-texts" href="#about">About</a>
-          </li>
-          <li class="nav-item me-4">
-            <a class="nav-link header-texts" href="#products">Products</a>
-          </li>
-          <li class="nav-item me-4">
-            <a class="nav-link header-texts" href="#team">Team</a>
-          </li>
-          <li class="nav-item me-4">
-            <a class="nav-link header-texts" href="#contact">Contact</a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-          <li class="nav-item me-4">
-            <a class="nav-link scrollto header-texts" href="/sign-in">Login</a>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-lg sign-up-button" (click)="goToSignUp()">Sign up</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <section id="welcome" class="welcome section-bg m-md-header m-sm-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
+<div class="header-image header-height">
+  <section id="welcome" class="welcome m-md-header m-sm-header">
+    <div class="container-fluid">
+      <div class="row pt-150">
+        <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-down" data-aos-delay="100">
           <h1 class="welcome">Welcome to <span class="fw-bolder">BizSolutions</span></h1>
           <p class="sub-welcome mt-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum convallis tincidunt.
           </p>
           <button class="btn btn-lg get-started mt-3">Get Started</button>
         </div>
-        <div class="col-lg-6 pt-4 pt-lg-0 contentr">
+        <div class="col-lg-6 col-md-6 col-sm-12 pt-4 pt-lg-0" data-aos="fade-right" data-aos-delay="100">
           <img src="assets/images/landing/GCash.png" class="img-fluid" alt="">
         </div>
       </div>
-
     </div>
   </section>
 </div>
 <!-- ======= Header ======= -->
 
 <!-- ======= About Us Section ======= -->
-<section id="about">
-  <div class="container d-flex align-items-center justify-content-center">
-    <div class="about-section-title">
-      <h1 class="mb-4">ABOUT US</h1>
+<section id="about" data-aos="fade-up" data-aos-delay="100">
+  <nav class="navbar justify-content-center mb-5">
+  <div class="container-fluid d-flex align-items-center justify-content-center">
+    <div class="row m-md-header m-sm-header about-section-title">
+      <h1 class="mb-5 mt-5">ABOUT US</h1>
       <p class="about-us-content">
         Phasellus aliquet lectus id efficitur mollis. Sed lacinia purus sed dapibus tempor. <br> Integer eleifend purus non condimentum vestibulum. <br><br>
         Curabitur fermentum nec mi sed porta. In posuere ultrices rhoncus.<br> Nam rhoncus nibh a eros consectetur pellentesque in vitae ipsum. Sed varius semper dui quis <br> laoreet. Fusce scelerisque faucibus malesuada. <br><br>
@@ -73,22 +72,20 @@
       </p>
     </div>
   </div>
+  </nav>
 </section>
 
 <!-- ======= End About Us Section ======= -->
 
-
 <!-- ======= Products Section ======= -->
-
 <section id="products" class="products">
 <div class="product-section product-height">
-  <nav class="navbar navbar-expand-lg justify-content-center mb-5">
-    <div class="container-fluid">
+    <div class="container-fluid pt-10">
       <div class="row m-md-header m-sm-header">
-        <div class="col-lg-7 content mt-5">
-          <h1 class="welcome">OUR PRODUCTS</h1>
+        <div class="col-lg-7 content mt-5" data-aos="zoom-in-down" data-aos-delay="100">
+          <h1 class="welcome text-sm-center text-md-start">OUR PRODUCTS</h1>
           <ul>
-            <li class="align-items-center mt-5">
+            <li class="align-items-center mt-5 ms-md-0 ms-sm-5">
               <img src="assets/images/landing/Security.png" class="img-fluid me-3" alt="">
               <div>
                 <h1 class="product-title">Lender Compliance Program</h1>
@@ -111,24 +108,22 @@
           </div>
           <button class="btn btn-lg get-started mt-3 ms-5">learn more</button>
         </div>
-        <div class="col-lg-5 content mt-5">
-          <img src="assets/images/landing/cell.png" class="img-fluid" alt="" style="height: 437.86px;width: 100%;">
+        <div class="col-lg-5 content mt-5 text-center" data-aos="zoom-in-up" data-aos-delay="100">
+          <img src="assets/images/landing/cell.png" class="img-fluid" alt="" style="height: 437.86px; width: auto;">
         </div>
       </div>
     </div>
-  </nav>
 
   <hr class="divider">
 
-  <nav class="navbar navbar-expand-lg justify-content-center mt-5 mb-5">
-    <div class="container-fluid">
+    <div class="container-fluid mt-5 mb-5">
       <div class="row m-md-header m-sm-header">
-        <div class="col-lg-5 content">
-          <img src="assets/images/landing/corporate.png" class="img-fluid" alt="" style="height: 437.86px;width: 100%;">
+        <div class="col-lg-5 content text-center" data-aos="zoom-in-right" data-aos-delay="100">
+          <img src="assets/images/landing/corporate.png" class="img-fluid" alt="" style="height: 437.86px; width: auto;">
         </div>
-        <div class="col-lg-7 content">
+        <div class="col-lg-7 content" data-aos="zoom-in-down" data-aos-delay="100">
           <ul>
-            <li class="align-items-center mt-5">
+            <li class="align-items-center mt-5 ms-md-0 ms-sm-5">
               <img src="assets/images/landing/Security.png" class="img-fluid me-3" alt="">
               <div>
                 <h1 class="product-title">Lender Compliance Program</h1>
@@ -153,16 +148,14 @@
         </div>
       </div>
     </div>
-  </nav>
 
   <hr class="divider">
 
-  <nav class="navbar navbar-expand-lg justify-content-center mt-5">
-    <div class="container-fluid">
+    <div class="container-fluid mt-5 mb-5">
       <div class="row m-md-header m-sm-header">
-        <div class="col-lg-7 content">
+        <div class="col-lg-7 content" data-aos="fade-up" data-aos-duration="3000">
           <ul>
-            <li class="align-items-center mt-5">
+            <li class="align-items-center mt-5 ms-md-0 ms-sm-5">
               <img src="assets/images/landing/Arrow.png" class="img-fluid me-3" alt="">
               <div>
                 <h1 class="product-title">Strategic Funding Solutions</h1>
@@ -184,12 +177,14 @@
           </div>
           <button class="btn btn-lg get-started mt-3 ms-5">learn more</button>
         </div>
-        <div class="col-lg-5 content">
-          <img src="assets/images/landing/strategic.png" class="img-fluid" alt="" style="height: 437.86px;width: 100%;">
+        <div class="col-lg-5 content text-center" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+          <img src="assets/images/landing/strategic.png" class="img-fluid" alt="" style="height: 437.86px; width: auto;">
         </div>
       </div>
     </div>
-  </nav>
+
+  <hr class="divider">
+
 </div>
 </section>
 <!-- ======= End Products Section ======= -->
