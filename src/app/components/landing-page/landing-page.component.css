@@ -11,8 +11,8 @@
   width: 100%;
   background-image:url('../../../assets/images/landing/bg-top.png');
   background-size: 100% 100%;
-  transition: all 0.5s;
-  z-index: 997;
+  /*transition: all 0.5s;*/
+  /*z-index: 997;*/
   height: 86px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
@@ -123,9 +123,15 @@
   border-color: rgb(75, 235, 207);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1400px) {
+  .pl-lg-100{
+    padding-left: 100px;
+  }
+}
+
+@media (min-width: 992px) {
   .m-md-header{
-    margin: 8rem 10rem;
+    margin: 8rem 10rem 5rem 10rem;
   }
 
   .header-height{
@@ -133,7 +139,15 @@
   }
 
   .product-height{
-    height: 2300px;
+    height: auto;
+  }
+
+  .pt-md-100{
+    padding-top: 100px;
+  }
+
+  .p-md-100{
+    padding: 50px 100px 50px 100px;
   }
 }
 
@@ -151,15 +165,71 @@
   }
 
   .product-height{
-    height: 3400px;
+    height: auto;
   }
 
   .sm-dropdown{
-    margin: 25px 0 30px 0;
+    margin: 25px -12px 30px -12px;
     padding-bottom: 30px;
     background-image:url('../../../assets/images/landing/bg-top.png');
     background-size: 100% 100%;
   }
+}
+
+/*// X-Small devices (portrait phones, less than 576px)*/
+/*// No media query for `xs` since this is the default in Bootstrap*/
+
+/*// Extra Small devices (landscape phones, 576px and below)*/
+@media (max-width: 576px) {
+  .pt-xs-20{
+    padding-top: 20px;
+  }
+
+  .pt-xs-50{
+    padding-top: 50px;
+  }
+
+  .pt-xs-100{
+    padding-top: 100px;
+  }
+
+  .w-xs-100{
+    width: 100%!important;
+  }
+
+  .h-xs-150{
+    height: 150px;
+  }
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .pt-sm-50{
+    padding-top: 50px;
+  }
+
+  .h-sm-150{
+    height: 150px;
+  }
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+}
+
+/*// X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}
+
+/*// XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
 
 }
 
@@ -197,8 +267,6 @@
 
 .about-section-title {
   text-align: center;
-  /*margin-top: 130px;*/
-  /*margin-bottom: 130px;*/
 }
 
 .about-us-content{
@@ -255,7 +323,7 @@
   font-family: Rubik, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 38px;
   letter-spacing: 0.05em;
   color: #CCFFFF;
@@ -276,10 +344,61 @@
 hr.divider {
   height: 2px;
   background: linear-gradient(to right, #4EEAE2, #CCFFFF, #4EEAE2);
-  width: 50%;
+  width: 70%;
   margin: auto;
 }
 
+hr.prod-divider {
+  height: 2px;
+  width: 70%;
+  margin: auto;
+  border: 1px solid;
+  border-image-source: linear-gradient(90deg, #1D2B51 0%, #CCFFFF 68.52%, #261A30 100%);
+
+
+}
+
+.font-overpass{
+  font-family: Overpass, sans-serif;
+}
+
+.product-inclusions ul li{
+  font-size: 20px;
+  line-height: 31px;
+  text-align: justify;
+  color: #261A30;
+  margin: 8px 0;
+}
+
+.product-corp-text{
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+  background: -webkit-linear-gradient(180deg, #E9A039 20.83%, #F4EAB3 39.06%, #BF7710 66.67%);
+  letter-spacing: 0.05em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /*--------------------------------------------------------------
 # End Products Section
 --------------------------------------------------------------*/
+
+.footer-text{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  /*line-height: 31px;*/
+  /* SIS/1 dark blue */
+  color: #1C2A43;
+  opacity: 0.6;
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}

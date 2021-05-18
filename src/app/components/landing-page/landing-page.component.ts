@@ -16,13 +16,20 @@ export class LandingPageComponent implements OnInit {
   isSignUp = false;
   isAuth = false;
   isProduct = true;
+  isLoading = false;
+  myInnerHeight = 0;
 
   constructor(private routeService: RouteService) { }
 
   title = 'Biz Solutions';
 
   ngOnInit(): void {
-    this.routeService.navigate('/');
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+      this.routeService.navigate('/');
+    }, 1000);
+    console.log();
   }
 
   goToSignUp(): void {
@@ -45,6 +52,10 @@ export class LandingPageComponent implements OnInit {
     this.isAuth = false;
   }
 
+  hideLcpPersonal(): void {
+    this.isLcpPersonal = false;
+  }
+
   showLcpCorporate(): void {
     this.isLcpCorporate = true;
     this.isProduct = false;
@@ -53,12 +64,20 @@ export class LandingPageComponent implements OnInit {
     this.isAuth = false;
   }
 
+  hideLcpCorporate(): void {
+    this.isLcpCorporate = false;
+  }
+
   showStrategic(): void {
     this.isStrategic = true;
     this.isProduct = false;
     this.isLcpCorporate = false;
     this.isLcpPersonal = false;
     this.isAuth = false;
+  }
+
+  hideStrategic(): void {
+    this.isStrategic = false;
   }
 
   showAuth(): void {
@@ -85,5 +104,4 @@ export class LandingPageComponent implements OnInit {
     this.isLcpCorporate = false;
     this.isLcpPersonal = false;
   }
-
 }
