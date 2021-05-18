@@ -1,3 +1,13 @@
+<div *ngIf="isLoading" class="sk-chase">
+  <div class="sk-chase-dot"></div>
+  <div class="sk-chase-dot"></div>
+  <div class="sk-chase-dot"></div>
+  <div class="sk-chase-dot"></div>
+  <div class="sk-chase-dot"></div>
+  <div class="sk-chase-dot"></div>
+</div>
+
+<div *ngIf="!isLoading">
 <nav class="navbar navbar-expand-lg justify-content-center fixed-top bg-top-nav">
   <div class="container-fluid">
     <a class="w-50 w-sm-80" href="/">
@@ -42,14 +52,14 @@
   <section id="welcome" class="welcome m-md-header m-sm-header">
     <div class="container-fluid">
       <div class="row pt-150">
-        <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-down" data-aos-delay="100">
+        <div class="col-lg-6 col-md-6 col-sm-12 text-center text-sm-start" data-aos="fade-down" data-aos-delay="100">
           <h1 class="welcome">Welcome to <span class="fw-bolder">BizSolutions</span></h1>
           <p class="sub-welcome mt-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum convallis tincidunt.
           </p>
           <button class="btn btn-lg get-started mt-3">Get Started</button>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 pt-4 pt-lg-0" data-aos="fade-right" data-aos-delay="100">
+        <div class="col-lg-6 col-md-6 col-sm-12  pt-xs-50 pt-lg-0" data-aos="fade-right" data-aos-delay="100">
           <img src="assets/images/landing/GCash.png" class="img-fluid" alt="">
         </div>
       </div>
@@ -75,64 +85,128 @@
   </nav>
 </section>
 
-<!-- ======= End About Us Section ======= -->
+<!--&lt;!&ndash; ======= End About Us Section ======= &ndash;&gt;-->
 
 <!-- ======= Products Section ======= -->
 <section id="products" class="products">
 <div class="product-section product-height">
     <div class="container-fluid pt-10">
-      <div class="row m-md-header m-sm-header">
-        <div class="col-lg-7 content mt-5" data-aos="zoom-in-down" data-aos-delay="100">
-          <h1 class="welcome text-sm-center text-md-start">OUR PRODUCTS</h1>
-          <ul>
-            <li class="align-items-center mt-5 ms-md-0 ms-sm-5">
-              <img src="assets/images/landing/Security.png" class="img-fluid me-3" alt="">
-              <div>
-                <h1 class="product-title">Lender Compliance Program</h1>
-                <p class="product-sub-title">PERSONAL</p>
+      <div id="personal" class="row m-md-header m-sm-header">
+        <h1 class="welcome text-center text-md-start pt-xs-100">OUR PRODUCTS</h1>
+        <div class="col-lg-7 content mt-5" data-aos="fade-up" data-aos-duration="3000">
+          <div class="pl-lg-200 pt-md-100">
+            <div class="container p-0">
+              <div class="row">
+                <div class="col-md-2 col-xs-12 text-center">
+                  <img src="assets/images/landing/Security.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-10 col-xs-12 text-center text-md-start">
+                  <h1 class="product-title">Lender Compliance Program</h1>
+                  <p class="product-sub-title">PERSONAL</p>
+                </div>
               </div>
-            </li>
-          </ul>
-          <div class="product-desc">
-            <ul class="ms-5">
-              <li>
-                Increase your credit scores to meet lender requirement
-              </li>
-              <li>
-                Remove negative items in your credit file
-              </li>
-              <li>
-                Ensure accuracy of your information in your credit file
-              </li>
-            </ul>
+            </div>
+            <div class="product-desc pt-xs-20">
+              <ul class="ms-3">
+                <li>
+                  Increase your credit scores to meet lender requirement
+                </li>
+                <li>
+                  Remove negative items in your credit file
+                </li>
+                <li>
+                  Ensure accuracy of your information in your credit file
+                </li>
+              </ul>
+            </div>
+            <div class="text-center text-md-start mt-3">
+              <a href="#lcp-personal"><button class="btn btn-lg get-started" (click)="showLcpPersonal()">learn more</button></a>
+            </div>
           </div>
-          <button class="btn btn-lg get-started mt-3 ms-5">learn more</button>
         </div>
         <div class="col-lg-5 content mt-5 text-center" data-aos="zoom-in-up" data-aos-delay="100">
-          <img src="assets/images/landing/cell.png" class="img-fluid" alt="" style="height: 437.86px; width: auto;">
+          <img src="assets/images/landing/cell.png" class="img-fluid" alt="">
         </div>
       </div>
     </div>
 
   <hr class="divider">
 
-    <div class="container-fluid mt-5 mb-5">
-      <div class="row m-md-header m-sm-header">
-        <div class="col-lg-5 content text-center" data-aos="zoom-in-right" data-aos-delay="100">
-          <img src="assets/images/landing/corporate.png" class="img-fluid" alt="" style="height: 437.86px; width: auto;">
-        </div>
-        <div class="col-lg-7 content" data-aos="zoom-in-down" data-aos-delay="100">
-          <ul>
-            <li class="align-items-center mt-5 ms-md-0 ms-sm-5">
-              <img src="assets/images/landing/Security.png" class="img-fluid me-3" alt="">
-              <div>
-                <h1 class="product-title">Lender Compliance Program</h1>
-                <p class="product-sub-title">CORPORATE</p>
-              </div>
+  <!-- ======= LCP Personal Description Section ======= -->
+
+  <section id="lcp-personal" *ngIf="isLcpPersonal" data-aos="fade-down" data-aos-delay="100">
+    <nav class="navbar justify-content-center mb-5 bg-light font-overpass">
+      <div class="container-fluid product-inclusions w-75 p-md-100 pt-xs-100 w-xs-100">
+          <p style="opacity: 0.8;">By enrolling in this program, we will perform some or all of the following:</p>
+          <ul class="text-start">
+            <li>
+              Work to remove any previous addresses reporting on the file
+            </li>
+            <li>
+              Ensure your current address is reporting correctly across all 3 credit bureaus
+            </li>
+            <li>
+              Add primary tradelines to all 3 credit bureaus to meet the criterion of having a minimum of 4 open primary tradelines
+            </li>
+            <li>
+              Add a revolving Primary Tradeline with a minimum $5,000 credit limit to meet this criterion
+            </li>
+            <li>
+              Remove any inquiries that did not result in credit being issued from all 3 credit reports
+            </li>
+            <li>
+              Target and remove any derogatory items reporting on all 3 credit bureaus
+            </li>
+            <li>
+              Target and attempt to update or reverse any late pays reporting on all 3 credit bureaus
+            </li>
+            <li>
+              Perform Data Suppression techniques to remove bankruptcies and or any other public records
+            </li>
+            <li>
+              Increase credit scores so that they meet lender requirements
+            </li>
+            <li>
+              Ensure that you meet all DTI requirements and advise how much income is needed in order to qualify for funding based on all outstanding debt
+            </li>
+            <li>
+              Ensure that your Average Age of Accounts (AAoA) meets lender requirements and calculating the amount of age that's needed, and provide a solution to meet this criterion.
             </li>
           </ul>
-          <div class="product-desc">
-            <ul class="ms-5">
+          <hr class="divider">
+        <br><br>
+        <div class="container-fluid text-center">
+          <p class="fw-bold fs-1">$299 Enrollment Fee</p>
+          <h3 class="fw-bold">$99 per month</h3>
+          <button class="btn btn-lg get-started mt-3">Get Started</button>
+          <br><br>
+          <a href="#personal" (click)="hideLcpPersonal()"><i class="fa fa-angle-up fa-2x"></i></a>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <!-- ======= End LCP Personal Description Section ======= -->
+
+    <div id="corporate" class="container-fluid mt-5 mb-5">
+      <div class="row m-md-header m-sm-header">
+        <div class="col-lg-5 content text-center" data-aos="zoom-in-right" data-aos-delay="100">
+          <img src="assets/images/landing/corporate.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-7 content" data-aos="zoom-in-down" data-aos-delay="100">
+          <div class="container p-0">
+            <div class="row">
+              <div class="col-md-2 col-xs-12 text-center pt-xs-50">
+                <img src="assets/images/landing/corp.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-md-10 col-xs-12 text-center text-md-start">
+                <h1 class="product-title">Lender Compliance Program</h1>
+                <p class="product-corp-text">CORPORATE</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-desc pt-xs-20">
+            <ul class="ms-3">
               <li>
                 Ensure that your business name and industry meets lender compliance
               </li>
@@ -144,47 +218,233 @@
               </li>
             </ul>
           </div>
-          <button class="btn btn-lg get-started mt-3 ms-5">learn more</button>
-        </div>
-      </div>
-    </div>
-
-  <hr class="divider">
-
-    <div class="container-fluid mt-5 mb-5">
-      <div class="row m-md-header m-sm-header">
-        <div class="col-lg-7 content" data-aos="fade-up" data-aos-duration="3000">
-          <ul>
-            <li class="align-items-center mt-5 ms-md-0 ms-sm-5">
-              <img src="assets/images/landing/Arrow.png" class="img-fluid me-3" alt="">
-              <div>
-                <h1 class="product-title">Strategic Funding Solutions</h1>
-              </div>
-            </li>
-          </ul>
-          <div class="product-desc">
-            <ul class="ms-5">
-              <li>
-                Obtain funding products that match your business goals.
-              </li>
-              <li>
-                Start up unsecured funding
-              </li>
-              <li>
-                Real estate financing
-              </li>
-            </ul>
+          <div class="text-center text-md-start mt-3">
+            <a href="#lcp-corporate"><button class="btn btn-lg get-started" (click)="showLcpCorporate()">learn more</button></a>
           </div>
-          <button class="btn btn-lg get-started mt-3 ms-5">learn more</button>
-        </div>
-        <div class="col-lg-5 content text-center" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-          <img src="assets/images/landing/strategic.png" class="img-fluid" alt="" style="height: 437.86px; width: auto;">
         </div>
       </div>
     </div>
 
   <hr class="divider">
+
+  <!-- ======= LCP Personal Description Section ======= -->
+<!--  *ngIf="isLcpCorporate"-->
+  <section id="lcp-corporate" *ngIf="isLcpCorporate" data-aos="fade-down" data-aos-delay="100">
+    <nav class="navbar justify-content-center mb-5 bg-light font-overpass">
+      <div class="container-fluid product-inclusions w-75 p-md-100 pt-xs-100 w-xs-100">
+        <p style="opacity: 0.8;">By enrolling in this program, we will perform some or all of the following:</p>
+        <ul class="text-start">
+          <li>
+            EVERYTHING in the Lender Compliance Program - PERSONAL
+          </li>
+          <li>
+            Done-For-You Corporate Credit Building
+          </li>
+          <li>
+            Ensure that your business name and industry meets lender compliance
+          </li>
+          <li>
+            Set up a lender compliant business address
+          </li>
+          <li>
+            Set up Business Phone
+          </li>
+          <li>
+            Register Business in the National 411 Database
+          </li>
+          <li>
+            Set up your EIN (if necessary)
+          </li>
+          <li>
+            Set up your Corporate Bank Account
+          </li>
+          <li>
+            Set up your Merchant Account
+          </li>
+          <li>
+            Set up your D&B, Equifax, and Experian Business Profiles
+          </li>
+          <li>
+            Design Company Logo
+          </li>
+          <li>
+            Set up Website Domain
+          </li>
+          <li>
+            Set up Business Email to meet lender compliance
+          </li>
+          <li>
+            Design and Develop Corporate Website
+          </li>
+          <li>
+            Set up and Provide 12 mos of Website Hosting
+          </li>
+          <li>
+            Set up and Design Social Media Websites
+          </li>
+          <li>
+            Target and remove any derogatory items reporting on all 3 business credit bureaus
+          </li>
+          <li>
+            Target and attempt to update or reverse any late pays reporting on all 3 business credit bureaus
+          </li>
+          <li>
+            Done-For-You Concierge Services
+          </li>
+          <li>
+            Monitor the status of your file 24/7/365 - 360 degree visibility
+          </li>
+          <li>
+            Corporate Funding Concierge - We serve as your very own corporate funding concierge providing you direct access to the Strategic Funding Program.
+          </li>
+          <li>
+            Build Corporate Credit to where your company will qualify for NO PG Funding
+          </li>
+        </ul>
+        <hr class="prod-divider">
+        <br><br>
+        <div class="row text-center">
+          <p class="mt-4 mb-5">Our payment plans</p>
+          <div class="col-sm-4">
+            <div class="card mb-3" style="width: 16rem;">
+              <div class="card-body">
+                <h5 class="card-title pb-4">One time payment</h5>
+                <p class="fw-bold fs-1">$4,995</p>
+                <h6 class="card-subtitle mb-2 text-muted">Enrollment Fee</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card mb-3" style="width: 16rem;">
+              <div class="card-body">
+                <h5 class="card-title pb-4">3 time payment</h5>
+                <p class="fw-bold fs-1">$1,994<sup class="fs-6">/mo</sup></p>
+                <h6 class="card-subtitle mb-2 text-muted" style="opacity: 0.8;">$66.47/day</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card mb-3" style="width: 16rem;">
+              <div class="card-body">
+                <h5 class="card-title pb-4">7 time payment</h5>
+                <p class="fw-bold fs-1">897<sup class="fs-6">/mo</sup></p>
+                <h6 class="card-subtitle mb-2 text-muted" style="opacity: 0.8;">$29.9/day only</h6>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid text-center">
+            <button class="btn btn-lg get-started mt-3">Get Started</button>
+            <br><br>
+            <a href="#corporate" (click)="hideLcpCorporate()"><i class="fa fa-angle-up fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <!-- ======= End LCP Personal Description Section ======= -->
+
+    <div id="fund" class="container-fluid mt-5">
+      <div class="row m-md-header m-sm-header mb-0">
+        <div class="col-lg-7 content" data-aos="fade-up" data-aos-duration="3000">
+          <div class="pl-lg-200 pt-md-100">
+            <div class="container p-0">
+              <div class="row">
+                <div class="col-md-2 col-xs-12 text-center">
+                  <img src="assets/images/landing/Arrow.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-10 col-xs-12 text-center text-md-start">
+                  <h1 class="product-title">Strategic Funding Solutions</h1>
+                </div>
+              </div>
+            </div>
+            <div class="product-desc pt-xs-20">
+              <ul class="ms-3">
+                <li>
+                  Obtain funding products that match your business goals.
+                </li>
+                <li>
+                  Start up unsecured funding
+                </li>
+                <li>
+                  Real estate financing
+                </li>
+              </ul>
+            </div>
+            <div class="text-center text-md-start mt-3">
+              <a href="#strategic"><button class="btn btn-lg get-started" (click)="showStrategic()">learn more</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 content text-center pt-xs-50" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+          <img src="assets/images/landing/strategic.png" class="img-fluid" alt="">
+        </div>
+    <hr class="divider mt-5">
+
+      </div>
+    </div>
+
+  <div class="container h-xs-150 h-sm-150">
+  </div>
+
+  <section id="strategic" *ngIf="isStrategic" data-aos="fade-down" data-aos-delay="100">
+    <nav class="navbar justify-content-center mb-5 bg-light font-overpass">
+      <div class="container-fluid product-inclusions w-75 p-md-100 pt-xs-100 w-xs-100">
+        <p style="opacity: 0.8;">The Strategic Funding Solutions is simply a program that strategically places your company with funding products that matches your goals.</p>
+        <ul class="text-start">
+          <li>
+            Start Up Unsecured Funding
+          </li>
+          <li>
+            Equipment Financing
+          </li>
+          <li>
+            Real Estate Financing
+          </li>
+        </ul>
+        <hr class="prod-divider">
+        <br><br>
+        <div class="container-fluid text-center">
+          <button class="btn btn-lg get-started mt-3">Get Started</button>
+          <br><br>
+          <a href="#fund" (click)="hideStrategic()"><i class="fa fa-angle-up fa-2x"></i></a>
+        </div>
+      </div>
+    </nav>
+  </section>
 
 </div>
 </section>
 <!-- ======= End Products Section ======= -->
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row text-center col-xs-12">
+
+        <div class="col-md-4 mb-3">
+          <a class="w-50 w-sm-80" href="/">
+            <img src="assets/images/landing/Subtract.png">
+            <img src="assets/images/landing/footer-bizsolutions.png">
+          </a>
+        </div>
+        <div class="col-md-2 mb-3">
+          <a class="nav-link scrollto footer-text" href="#products">About us</a>
+        </div>
+        <div class="col-md-2 mb-3">
+          <a class="nav-link scrollto footer-text" href="#products">Products</a>
+        </div>
+        <div class="col-md-2 mb-3">
+          <a class="nav-link scrollto footer-text" href="#products">Privacy Policy</a>
+        </div>
+        <div class="col-md-2 mt-1">
+          <img class="m-1" src="assets/images/landing/footer/insta.png">
+          <img class="m-1" src="assets/images/landing/footer/twitter.png">
+          <img class="m-1" src="assets/images/landing/footer/facebook.png">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
