@@ -25,11 +25,17 @@ export class SignUpComponent implements OnInit {
   });
   isSigningUp = false;
   errorMessage = '';
+  isLoading = false;
 
   constructor(private fb: FormBuilder, private routeService: RouteService, private signinService: SigninService,
               private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+      this.routeService.navigate('/sign-up');
+    }, 500);
   }
 
   signUp(): void {
