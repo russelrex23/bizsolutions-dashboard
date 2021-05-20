@@ -17,7 +17,6 @@ export class LandingPageComponent implements OnInit {
   isAuth = false;
   isProduct = true;
   isLoading = false;
-  myInnerHeight = 0;
 
   constructor(private routeService: RouteService) { }
 
@@ -29,7 +28,6 @@ export class LandingPageComponent implements OnInit {
       this.isLoading = false;
       this.routeService.navigate('/');
     }, 1000);
-    console.log();
   }
 
   goToSignUp(): void {
