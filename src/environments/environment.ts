@@ -3,8 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  site: 'http://localhost:4200',
   production: false,
-  apiUrl: 'http://localhost/bizsolutions-dashboard/src/api'
+  apiUrl: 'http://localhost/bizsolutions-dashboard/src/api',
+  emailApiUrl: 'http://localhost/bizsolutions-dashboard/src/mail',
+  sgApi: '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'
 };
 
 /*
