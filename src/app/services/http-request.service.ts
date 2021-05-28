@@ -11,7 +11,7 @@ import {NotificationUtil} from '../../utils';
 })
 export class HttpRequestService {
 
-  private API_URL = 'http://localhost/bizsolutions-dashboard/src/api';
+  private API_URL = environment.emailApiUrl;
 
   constructor(private http: HttpClient) {
   }
@@ -98,6 +98,7 @@ export class HttpRequestService {
       headers: this.setHeaders()
     };
 
+    console.log(url);
     console.log(url);
     console.log(body);
     return this.http.post<T>(url, body, options)
