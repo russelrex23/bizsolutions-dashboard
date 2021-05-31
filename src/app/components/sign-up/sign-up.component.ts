@@ -50,15 +50,17 @@ export class SignUpComponent implements OnInit {
     this.emailService.sendEmail(payload).subscribe(
       (response) => {
         console.log(response);
+        this.isSigningUp = false;
+        this.signUpFormGroup.reset();
+        NotificationUtil.success(response.message);
       }, (httpErrorResponse: HttpErrorResponse) => {
-        if (httpErrorResponse.status === 200) {
-          setTimeout(() => {
-            this.isSigningUp = false;
-            this.signUpFormGroup.reset();
-            NotificationUtil.success('Email Verification Successful! Please check this inbox of your email!');
-          }, 2000);
+        if (httpErrorResponse.error.error) {
+          this.errorMessage = httpErrorResponse.error.error;
+        } else {
+          this.errorMessage = 'Can\'t connect to the server at the moment. Please check your internet connection and try again.';
         }
-        console.log(httpErrorResponse);
+
+        this.isSigningUp = false;
       }
     );
     // const sgMail = require('@sendgrid/mail');
