@@ -1,4 +1,4 @@
 {
-    "schemaVersion" : 2,
-    "imageName" : "Angular: 11.2.12"
+    "schemaVersion" :2,
+    "dockerfilePath" :"./Dockerfile"
 }
