@@ -5,10 +5,10 @@ import { SigninService } from '../../services/signin.service';
 import { RouteService } from '../../services/route.service';
 import { first } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import {NotificationUtil} from '../../../utils';
+import {NotificationUtil} from '../../utils';
 import {environment} from '../../../environments/environment';
-import {GenericObject} from '../../../models/generic-object';
-import {Authorization} from '../../../models/authorization';
+import {GenericObject} from '../../models/generic-object';
+import {Authorization} from '../../models/authorization';
 import { EmailService } from '../../services/email.service';
 
 import {HttpRequestService} from '../../services/http-request.service';
@@ -21,7 +21,6 @@ import {HttpRequestService} from '../../services/http-request.service';
 export class SignUpComponent implements OnInit {
 
   private API_URL = environment.apiUrl;
-  private SG_API = environment.sgApi;
   private SITE = environment.site;
 
   signUpFormGroup = this.fb.group({

@@ -3,15 +3,15 @@ import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/c
 import {catchError} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
 import {Observable, throwError} from 'rxjs';
-import {GenericObject} from '../../models/generic-object';
-import {NotificationUtil} from '../../utils';
+import {GenericObject} from '../models/generic-object';
+import {NotificationUtil} from '../utils';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpRequestService {
 
-  private API_URL = environment.emailApiUrl;
+  private API_URL = environment.apiUrl;
 
   constructor(private http: HttpClient) {
   }
@@ -99,11 +99,12 @@ export class HttpRequestService {
     };
 
     console.log(url);
-    console.log(url);
     console.log(body);
     return this.http.post<T>(url, body, options)
       .pipe(
-        catchError(this.handleError)
+        catchError((err) => {
+          return throwError(err);
+        })
       );
   }
 

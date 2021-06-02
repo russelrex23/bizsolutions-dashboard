@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthenticationService} from '../../services/authentication.service';
+import {RouteService} from '../../services/route.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authenticationService: AuthenticationService,
+    private routeService: RouteService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  signOut(): void {
+    this.routeService.navigate('/sign-in');
+    // this.authenticationService.signOut().subscribe(() => {
+    //   localStorage.removeItem('token');
+    //   this.routeService.navigate('/sign-in');
+    // });
+  }
 }

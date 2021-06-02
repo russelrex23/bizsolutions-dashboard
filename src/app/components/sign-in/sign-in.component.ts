@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import {HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { SigninService } from '../../services/signin.service';
+import {AuthenticationService} from '../../services/authentication.service';
 import { RouteService } from '../../services/route.service';
-import { first } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-import {NotificationUtil} from '../../../utils';
 import {environment} from '../../../environments/environment';
+import {Authorization} from '../../models/authorization';
+import {NotificationUtil} from '../../utils';
 
 @Component({
   selector: 'app-sign-in',
@@ -25,8 +25,8 @@ export class SignInComponent implements OnInit {
   errorMessage = '';
   isLoading = false;
 
-  constructor(private fb: FormBuilder, private routeService: RouteService, private signinService: SigninService,
-              private http: HttpClient) {}
+  constructor(private fb: FormBuilder, private routeService: RouteService,
+              private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -36,21 +36,42 @@ export class SignInComponent implements OnInit {
     }, 500);
   }
 
+  // signIn(): void {
+  //   this.isLoggingIn = true;
+  //   const formData: any = new FormData();
+  //   formData.append('email', this.signInFormGroup.get('email').value);
+  //   formData.append('password', this.signInFormGroup.get('password').value);
+  //   this.http.post(this.API_URL + '/signin.php',
+  //     formData, {responseType: 'text'}).subscribe(
+  //     (response) => {
+  //       this.isLoggingIn = false;
+  //       NotificationUtil.success('Success');
+  //       this.routeService.navigate('/dashboard');
+  //       }, (httpErrorResponse: HttpErrorResponse) => {
+  //         NotificationUtil.error('Error! Wrong Email or Password!');
+  //         this.isLoggingIn = false;
+  //       }
+  //   );
+  // }
+
   signIn(): void {
     this.isLoggingIn = true;
-    const formData: any = new FormData();
-    formData.append('email', this.signInFormGroup.get('email').value);
-    formData.append('password', this.signInFormGroup.get('password').value);
-    this.http.post(this.API_URL + '/signin.php',
-      formData, {responseType: 'text'}).subscribe(
-      (response) => {
+    this.authenticationService.authenticate(this.signInFormGroup.value).subscribe(
+      (authorization: Authorization) => {
+        console.log(authorization);
         this.isLoggingIn = false;
+        localStorage.setItem('token', authorization.token);
         NotificationUtil.success('Success');
         this.routeService.navigate('/dashboard');
-        }, (httpErrorResponse: HttpErrorResponse) => {
-          NotificationUtil.error('Error! Wrong Email or Password!');
-          this.isLoggingIn = false;
+      }, (httpErrorResponse: HttpErrorResponse) => {
+        if (httpErrorResponse.error.message) {
+          NotificationUtil.error(httpErrorResponse.error.message);
+        } else {
+          this.errorMessage = 'Can\'t connect to the server at the moment. Please check your internet connection and try again.';
         }
+
+        this.isLoggingIn = false;
+      }
     );
   }
 }
