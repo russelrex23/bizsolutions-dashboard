@@ -14,7 +14,7 @@ export class EmailService {
 
   public sendEmail(payload): Observable<any> {
     console.log(payload);
-    return this.httpRequestService.post('/api/sendEmail', payload);
+    return this.httpRequestService.post('/auth/sign-up', payload);
   }
 
   // Get the status

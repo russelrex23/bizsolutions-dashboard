@@ -138,6 +138,10 @@ body {
   }
 }
 
+input:disabled {
+  background: #ccc !important;
+}
+
 @media (min-width: 576px) {
 
 }

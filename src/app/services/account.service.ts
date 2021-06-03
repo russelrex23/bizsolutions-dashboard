@@ -14,4 +14,12 @@ export class AccountService {
   public createAccount(payload: GenericObject): Observable<Account> {
     return this.httpRequestService.post('/auth/register', payload);
   }
+
+  /**
+   * Update authenticated user info.
+   * @param payload - info
+   */
+  public update(payload: GenericObject): Observable<Account> {
+    return this.httpRequestService.put('/user-update', payload);
+  }
 }

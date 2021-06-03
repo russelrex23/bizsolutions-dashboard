@@ -2,14 +2,14 @@ export class Account {
 
   private _email: string;
   private _password: string;
-  private _contact: number;
-  private _address: string;
+  private _fistName: string;
+  private _lastName: string;
 
   constructor() {
     this._email = '';
     this._password = '';
-    this._contact = 0;
-    this._address = '';
+    this._fistName = '';
+    this._lastName = '';
   }
 
   get email(): string {
@@ -28,19 +28,19 @@ export class Account {
     this._password = value;
   }
 
-  get contact(): number {
-    return this._contact;
+  get firstName(): string {
+    return this._fistName;
   }
 
-  set contact(value: number) {
-    this._contact = value;
+  set firstName(value: string) {
+    this._fistName = value;
   }
 
-  get address(): string {
-    return this._address;
+  get lastName(): string {
+    return this._lastName;
   }
 
-  set address(value: string) {
-    this._address = value;
+  set lastName(value: string) {
+    this._lastName = value;
   }
 }
