@@ -56,7 +56,7 @@
               <input type="text" class="form-control mb-4" placeholder="last name">
 
               <p class="card-text">Email address</p>
-              <input type="text" class="form-control mb-4" placeholder="email address">
+              <input type="text" class="form-control mb-4" placeholder="email address" value="{{user.email}}" [disabled]="true">
             </div>
           </div>
           <button class="btn btn-lg get-started float-end mt-5 mb-3 d-sm-block d-none" (click)="nextFirst();">Next</button>
