@@ -7,6 +7,7 @@ import {RouteService} from '../../services/route.service';
 import {Account} from '../../models/account';
 import {AccountService} from '../../services/account.service';
 import {ActivatedRoute} from '@angular/router';
+import {PageUtil} from '../../utils/page.util';
 import jwt_decode from 'jwt-decode';
 
 @Component({
@@ -61,5 +62,26 @@ export class RegistrationComponent implements OnInit {
         this.isSigningUp = false;
       }
     );
+  }
+
+  showSecondaryLCP(): void {
+    PageUtil.showModal('showSecondaryLcpPersonal');
+  }
+
+  showSecondaryLCPDetails(): void {
+    PageUtil.hideModal('showSecondaryLcpPersonal');
+    PageUtil.showModal('showSecondaryLcpPersonalDetails');
+  }
+
+  showTransactionComplete(): void {
+    PageUtil.showModal('showTransactionComplete');
+  }
+
+  nextFirst(): void{
+    PageUtil.click('pills-second-tab');
+  }
+
+  nextSecond(): void{
+    PageUtil.click('pills-third-tab');
   }
 }
