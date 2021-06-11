@@ -1,41 +1,65 @@
-<div class="d-flex flex-column p-3 text-white bg-dark" style="width: 280px; height: 100%">
-  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-    <span class="fs-4">Admin</span>
-  </a>
-  <hr>
-  <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav-item">
-      <a href="/dashboard/#" class="nav-link active">
-        <svg class="bi me-2" width="16" height="16"></svg>
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="/dashboard/#" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-        Dashboard
-      </a>
-    </li>
-    <li>
-      <a href="/dashboard/#" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-        Orders
-      </a>
-    </li>
-    <li>
-      <a href="/dashboard/#" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-        Products
-      </a>
-    </li>
-    <li>
-      <a href="/dashboard/#" class="nav-link text-white">
-        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-        Customers
-      </a>
-    </li>
-  </ul>
-  <hr>
-  <button class="btn-primary" (click)="signOut()">Sign Out</button>
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header text-center">
+      <div class="user" style="background-image:url('../../../assets/images/dashboard/profile-default.png')"></div>
+      <h4 class="pt-4 pb-4">Wade Warren</h4>
+      <button class="button" [routerLink]="['account']">My Account</button>
+    </div>
+    <hr class="hr-custom">
+    <ul class="list-unstyled components">
+      <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+        <a [routerLink]="['home']" href="#"><img class="me-3" src="../../../assets/images/dashboard/dashboard.png">Dashboard</a>
+      </li>
+      <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+        <a [routerLink]="['products']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/check.png">LCP Corporate</a>
+      </li>
+      <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+        <a [routerLink]="['plan']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/plan.png">Work Plan</a>
+      </li>
+      <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+        <a [routerLink]="['other']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/user.png">Other informations</a>
+      </li>
+      <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+        <a href="#"><img class="me-3" src="../../../assets/images/dashboard/logout.png">Log out</a>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled CTAs">
+      <li>
+        <p class="m-0">powered by</p>
+        <a class="text-start p-0" href="/">
+          <img src="assets/images/landing/Subtract.png">
+          <img src="assets/images/landing/bizsolutions.png">
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+
 </div>
+
+<!--START SECONDARY LCP PERSONAL MODAL-->
+<div id="showGoals" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title fw-bolder mb-4">Select your Goal</h5>
+        <select [(ngModel)]="selectedObject" class="form-select" multiple style="height: 500px;">
+          <option class="container goals p-2 mb-2" *ngFor="let item of goals">
+            {{item.data}}
+          </option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-lg get-started float-end" (click)="selectedGoal()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END SECONDARY LCP PERSONAL MODAL-->

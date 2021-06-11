@@ -1,0 +1,214 @@
+<div id="container">
+  <div class="card card-height mb-4">
+    <div class="header m-4">
+      <h4 class="fw-bolder">My Account</h4>
+    </div>
+    <div class="body ms-3 mb-5">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="home" aria-selected="true">Personal Info</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#financial" type="button" role="tab" aria-controls="profile" aria-selected="false">Financial Info</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#payment" type="button" role="tab" aria-controls="contact" aria-selected="false">Payment Info</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="address-tab" data-bs-toggle="tab" data-bs-target="#address" type="button" role="tab" aria-controls="contact" aria-selected="false">Address</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tab-content" id="myTabContent">
+
+      <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="home-tab">
+        <div class="card m-5 mt-3">
+          <div class="header m-3">
+            <h4>Personal details</h4>
+            <hr>
+          </div>
+          <div class="row">
+            <div class="col text-end me-5" *ngIf="isEdit">
+              <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>
+            </div>
+            <div class="col text-end me-5" *ngIf="!isEdit">
+              <button class="button me-3" type="button" (click)="back()">Back</button>
+              <button class="btn submit-btn" type="button" (click)="submit()">Submit</button>
+            </div>
+          </div>
+          <div class="row body text-center mb-5 m-3">
+            <div class="row clearfix mb-4 text-start">
+              <div class="col-6">
+                <p>First name</p>
+                <input type="text" class="form-control" value="Wade" [readonly]="isReadOnly">
+              </div>
+              <div class="col-6">
+                <p>Last name</p>
+                <input type="text" class="form-control" value="Warren" [readonly]="isReadOnly">
+              </div>
+            </div>
+            <div class="row clearfix mb-4 text-start">
+              <div class="col-4">
+                <p>Personal email</p>
+                <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly">
+              </div>
+              <div class="col-4">
+                <p>Personal phone</p>
+                <input type="text" class="form-control" value="+1234567890" [readonly]="isReadOnly">
+              </div>
+              <div class="col-4">
+                <p>Date of birth(MM-DD-YYYY)</p>
+                <input type="text" class="form-control" value="01-08-1980" [readonly]="isReadOnly">
+              </div>
+            </div>
+            <div class="row clearfix text-start">
+              <div class="col-4">
+                <p>Complete SSN</p>
+                <input type="text" class="form-control" value="046-54-8647" [readonly]="isReadOnly">
+              </div>
+            </div>
+          </div>
+
+          <div class="header m-3">
+            <h4>Authentication</h4>
+            <button class="button m-3" type="button">Change password</button>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="financial" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="card m-5 mt-3">
+          <div class="row">
+            <div class="col text-end me-5 mt-5" *ngIf="isEdit">
+              <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>
+            </div>
+            <div class="col text-end me-5 mt-5" *ngIf="!isEdit">
+              <button class="button me-3" type="button" (click)="back()">Back</button>
+              <button class="btn submit-btn" type="button" (click)="submit()">Submit</button>
+            </div>
+          </div>
+          <div class="row body text-center mb-5 m-3">
+            <div class="row clearfix mb-4 text-start">
+              <div class="col-6">
+                <p>Personal monthly income</p>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">$</span>
+                  <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+                </div>
+              </div>
+              <div class="col-6">
+                <p>Total household monthly income</p>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">$</span>
+                  <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+                </div>
+              </div>
+            </div>
+            <div class="row clearfix mb-4 text-start">
+              <div class="col-4">
+                <p>House ownership: (e.g. Rent or Own)</p>
+                <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+              </div>
+              <div class="col-4">
+                <p>Monthly rent / Mortgage amount</p>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">$</span>
+                  <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+                </div>
+              </div>
+              <div class="col-4">
+                <p>Years and months in residence</p>
+                <input type="text" class="form-control" value="01-08-1980" [readonly]="isReadOnly">
+              </div>
+            </div>
+            <div class="row clearfix text-start">
+              <div class="col-6">
+                <p>Type of work</p>
+                <input type="text" class="form-control" value="Others" [readonly]="isReadOnly">
+              </div>
+              <div class="col-6">
+                <p>Specify</p>
+                <input type="text" class="form-control" value="Lorem ipsum" [readonly]="isReadOnly">
+              </div>
+            </div>
+          </div>
+
+          <div class="header m-3">
+            <h4>Authentication</h4>
+            <button class="button m-3" type="button">Change password</button>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="card m-5 mt-3">
+          <div class="header m-3">
+            <h4>Payment</h4>
+          </div>
+        </div>
+      </div>
+    <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="contact-tab">
+      <div class="card m-5 mt-3">
+        <div class="header m-3">
+          <h4>Address</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  <div class="card m-5 mt-3">-->
+<!--    <div class="header m-3">-->
+<!--      <h4>Personal details</h4>-->
+<!--      <hr>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col text-end me-5" *ngIf="isEdit">-->
+<!--        <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>-->
+<!--      </div>-->
+<!--      <div class="col text-end me-5" *ngIf="!isEdit">-->
+<!--        <button class="button me-3" type="button" (click)="back()">Back</button>-->
+<!--        <button class="btn submit-btn" type="button" (click)="submit()">Submit</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row body text-center mb-5 m-3">-->
+<!--      <div class="row clearfix mb-4 text-start">-->
+<!--        <div class="col-6">-->
+<!--          <p>First name</p>-->
+<!--          <input type="text" class="form-control" value="Wade" [readonly]="isReadOnly">-->
+<!--        </div>-->
+<!--        <div class="col-6">-->
+<!--          <p>Last name</p>-->
+<!--          <input type="text" class="form-control" value="Warren" [readonly]="isReadOnly">-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="row clearfix mb-4 text-start">-->
+<!--        <div class="col-4">-->
+<!--          <p>Personal email</p>-->
+<!--          <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly">-->
+<!--        </div>-->
+<!--        <div class="col-4">-->
+<!--          <p>Personal phone</p>-->
+<!--          <input type="text" class="form-control" value="+1234567890" [readonly]="isReadOnly">-->
+<!--        </div>-->
+<!--        <div class="col-4">-->
+<!--          <p>Date of birth(MM-DD-YYYY)</p>-->
+<!--          <input type="text" class="form-control" value="01-08-1980" [readonly]="isReadOnly">-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="row clearfix text-start">-->
+<!--        <div class="col-4">-->
+<!--          <p>Complete SSN</p>-->
+<!--          <input type="text" class="form-control" value="046-54-8647" [readonly]="isReadOnly">-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+
+<!--    <div class="header m-3">-->
+<!--      <h4>Authentication</h4>-->
+<!--      <button class="button m-3" type="button">Change password</button>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
