@@ -146,8 +146,10 @@ input:disabled {
   background: #ccc !important;
 }
 
-@media (min-width: 576px) {
-
+@media (max-width: 425px) {
+  .w-sm-100{
+    width: 100% !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -175,4 +177,14 @@ input:disabled {
   background: linear-gradient(103.88deg, #27ACE7 8.14%, #4BEBCF 93.22%);
   color: #CCFFFF;
   box-shadow: 0px 11px 14px -10px rgba(51, 51, 51, 0.3);
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#footer{
 }

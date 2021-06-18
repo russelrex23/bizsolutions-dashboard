@@ -1,48 +1,118 @@
-<div class="wrapper">
-  <!-- Sidebar  -->
+<!--<div class="wrapper">-->
+<!--  &lt;!&ndash; Sidebar  &ndash;&gt;-->
+<!--  <nav id="sidebar" class="sidebar-scroll">-->
+
+<!--    <div class="navbar-brand">-->
+<!--      <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="closeNav()"><i class="lnr lnr-menu fa fa-chevron-circle-left"></i></button>-->
+<!--    </div>-->
+<!--    <div class="sidebar-header text-center">-->
+<!--      <div class="user" style="background-image:url('../../../assets/images/dashboard/profile-default.png')"></div>-->
+<!--      <h4 class="pt-4 pb-4">Wade Warren</h4>-->
+<!--      <button class="button" [routerLink]="['account']">My Account</button>-->
+<!--    </div>-->
+<!--    <hr class="hr-custom">-->
+<!--    <ul class="list-unstyled components">-->
+<!--      <li [routerLinkActive]="['active']" class="ms-3 mb-2">-->
+<!--        <a [routerLink]="['home']" href="#"><img class="me-3" src="../../../assets/images/dashboard/dashboard.png">Dashboard</a>-->
+<!--      </li>-->
+<!--      <li [routerLinkActive]="['active']" class="ms-3 mb-2">-->
+<!--        <a [routerLink]="['products']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/check.png">LCP Corporate</a>-->
+<!--      </li>-->
+<!--      <li [routerLinkActive]="['active']" class="ms-3 mb-2">-->
+<!--        <a [routerLink]="['plan']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/plan.png">Work Plan</a>-->
+<!--      </li>-->
+<!--      <li [routerLinkActive]="['active']" class="ms-3 mb-2">-->
+<!--        <a [routerLink]="['other']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/user.png">Other informations</a>-->
+<!--      </li>-->
+<!--      <li [routerLinkActive]="['active']" class="ms-3 mb-2">-->
+<!--        <a href="#"><img class="me-3" src="../../../assets/images/dashboard/logout.png">Log out</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+
+<!--    <ul class="list-unstyled CTAs">-->
+<!--      <li>-->
+<!--        <p class="m-0">powered by</p>-->
+<!--        <a class="text-start p-0" href="/">-->
+<!--          <img src="assets/images/landing/Subtract.png">-->
+<!--          <img src="assets/images/landing/bizsolutions.png">-->
+<!--        </a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </nav>-->
+
+<!--  <div id="content">-->
+<!--    <button type="button" id="sidebarCollapse" class="btn btn-info">-->
+<!--      <i class="fas fa-align-left"></i>-->
+<!--      <span>Toggle Sidebar</span>-->
+<!--    </button>-->
+<!--    <router-outlet></router-outlet>-->
+<!--  </div>-->
+
+<!--</div>-->
+
+
+<section class="wrapper">
+  <!--Start Sidebar-->
   <nav id="sidebar">
-    <div class="sidebar-header text-center">
-      <div class="user" style="background-image:url('../../../assets/images/dashboard/profile-default.png')"></div>
-      <h4 class="pt-4 pb-4">Wade Warren</h4>
-      <button class="button" [routerLink]="['account']">My Account</button>
+
+    <div class="navbar-brand">
+      <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="toggleSidebar()"><i class="lnr lnr-menu fa fa-chevron-circle-left" style="color: white; font-size: 20px;"></i></button>
     </div>
-    <hr class="hr-custom">
-    <ul class="list-unstyled components">
-      <li [routerLinkActive]="['active']" class="ms-3 mb-2">
-        <a [routerLink]="['home']" href="#"><img class="me-3" src="../../../assets/images/dashboard/dashboard.png">Dashboard</a>
-      </li>
-      <li [routerLinkActive]="['active']" class="ms-3 mb-2">
-        <a [routerLink]="['products']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/check.png">LCP Corporate</a>
-      </li>
-      <li [routerLinkActive]="['active']" class="ms-3 mb-2">
-        <a [routerLink]="['plan']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/plan.png">Work Plan</a>
-      </li>
-      <li [routerLinkActive]="['active']" class="ms-3 mb-2">
-        <a [routerLink]="['other']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/user.png">Other informations</a>
-      </li>
-      <li [routerLinkActive]="['active']" class="ms-3 mb-2">
-        <a href="#"><img class="me-3" src="../../../assets/images/dashboard/logout.png">Log out</a>
-      </li>
-    </ul>
 
-    <ul class="list-unstyled CTAs">
-      <li>
-        <p class="m-0">powered by</p>
-        <a class="text-start p-0" href="/">
-          <img src="assets/images/landing/Subtract.png">
-          <img src="assets/images/landing/bizsolutions.png">
-        </a>
-      </li>
-    </ul>
+    <div class="sidebar-header text-center">
+            <div class="user" style="background-image:url('../../../assets/images/dashboard/profile-default.png')"></div>
+            <h4 class="pt-4 pb-4">Wade Warren</h4>
+            <button class="button" [routerLink]="['account']">My Account</button>
+          </div>
+          <hr class="hr-custom">
+          <ul class="list-unstyled components">
+            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+              <a [routerLink]="['home']" href="#"><img class="me-3" src="../../../assets/images/dashboard/dashboard.png">Dashboard</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+              <a [routerLink]="['products']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/check.png">LCP Corporate</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+              <a [routerLink]="['plan']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/plan.png">Work Plan</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+              <a [routerLink]="['other']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/user.png">Other informations</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+              <a href="#"><img class="me-3" src="../../../assets/images/dashboard/logout.png">Log out</a>
+            </li>
+          </ul>
+
+          <ul class="list-unstyled CTAs">
+            <li>
+              <p class="m-0">powered by</p>
+              <a class="text-start p-0" href="/">
+                <img src="assets/images/landing/Subtract.png">
+                <img src="assets/images/landing/bizsolutions.png">
+              </a>
+            </li>
+          </ul>
   </nav>
-  <div id="content">
-    <router-outlet></router-outlet>
-  </div>
+  <!--End Sidebar-->
 
-</div>
+  <!--Start Page Content-->
+  <section class="page-content">
+    <button (click)="toggleSidebar()" id="sidebarToggler" class="btn btn-light" style="background-color: #47748b;">
+      <i class="lnr lnr-menu fa fa-chevron-circle-right " style="color: white; font-size: 20px;"></i>
+    </button>
 
-<!--START SECONDARY LCP PERSONAL MODAL-->
-<div id="showGoals" class="modal fade" tabindex="-1">
+    <!--Start Template Content-->
+    <section class="template-content">
+      <router-outlet></router-outlet>
+    </section>
+    <!--End Template Content-->
+
+    <!--End Footer-->
+  </section>
+</section>
+
+<!--START GOALS MODAL-->
+<div id="goals" class="modal fade" tabindex="-1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header" style="border-bottom: 0;">
@@ -62,4 +132,4 @@
     </div>
   </div>
 </div>
-<!--END SECONDARY LCP PERSONAL MODAL-->
+<!--END GOALS MODAL-->

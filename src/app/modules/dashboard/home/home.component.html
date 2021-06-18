@@ -1,5 +1,18 @@
 <div id="container">
 
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <div class="card mb-4">
+        <div class="header m-3">
+          <h4>Underwriting Self-Assessment</h4>
+          <hr>
+        </div>
+        <div class="body ms-3 mb-5">
+          <button class="btn btn-lg get-started" style="width: 200px" (click)="showUnderwriting()">Self Assessment</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <div class="row mb-3">
       <div class="col-lg-6">
         <div class="card mb-4">
@@ -87,3 +100,299 @@
   </div>
 
 </div>
+
+
+<!--START UNDERWRITING MODAL-->
+<div id="underWriting" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="margin-left: 15%;">
+      <div class="modal-header" style="border-bottom: 0;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title fw-bolder mb-4">Underwriting Self-Assessment</h5>
+        <div class="table-responsive">
+          <table class="table underwriting">
+            <colgroup>
+              <col span="2" style="background-color:white">
+              <col style="background-color:#EDF3F3">
+            </colgroup>
+            <thead>
+            <tr>
+              <th>#</th>
+              <th style="width: 60%;">QUESTIONS</th>
+              <th>RESPONSES</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Is your name accurately reporting on all 3 credit bureaus?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Is your address accurately reporting on all 3 credit bureaus?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Does your credit file contain more than 1 previous address?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    <i class="fa fa-check" style="color: white;" aria-hidden="true"></i>No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Do you currently own or rent your home?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                     No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Does your file have any fraud alerts or credit freezes?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>Have you recently had any credit repair performed on your file?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>Enter your annual income</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>Enter your desired loan amount</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">9</th>
+              <td>Enter desired loan terms (max of 5 years)</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10</th>
+              <td>Do you need to create a website? Or Do you need assistance with your website?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">11</th>
+              <td>What is the goal of the web content? Is it to book a call, buy a product, get a quote?</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">12</th>
+              <td>Who are your ideal customers? Please describe them in detail.</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">13</th>
+              <td>Additional info about your ideal customers:
+                <br>
+                What are the age ranges of your customers? (Select all that apply)
+              </td>
+              <td>
+                <span style="font-size: 13px; opacity: 0.5;">hold ctrl to multiple select that apply</span>
+                <select class="form-select radio" multiple style="height: 200px;">
+                  <option class="container goals p-2 mb-2">
+                    31 - 40
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    41 - 50
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    51 - 60
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    61 and above
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">14</th>
+              <td>Gender</td>
+              <td>
+                <select class="form-select radio" multiple style="height: 100%;">
+                  <span style="font-size: 13px; opacity: 0.5;">select that apply</span>
+                  <option class="container goals p-2 mb-2">
+                    Male
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Female
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Mixed
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>Where do they live? (Optional)</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">16</th>
+              <td>What is their typical life like? (Optional)</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">17</th>
+              <td>What are your customers interested in? What websites, blogs, books, magazines, people, shows, movies, software, Facebook pages, causes, charities would your audience be mostly to engage with? Feel free to elaborate as many as you like.
+                (Optional)</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>Where do they live? (Optional)</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">18</th>
+              <td>What are your ideal customer’s goals and values?</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">19</th>
+              <td>What are your ideal customer's pain points and challenges? Describe what keeps them up at night.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">20</th>
+              <td>What will be their objections in buying your product/service? (Optional)</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">21</th>
+              <td>What is the business all about? Please explain in detail what you do and how you provide value to your customers.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">22</th>
+              <td>What products/services do you sell? Kindly describe what the service is in detail.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">23</th>
+              <td>What benefits does your service give to your customers?</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">24</th>
+              <td>Do you have any direct competitors offering the same service? If not, can you give us at least three of your closest competitors?</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">25</th>
+              <td>What is your value proposition? What makes you unique from your competitors? What do customers get when they give you their money? This is also critical to our success, so feel free to elaborate.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button class="btn btn-lg get-started w-50">Submit Underwriting Self-Assessment</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END UNDERWRITING MODAL-->

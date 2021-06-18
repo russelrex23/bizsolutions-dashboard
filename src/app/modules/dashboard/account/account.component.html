@@ -1,12 +1,15 @@
 <div id="container">
-  <div class="card card-height mb-4">
+  <div class="card mb-4">
     <div class="header m-4">
       <h4 class="fw-bolder">My Account</h4>
     </div>
     <div class="body ms-3 mb-5">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="home" aria-selected="true">Personal Info</button>
+          <button class="nav-link active" id="credit-tab" data-bs-toggle="tab" data-bs-target="#credit" type="button" role="tab" aria-controls="credit" aria-selected="true">Credit Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="home" aria-selected="true">Personal Info</button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#financial" type="button" role="tab" aria-controls="profile" aria-selected="false">Financial Info</button>
@@ -22,9 +25,106 @@
   </div>
 
   <div class="tab-content" id="myTabContent">
+    <!-- Start Credit Report Tab -->
+      <div class="tab-pane fade show active" id="credit" role="tabpanel" aria-labelledby="cre-tab">
+        <div class="card w-75 w-sm-100 mt-3">
+          <div class="header m-3 text-center">
+            <img class="pe-2" src="/assets/images/dashboard/identity-iq.png">
+          </div>
+          <div class="m-4 justify-content-center">
+            <p>Your IdentityIQ information will be required in order to generate
+              a credit analysis for you. If you already have an IdentityIQ account,
+              please provide your credentials. If not, please proceed with registration. </p>
+          </div>
+          <div class="row text-center mb-5">
+            <div class="col">
+              <button class="button mb-3" style="width: 200px">No</button>
+              <p>I don’t have an existing<br>
+                IdentityIQ account</p>
+            </div>
+            <div class="col">
+              <button class="btn btn-lg mb-3 get-started" style="width: 200px" (click)="showIdentityIqModal()">Yes</button>
+              <p>I have an existing<br>
+                IdentityIQ account</p>
+            </div>
+          </div>
+        </div>
 
-      <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="home-tab">
-        <div class="card m-5 mt-3">
+        <div class="row mb-3 mt-5">
+          <div class="col-lg-6">
+            <div class="card mb-4">
+              <div class="header m-3">
+                <h4>Credit Analysis</h4>
+                <hr>
+              </div>
+              <div class="body ms-3 mb-5">
+                <span class="fw-bold pointer">WadeWarren-credit-analysis-01Jan2021.pdf</span>
+                <i class="fa fa-file pointer ms-4" aria-hidden="true" style="color: #66ace9;"></i>
+                <i class="fa fa-download pointer ms-4" aria-hidden="true" style="color: #66ace9;"></i>
+              </div>
+            </div>
+            <div class="card">
+              <div class="header m-3">
+                <h4>Your Credit Score</h4>
+                <hr>
+              </div>
+              <div class="body text-center mb-5">
+                <div class="row fw-bolder">
+                  <div class="col-md-4">
+                    EQUIFAX
+                    <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+                  </div>
+                  <div class="col-md-4">
+                    EXPERIAN
+                    <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+                  </div>
+                  <div class="col-md-4">
+                    TRANSUNION
+                    <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="header m-3">
+                <h4>Credit score ranges and their meaning</h4>
+                <hr>
+              </div>
+              <div class="body text-center mb-5">
+                <ul class="list-group m-3 rounded-0">
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                    <div><i class="fa fa-circle" style="color: #49AF46"></i><span class="ps-2 fw-bolder">800 and Higher</span><span class="ps-2 opacity-50">(Excellent)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                    <div><i class="fa fa-circle" style="color: #99CA3B"></i><span class="ps-2 fw-bolder">700 - 799</span><span class="ps-2 opacity-50">(Very Good)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                    <div><i class="fa fa-circle" style="color: #FDB932"></i><span class="ps-2 fw-bolder">680 - 699</span><span class="ps-2 opacity-50">(Good)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                    <div><i class="fa fa-circle" style="color: #F5891D"></i><span class="ps-2 fw-bolder">620 - 679</span><span class="ps-2 opacity-50">(Ok or Fair)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                    <div><i class="fa fa-circle" style="color: #F15A24"></i><span class="ps-2 fw-bolder">580 - 619</span><span class="ps-2 opacity-50">(Poor)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                    <div><i class="fa fa-circle" style="color: #EF4649"></i><span class="ps-2 fw-bolder">500 - 579</span><span class="ps-2 opacity-50">(Bad)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                    <div><i class="fa fa-circle" style="color: #B3285A"></i><span class="ps-2 fw-bolder">499 and lower</span><span class="ps-2 opacity-50">(Very Bad)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Start Personal Details Tab -->
+      <div class="tab-pane fade" id="personal" role="tabpanel" aria-labelledby="home-tab">
+        <div class="card mt-3">
           <div class="header m-3">
             <h4>Personal details</h4>
             <hr>
@@ -40,31 +140,31 @@
           </div>
           <div class="row body text-center mb-5 m-3">
             <div class="row clearfix mb-4 text-start">
-              <div class="col-6">
+              <div class="col-md-6">
                 <p>First name</p>
                 <input type="text" class="form-control" value="Wade" [readonly]="isReadOnly">
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
                 <p>Last name</p>
                 <input type="text" class="form-control" value="Warren" [readonly]="isReadOnly">
               </div>
             </div>
             <div class="row clearfix mb-4 text-start">
-              <div class="col-4">
+              <div class="col-md-4">
                 <p>Personal email</p>
                 <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly">
               </div>
-              <div class="col-4">
+              <div class="col-md-4">
                 <p>Personal phone</p>
                 <input type="text" class="form-control" value="+1234567890" [readonly]="isReadOnly">
               </div>
-              <div class="col-4">
+              <div class="col-md-4">
                 <p>Date of birth(MM-DD-YYYY)</p>
                 <input type="text" class="form-control" value="01-08-1980" [readonly]="isReadOnly">
               </div>
             </div>
             <div class="row clearfix text-start">
-              <div class="col-4">
+              <div class="col-md-4">
                 <p>Complete SSN</p>
                 <input type="text" class="form-control" value="046-54-8647" [readonly]="isReadOnly">
               </div>
@@ -77,8 +177,10 @@
           </div>
         </div>
       </div>
+
+    <!-- Start Financial Details Tab -->
       <div class="tab-pane fade" id="financial" role="tabpanel" aria-labelledby="profile-tab">
-        <div class="card m-5 mt-3">
+        <div class="card mt-3">
           <div class="row">
             <div class="col text-end me-5 mt-5" *ngIf="isEdit">
               <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>
@@ -90,14 +192,14 @@
           </div>
           <div class="row body text-center mb-5 m-3">
             <div class="row clearfix mb-4 text-start">
-              <div class="col-6">
+              <div class="col-md-6">
                 <p>Personal monthly income</p>
                 <div class="input-group mb-3">
                   <span class="input-group-text">$</span>
                   <input type="text" class="form-control" value="" [readonly]="isReadOnly">
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
                 <p>Total household monthly income</p>
                 <div class="input-group mb-3">
                   <span class="input-group-text">$</span>
@@ -106,28 +208,28 @@
               </div>
             </div>
             <div class="row clearfix mb-4 text-start">
-              <div class="col-4">
+              <div class="col-md-4">
                 <p>House ownership: (e.g. Rent or Own)</p>
                 <input type="text" class="form-control" value="" [readonly]="isReadOnly">
               </div>
-              <div class="col-4">
+              <div class="col-md-4">
                 <p>Monthly rent / Mortgage amount</p>
                 <div class="input-group mb-3">
                   <span class="input-group-text">$</span>
                   <input type="text" class="form-control" value="" [readonly]="isReadOnly">
                 </div>
               </div>
-              <div class="col-4">
+              <div class="col-md-4">
                 <p>Years and months in residence</p>
                 <input type="text" class="form-control" value="01-08-1980" [readonly]="isReadOnly">
               </div>
             </div>
             <div class="row clearfix text-start">
-              <div class="col-6">
+              <div class="col-md-6">
                 <p>Type of work</p>
                 <input type="text" class="form-control" value="Others" [readonly]="isReadOnly">
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
                 <p>Specify</p>
                 <input type="text" class="form-control" value="Lorem ipsum" [readonly]="isReadOnly">
               </div>
@@ -140,75 +242,55 @@
           </div>
         </div>
       </div>
+
+    <!-- Start Payment Details Tab -->
       <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="contact-tab">
-        <div class="card m-5 mt-3">
+        <div class="card mt-3">
           <div class="header m-3">
             <h4>Payment</h4>
           </div>
         </div>
       </div>
+
+    <!-- Start Address Tab -->
     <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="contact-tab">
-      <div class="card m-5 mt-3">
+      <div class="card mt-3">
         <div class="header m-3">
           <h4>Address</h4>
         </div>
       </div>
     </div>
+
   </div>
-
-<!--  <div class="card m-5 mt-3">-->
-<!--    <div class="header m-3">-->
-<!--      <h4>Personal details</h4>-->
-<!--      <hr>-->
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--      <div class="col text-end me-5" *ngIf="isEdit">-->
-<!--        <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>-->
-<!--      </div>-->
-<!--      <div class="col text-end me-5" *ngIf="!isEdit">-->
-<!--        <button class="button me-3" type="button" (click)="back()">Back</button>-->
-<!--        <button class="btn submit-btn" type="button" (click)="submit()">Submit</button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="row body text-center mb-5 m-3">-->
-<!--      <div class="row clearfix mb-4 text-start">-->
-<!--        <div class="col-6">-->
-<!--          <p>First name</p>-->
-<!--          <input type="text" class="form-control" value="Wade" [readonly]="isReadOnly">-->
-<!--        </div>-->
-<!--        <div class="col-6">-->
-<!--          <p>Last name</p>-->
-<!--          <input type="text" class="form-control" value="Warren" [readonly]="isReadOnly">-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div class="row clearfix mb-4 text-start">-->
-<!--        <div class="col-4">-->
-<!--          <p>Personal email</p>-->
-<!--          <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly">-->
-<!--        </div>-->
-<!--        <div class="col-4">-->
-<!--          <p>Personal phone</p>-->
-<!--          <input type="text" class="form-control" value="+1234567890" [readonly]="isReadOnly">-->
-<!--        </div>-->
-<!--        <div class="col-4">-->
-<!--          <p>Date of birth(MM-DD-YYYY)</p>-->
-<!--          <input type="text" class="form-control" value="01-08-1980" [readonly]="isReadOnly">-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div class="row clearfix text-start">-->
-<!--        <div class="col-4">-->
-<!--          <p>Complete SSN</p>-->
-<!--          <input type="text" class="form-control" value="046-54-8647" [readonly]="isReadOnly">-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--    </div>-->
-
-<!--    <div class="header m-3">-->
-<!--      <h4>Authentication</h4>-->
-<!--      <button class="button m-3" type="button">Change password</button>-->
-<!--    </div>-->
-<!--  </div>-->
 </div>
+
+
+<!--START IDENTITY IQ CREDENTIAL MODAL-->
+<div id="showIdentityIq" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body m-4 mt-0 mb-2">
+        <h5 class="modal-title fw-bolder mb-5">Please enter your IdentityIQ Credentials</h5>
+        <div class="col mb-4">
+          <p>Username</p>
+          <input type="text" class="form-control">
+        </div>
+        <div class="col mb-4">
+          <p>Password</p>
+          <input type="text" class="form-control">
+        </div>
+        <div class="col mb-4">
+          <p>Last 4 digit of SSN</p>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <div class="text-center mb-5">
+        <button class="btn btn-lg get-started w-75">Import my Credit Report</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END IDENTITY IQ CREDENTIAL MODAL-->

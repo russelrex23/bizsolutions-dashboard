@@ -14,7 +14,11 @@ export class HomeComponent implements OnInit {
   }
 
   showGoals(): void {
-    PageUtil.showModal('showGoals');
+    PageUtil.showModal('goals');
+  }
+
+  showUnderwriting(): void {
+    PageUtil.showModal('underWriting');
   }
 
 }

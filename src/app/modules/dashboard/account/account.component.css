@@ -22,10 +22,6 @@
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 
-.card-height{
-  height: 140px;
-}
-
 button.button {
   border-radius: 100rem;
   padding: 1rem;
@@ -58,4 +54,16 @@ button.button:hover {
 button.btn:hover {
   box-shadow: none;
   color: black;
+}
+
+input{
+  border-radius: 16px;
+}
+
+.height-50{
+  height: 50px;
+}
+
+.opacity-50{
+  opacity: 0.5;
 }

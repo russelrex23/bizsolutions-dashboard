@@ -61,12 +61,30 @@ export class DashboardComponent implements OnInit {
   }
 
   openNav(): void{
-    document.getElementById('sidebar').style.width = '250px';
+    document.getElementById('mySidenav').style.width = '250px';
     document.getElementById('content').style.marginLeft = '250px';
   }
 
   closeNav(): void{
     document.getElementById('sidebar').style.width = '0';
     document.getElementById('content').style.marginLeft = '0';
+  }
+
+  toggleSidebar(): void {
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggler = document.getElementById('sidebarToggler');
+
+    if (sidebar && sidebarToggler) {
+      let sidebarMarginLeft = 0;
+      let sidebarTogglerDisplay = 'none';
+
+      if (sidebar.style.marginLeft === '0px') {
+        sidebarMarginLeft = -250;
+        sidebarTogglerDisplay = 'block';
+      }
+
+      sidebar.style.marginLeft = `${sidebarMarginLeft}px`;
+      sidebarToggler.style.display = sidebarTogglerDisplay;
+    }
   }
 }

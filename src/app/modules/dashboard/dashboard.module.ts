@@ -7,6 +7,7 @@ import { ProductsComponent } from './products/products.component';
 import { PlanComponent } from './plan/plan.component';
 import { OtherComponent } from './other/other.component';
 import { AccountComponent } from './account/account.component';
+import { MorrisJsModule } from 'angular-morris-js';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AccountComponent } from './account/account.component';
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    MorrisJsModule
   ]
 })
 export class DashboardModule { }

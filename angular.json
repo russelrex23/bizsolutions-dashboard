@@ -27,6 +27,7 @@
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/font-awesome/css/font-awesome.min.css",
               "./node_modules/vanillatoasts/vanillatoasts.css",
+              "./node_modules/morris.js/morris.css",
               "src/assets/vendor/aos/aos.css",
               "src/styles.css"
             ],
@@ -34,6 +35,8 @@
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
               "./node_modules/vanillatoasts/vanillatoasts.js",
+              "./node_modules/morris.js/morris.js",
+              "./node_modules/raphael/raphael.js",
               "src/assets/vendor/aos/aos.js",
               "src/assets/js/main.js"
             ]
