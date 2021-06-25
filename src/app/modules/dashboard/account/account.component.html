@@ -6,10 +6,7 @@
     <div class="body ms-3 mb-5">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="credit-tab" data-bs-toggle="tab" data-bs-target="#credit" type="button" role="tab" aria-controls="credit" aria-selected="true">Credit Report</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="home" aria-selected="true">Personal Info</button>
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="home" aria-selected="true">Personal Info</button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#financial" type="button" role="tab" aria-controls="profile" aria-selected="false">Financial Info</button>
@@ -20,111 +17,20 @@
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="address-tab" data-bs-toggle="tab" data-bs-target="#address" type="button" role="tab" aria-controls="contact" aria-selected="false">Address</button>
         </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="underwriting-tab" data-bs-toggle="tab" data-bs-target="#under-writing" type="button" role="tab" aria-controls="contact" aria-selected="false">Underwriting</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="credit-tab" data-bs-toggle="tab" data-bs-target="#credit" type="button" role="tab" aria-controls="credit" aria-selected="true">Credit Report</button>
+        </li>
       </ul>
     </div>
   </div>
 
   <div class="tab-content" id="myTabContent">
-    <!-- Start Credit Report Tab -->
-      <div class="tab-pane fade show active" id="credit" role="tabpanel" aria-labelledby="cre-tab">
-        <div class="card w-75 w-sm-100 mt-3">
-          <div class="header m-3 text-center">
-            <img class="pe-2" src="/assets/images/dashboard/identity-iq.png">
-          </div>
-          <div class="m-4 justify-content-center">
-            <p>Your IdentityIQ information will be required in order to generate
-              a credit analysis for you. If you already have an IdentityIQ account,
-              please provide your credentials. If not, please proceed with registration. </p>
-          </div>
-          <div class="row text-center mb-5">
-            <div class="col">
-              <button class="button mb-3" style="width: 200px">No</button>
-              <p>I don’t have an existing<br>
-                IdentityIQ account</p>
-            </div>
-            <div class="col">
-              <button class="btn btn-lg mb-3 get-started" style="width: 200px" (click)="showIdentityIqModal()">Yes</button>
-              <p>I have an existing<br>
-                IdentityIQ account</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-3 mt-5">
-          <div class="col-lg-6">
-            <div class="card mb-4">
-              <div class="header m-3">
-                <h4>Credit Analysis</h4>
-                <hr>
-              </div>
-              <div class="body ms-3 mb-5">
-                <span class="fw-bold pointer">WadeWarren-credit-analysis-01Jan2021.pdf</span>
-                <i class="fa fa-file pointer ms-4" aria-hidden="true" style="color: #66ace9;"></i>
-                <i class="fa fa-download pointer ms-4" aria-hidden="true" style="color: #66ace9;"></i>
-              </div>
-            </div>
-            <div class="card">
-              <div class="header m-3">
-                <h4>Your Credit Score</h4>
-                <hr>
-              </div>
-              <div class="body text-center mb-5">
-                <div class="row fw-bolder">
-                  <div class="col-md-4">
-                    EQUIFAX
-                    <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
-                  </div>
-                  <div class="col-md-4">
-                    EXPERIAN
-                    <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
-                  </div>
-                  <div class="col-md-4">
-                    TRANSUNION
-                    <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="header m-3">
-                <h4>Credit score ranges and their meaning</h4>
-                <hr>
-              </div>
-              <div class="body text-center mb-5">
-                <ul class="list-group m-3 rounded-0">
-                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
-                    <div><i class="fa fa-circle" style="color: #49AF46"></i><span class="ps-2 fw-bolder">800 and Higher</span><span class="ps-2 opacity-50">(Excellent)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
-                    <div><i class="fa fa-circle" style="color: #99CA3B"></i><span class="ps-2 fw-bolder">700 - 799</span><span class="ps-2 opacity-50">(Very Good)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
-                    <div><i class="fa fa-circle" style="color: #FDB932"></i><span class="ps-2 fw-bolder">680 - 699</span><span class="ps-2 opacity-50">(Good)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
-                    <div><i class="fa fa-circle" style="color: #F5891D"></i><span class="ps-2 fw-bolder">620 - 679</span><span class="ps-2 opacity-50">(Ok or Fair)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
-                    <div><i class="fa fa-circle" style="color: #F15A24"></i><span class="ps-2 fw-bolder">580 - 619</span><span class="ps-2 opacity-50">(Poor)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
-                    <div><i class="fa fa-circle" style="color: #EF4649"></i><span class="ps-2 fw-bolder">500 - 579</span><span class="ps-2 opacity-50">(Bad)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
-                    <div><i class="fa fa-circle" style="color: #B3285A"></i><span class="ps-2 fw-bolder">499 and lower</span><span class="ps-2 opacity-50">(Very Bad)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     <!-- Start Personal Details Tab -->
-      <div class="tab-pane fade" id="personal" role="tabpanel" aria-labelledby="home-tab">
-        <div class="card mt-3">
+      <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="home-tab">
+        <div class="card mt-3 ms-4 me-4">
           <div class="header m-3">
             <h4>Personal details</h4>
             <hr>
@@ -139,8 +45,8 @@
             </div>
           </div>
           <div class="row body text-center mb-5 m-3">
-            <div class="row clearfix mb-4 text-start">
-              <div class="col-md-6">
+            <div class="row clearfix mb-2 text-start">
+              <div class="col-md-6 mb-2">
                 <p>First name</p>
                 <input type="text" class="form-control" value="Wade" [readonly]="isReadOnly">
               </div>
@@ -149,12 +55,12 @@
                 <input type="text" class="form-control" value="Warren" [readonly]="isReadOnly">
               </div>
             </div>
-            <div class="row clearfix mb-4 text-start">
-              <div class="col-md-4">
+            <div class="row clearfix mb-2 text-start">
+              <div class="col-md-4 mb-2">
                 <p>Personal email</p>
                 <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly">
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 mb-2">
                 <p>Personal phone</p>
                 <input type="text" class="form-control" value="+1234567890" [readonly]="isReadOnly">
               </div>
@@ -180,7 +86,7 @@
 
     <!-- Start Financial Details Tab -->
       <div class="tab-pane fade" id="financial" role="tabpanel" aria-labelledby="profile-tab">
-        <div class="card mt-3">
+        <div class="card mt-3 ms-4 me-4">
           <div class="row">
             <div class="col text-end me-5 mt-5" *ngIf="isEdit">
               <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>
@@ -191,15 +97,15 @@
             </div>
           </div>
           <div class="row body text-center mb-5 m-3">
-            <div class="row clearfix mb-4 text-start">
-              <div class="col-md-6">
+            <div class="row clearfix mb-2 text-start">
+              <div class="col-md-4 mb-2">
                 <p>Personal monthly income</p>
                 <div class="input-group mb-3">
                   <span class="input-group-text">$</span>
                   <input type="text" class="form-control" value="" [readonly]="isReadOnly">
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4 mb-2">
                 <p>Total household monthly income</p>
                 <div class="input-group mb-3">
                   <span class="input-group-text">$</span>
@@ -207,12 +113,17 @@
                 </div>
               </div>
             </div>
-            <div class="row clearfix mb-4 text-start">
-              <div class="col-md-4">
+            <div class="row clearfix mb-2 text-start">
+              <div class="col-md-4 mb-2">
                 <p>House ownership: (e.g. Rent or Own)</p>
-                <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+                <select class="form-select" aria-label="Default select example" [disabled]="isReadOnly">
+                  <option selected></option>
+                  <option value="1">Lorem Ipsum</option>
+                  <option value="2">Lorem Ipsum</option>
+                  <option value="3">Lorem Ipsum</option>
+                </select>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 mb-2">
                 <p>Monthly rent / Mortgage amount</p>
                 <div class="input-group mb-3">
                   <span class="input-group-text">$</span>
@@ -221,17 +132,80 @@
               </div>
               <div class="col-md-4">
                 <p>Years and months in residence</p>
-                <input type="text" class="form-control" value="01-08-1980" [readonly]="isReadOnly">
+                <select class="form-select" aria-label="Default select example" [disabled]="isReadOnly">
+                  <option selected></option>
+                  <option value="1">Lorem Ipsum</option>
+                  <option value="2">Lorem Ipsum</option>
+                  <option value="3">Lorem Ipsum</option>
+                </select>
               </div>
             </div>
-            <div class="row clearfix text-start">
-              <div class="col-md-6">
+            <div class="row clearfix mb-2 text-start">
+              <div class="col-md-6 mb-2">
                 <p>Type of work</p>
-                <input type="text" class="form-control" value="Others" [readonly]="isReadOnly">
+                <select class="form-select" aria-label="Default select example" [disabled]="isReadOnly">
+                  <option selected></option>
+                  <option value="1">Lorem Ipsum</option>
+                  <option value="2">Lorem Ipsum</option>
+                  <option value="3">Lorem Ipsum</option>
+                </select>
               </div>
               <div class="col-md-6">
                 <p>Specify</p>
                 <input type="text" class="form-control" value="Lorem ipsum" [readonly]="isReadOnly">
+              </div>
+            </div>
+            <div class="row clearfix mb-2 text-start">
+              <div class="col-md-6 mb-2">
+                <p>Job Title</p>
+                <select class="form-select" aria-label="Default select example" [disabled]="isReadOnly">
+                  <option selected></option>
+                  <option value="1">Lorem Ipsum</option>
+                  <option value="2">Lorem Ipsum</option>
+                  <option value="3">Lorem Ipsum</option>
+                </select>
+              </div>
+            </div>
+            <div class="row clearfix mb-2 text-start">
+              <div class="col-md-12">
+                <p>Employer Street Address</p>
+                <input type="text" class="form-control" value="Lorem ipsum" [readonly]="isReadOnly">
+              </div>
+            </div>
+            <div class="row clearfix mb-2 text-start">
+              <div class="col-md-12">
+                <p>Employer Street Address 2</p>
+                <input type="text" class="form-control" value="Lorem ipsum" [readonly]="isReadOnly">
+              </div>
+            </div>
+            <div class="row clearfix mb-2 text-start">
+              <div class="col-md-6 mb-2">
+                <p>Employer City</p>
+                <select class="form-select" aria-label="Default select example" [disabled]="isReadOnly">
+                  <option selected></option>
+                  <option value="1">Lorem Ipsum</option>
+                  <option value="2">Lorem Ipsum</option>
+                  <option value="3">Lorem Ipsum</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <p>Employer State</p>
+                <select class="form-select" aria-label="Default select example" [disabled]="isReadOnly">
+                  <option selected></option>
+                  <option value="1">Lorem Ipsum</option>
+                  <option value="2">Lorem Ipsum</option>
+                  <option value="3">Lorem Ipsum</option>
+                </select>
+              </div>
+            </div>
+            <div class="row clearfix mb-2 text-start">
+              <div class="col-md-4 mb-2">
+                <p>Employer Zip Code</p>
+                <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+              </div>
+              <div class="col-md-4 mb-2">
+                <p>Employer Phone</p>
+                <input type="text" class="form-control" value="" [readonly]="isReadOnly">
               </div>
             </div>
           </div>
@@ -245,18 +219,246 @@
 
     <!-- Start Payment Details Tab -->
       <div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="contact-tab">
-        <div class="card mt-3">
+        <div class="card mt-3 ms-4 me-4">
+          <div class="row">
+            <div class="col text-end me-5 mt-5" *ngIf="isEdit">
+              <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>
+            </div>
+            <div class="col text-end me-5 mt-5" *ngIf="!isEdit">
+              <button class="button me-3" type="button" (click)="back()">Back</button>
+              <button class="btn submit-btn" type="button" (click)="submit()">Submit</button>
+            </div>
+          </div>
           <div class="header m-3">
-            <h4>Payment</h4>
+            <h4>Payment Method</h4>
+          </div>
+          <div class="body text-center mb-5 m-3">
+          <div class="row clearfix mb-2 text-start">
+            <div class="col-md-8">
+              <p>Name as it appears on the card</p>
+              <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+            </div>
+          </div>
+          <div class="row clearfix mb-2 text-start">
+            <div class="col-md-4 mb-2">
+              <p>16 digits on the card</p>
+              <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+            </div>
+            <div class="col-md-4 mb-2">
+              <p>Expiration Date on the Card</p>
+              <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+            </div>
+            <div class="col-md-4">
+              <p>CVC</p>
+              <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+            </div>
+          </div>
+          <div class="row clearfix mb-2 text-start">
+            <div class="col-md-4 mb-2">
+              <p>Card Type (Visa/Mastercard)</p>
+              <select class="form-select" aria-label="Default select example" [disabled]="isReadOnly">
+                <option selected></option>
+                <option value="1">Lorem Ipsum</option>
+                <option value="2">Lorem Ipsum</option>
+                <option value="3">Lorem Ipsum</option>
+              </select>
+            </div>
+          </div>
           </div>
         </div>
       </div>
 
     <!-- Start Address Tab -->
     <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="contact-tab">
-      <div class="card mt-3">
-        <div class="header m-3">
-          <h4>Address</h4>
+      <div class="card mt-3 ms-4 me-4">
+        <div class="row">
+          <div class="col text-end me-5 mt-5" *ngIf="isEdit">
+            <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>
+          </div>
+          <div class="col text-end me-5 mt-5" *ngIf="!isEdit">
+            <button class="button me-3" type="button" (click)="back()">Back</button>
+            <button class="btn submit-btn" type="button" (click)="submit()">Submit</button>
+          </div>
+        </div>
+        <div class="header m-3 ms-3">
+          <h4>Home Address</h4>
+        </div>
+        <div class="body text-center mb-5 ms-3 me-3">
+          <div class="row clearfix mb-4 text-start">
+            <div class="col-md-12">
+              <p>Street Address</p>
+              <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+            </div>
+          </div>
+          <div class="row clearfix mb-4 text-start">
+            <div class="col-md-12">
+              <p>Street Address 2</p>
+              <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+            </div>
+          </div>
+          <div class="row clearfix mb-4 text-start">
+            <div class="col-md-6">
+              <p>City</p>
+              <select class="form-select" aria-label="Default select example" [disabled]="isReadOnly">
+                <option selected></option>
+                <option value="1">Lorem Ipsum</option>
+                <option value="2">Lorem Ipsum</option>
+                <option value="3">Lorem Ipsum</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <p>State</p>
+              <select class="form-select" aria-label="Default select example" [disabled]="isReadOnly">
+                <option selected></option>
+                <option value="1">Lorem Ipsum</option>
+                <option value="2">Lorem Ipsum</option>
+                <option value="3">Lorem Ipsum</option>
+              </select>
+            </div>
+          </div>
+          <div class="row clearfix mb-4 text-start">
+            <div class="col-md-4">
+              <p>Zip Code</p>
+              <input type="text" class="form-control" value="" [readonly]="isReadOnly">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-3 ms-4 me-4">
+        <div class="header m-3 ms-4">
+          <h4>Billing Address</h4>
+        </div>
+        <div class="row body text-center mb-5 m-3 ms-5 me-5">
+          <div class="row clearfix mb-4 text-start">
+            <div class="col-md-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Same as Home Address
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- START UNDERWRITING TAB -->
+    <div class="tab-pane fade" id="under-writing" role="tabpanel" aria-labelledby="contact-tab">
+      <div class="card mt-3 ms-4 me-4">
+        <div class="row body text-start mb-5 m-3">
+            <div class="col-md-12">
+                <div class="header m-3">
+                  <h4>Underwriting Self-Assessment</h4>
+                  <hr>
+                </div>
+                <div class="body ms-3 mb-5">
+                  <button class="btn btn-lg get-started" style="width: 200px" (click)="showUnderwriting()">Self Assessment</button>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Credit Report Tab -->
+    <div class="tab-pane fade active" id="credit" role="tabpanel" aria-labelledby="cre-tab">
+      <div class="card w-75 w-sm-100 mt-3 mb-4">
+        <div class="header m-3 text-center">
+          <img class="pe-2" src="/assets/images/dashboard/identity-iq.png">
+        </div>
+        <div class="m-4 justify-content-center">
+          <p>Your IdentityIQ information will be required in order to generate
+            a credit analysis for you. If you already have an IdentityIQ account,
+            please provide your credentials. If not, please proceed with registration. </p>
+        </div>
+        <div class="row text-center mb-5">
+          <div class="col">
+            <button class="button mb-3" style="width: 200px">No</button>
+            <p>I don’t have an existing<br>
+              IdentityIQ account</p>
+          </div>
+          <div class="col">
+            <button class="btn btn-lg mb-3 get-started" style="width: 200px" (click)="showIdentityIqModal()">Yes</button>
+            <p>I have an existing<br>
+              IdentityIQ account</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-lg-6 mb-4">
+          <div class="card mb-4">
+            <div class="header m-3 mb-0">
+              <h4>Credit Analysis</h4>
+              <hr>
+            </div>
+            <div class="body m-3 mb-5">
+              <div class="row">
+                <div class="col-md-9">
+                  <span class="fw-bold pointer">WadeWarren-credit-analysis-01Jan2021.pdf</span>
+                </div>
+                <div class="col-md-3 text-center">
+                  <i class="fa fa-file pointer" aria-hidden="true" style="color: #66ace9;"></i>
+                  <i class="fa fa-download pointer ms-4" aria-hidden="true" style="color: #66ace9;"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="header m-3">
+              <h4>Your Credit Score</h4>
+              <hr>
+            </div>
+            <div class="body text-center mb-5">
+              <div class="row fw-bolder">
+                <div class="col-md-4">
+                  EQUIFAX
+                  <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+                </div>
+                <div class="col-md-4">
+                  EXPERIAN
+                  <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+                </div>
+                <div class="col-md-4">
+                  TRANSUNION
+                  <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="header m-3">
+              <h4>Credit score ranges and their meaning</h4>
+              <hr>
+            </div>
+            <div class="body text-center mb-5">
+              <ul class="list-group m-3 rounded-0">
+                <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                  <div><i class="fa fa-circle" style="color: #49AF46"></i><span class="ps-2 fw-bolder">800 and Higher</span><span class="ps-2 opacity-50">(Excellent)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                  <div><i class="fa fa-circle" style="color: #99CA3B"></i><span class="ps-2 fw-bolder">700 - 799</span><span class="ps-2 opacity-50">(Very Good)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                  <div><i class="fa fa-circle" style="color: #FDB932"></i><span class="ps-2 fw-bolder">680 - 699</span><span class="ps-2 opacity-50">(Good)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                  <div><i class="fa fa-circle" style="color: #F5891D"></i><span class="ps-2 fw-bolder">620 - 679</span><span class="ps-2 opacity-50">(Ok or Fair)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                  <div><i class="fa fa-circle" style="color: #F15A24"></i><span class="ps-2 fw-bolder">580 - 619</span><span class="ps-2 opacity-50">(Poor)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                  <div><i class="fa fa-circle" style="color: #EF4649"></i><span class="ps-2 fw-bolder">500 - 579</span><span class="ps-2 opacity-50">(Bad)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-end-0 height-50">
+                  <div><i class="fa fa-circle" style="color: #B3285A"></i><span class="ps-2 fw-bolder">499 and lower</span><span class="ps-2 opacity-50">(Very Bad)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -294,3 +496,299 @@
   </div>
 </div>
 <!--END IDENTITY IQ CREDENTIAL MODAL-->
+
+<!--START UNDERWRITING MODAL-->
+<div id="underWriting" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="margin-left: 15%;">
+      <div class="modal-header" style="border-bottom: 0;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title fw-bolder mb-4">Underwriting Self-Assessment</h5>
+        <div class="table-responsive">
+          <table class="table underwriting">
+            <colgroup>
+              <col span="2" style="background-color:white">
+              <col style="background-color:#EDF3F3">
+            </colgroup>
+            <thead>
+            <tr>
+              <th>#</th>
+              <th style="width: 60%;">QUESTIONS</th>
+              <th>RESPONSES</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Is your name accurately reporting on all 3 credit bureaus?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Is your address accurately reporting on all 3 credit bureaus?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Does your credit file contain more than 1 previous address?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    <i class="fa fa-check" style="color: white;" aria-hidden="true"></i>No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Do you currently own or rent your home?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Does your file have any fraud alerts or credit freezes?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>Have you recently had any credit repair performed on your file?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>Enter your annual income</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>Enter your desired loan amount</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">9</th>
+              <td>Enter desired loan terms (max of 5 years)</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10</th>
+              <td>Do you need to create a website? Or Do you need assistance with your website?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container goals p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">11</th>
+              <td>What is the goal of the web content? Is it to book a call, buy a product, get a quote?</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">12</th>
+              <td>Who are your ideal customers? Please describe them in detail.</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">13</th>
+              <td>Additional info about your ideal customers:
+                <br>
+                What are the age ranges of your customers? (Select all that apply)
+              </td>
+              <td>
+                <span style="font-size: 13px; opacity: 0.5;">hold ctrl to multiple select that apply</span>
+                <select class="form-select radio" multiple style="height: 210px;">
+                  <option class="container goals p-2 mb-2">
+                    31 - 40
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    41 - 50
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    51 - 60
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    61 and above
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">14</th>
+              <td>Gender</td>
+              <td>
+                <select class="form-select radio" multiple style="height: 100%;">
+                  <span style="font-size: 13px; opacity: 0.5;">select that apply</span>
+                  <option class="container goals p-2 mb-2">
+                    Male
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Female
+                  </option>
+                  <option class="container goals p-2 mb-2">
+                    Mixed
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>Where do they live? (Optional)</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">16</th>
+              <td>What is their typical life like? (Optional)</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">17</th>
+              <td>What are your customers interested in? What websites, blogs, books, magazines, people, shows, movies, software, Facebook pages, causes, charities would your audience be mostly to engage with? Feel free to elaborate as many as you like.
+                (Optional)</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>Where do they live? (Optional)</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">18</th>
+              <td>What are your ideal customer’s goals and values?</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">19</th>
+              <td>What are your ideal customer's pain points and challenges? Describe what keeps them up at night.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">20</th>
+              <td>What will be their objections in buying your product/service? (Optional)</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">21</th>
+              <td>What is the business all about? Please explain in detail what you do and how you provide value to your customers.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">22</th>
+              <td>What products/services do you sell? Kindly describe what the service is in detail.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">23</th>
+              <td>What benefits does your service give to your customers?</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">24</th>
+              <td>Do you have any direct competitors offering the same service? If not, can you give us at least three of your closest competitors?</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">25</th>
+              <td>What is your value proposition? What makes you unique from your competitors? What do customers get when they give you their money? This is also critical to our success, so feel free to elaborate.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button class="btn btn-lg get-started w-50">Submit Underwriting Self-Assessment</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END UNDERWRITING MODAL-->
+

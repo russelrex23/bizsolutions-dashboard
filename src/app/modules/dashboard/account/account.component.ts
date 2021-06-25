@@ -51,4 +51,8 @@ export class AccountComponent implements OnInit {
   showIdentityIqModal(): void{
     PageUtil.showModal('showIdentityIq');
   }
+
+  showUnderwriting(): void {
+    PageUtil.showModal('underWriting');
+  }
 }

@@ -1,45 +1,3 @@
-.nav-tabs {
-  border-bottom: none;
-}
-
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-  color: #27ACE7;
-  background-color: #fff;
-  border-color: white white #27ACE7 white;
-  border-width: 2px;
-}
-
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-  border-color: white white #27ACE7 white;
-  isolation: isolate;
-}
-
-.nav-link {
-  display: block;
-  padding: .5rem 1rem;
-  color: #C9CBD1;
-  text-decoration: none;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-}
-
-button.button {
-  border-radius: 100rem;
-  padding: 1rem;
-  font-size: 1rem;
-  padding: .4rem 1rem;
-  border: solid 3px transparent;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #27ACE7, #4BEBCF);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  box-shadow: 2px 1000px 1px white inset;
-  color: #27ACE7 ;
-}
-
-button.button:hover {
-  box-shadow: none;
-  color: white;
-}
-
 .submit-btn{
   height: 45px;
   width: 100px;
@@ -56,7 +14,7 @@ button.btn:hover {
   color: black;
 }
 
-input{
+input, select{
   border-radius: 16px;
 }
 
@@ -66,4 +24,61 @@ input{
 
 .opacity-50{
   opacity: 0.5;
+}
+.underwriting tr {
+  height: 70px;
+  vertical-align: middle;
+}
+
+.underwriting tr td input {
+  background: #FFFFFF;
+  border: 1px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
+  border-radius: 16px;
+}
+
+.underwriting tr td textarea {
+  background: #FFFFFF;
+  border: 1px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
+  border-radius: 16px;
+}
+
+.form-select{
+  overflow: hidden;
+  border:0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.goals{
+  width: 50%;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.08);
+  border-radius: 16px;
+  white-space: normal;
+  color: #27ACE7;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.radio option{
+  display: block;
+  width: 100%;
+}
+
+select option:hover {
+  background-color: #27ACE7;
+  color: white;
+}
+
+select{
+  height: 50px;
+  background-color: #EDF3F3;
 }

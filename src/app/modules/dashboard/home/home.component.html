@@ -1,398 +1,633 @@
 <div id="container">
-
-  <div class="row mb-3">
-    <div class="col-md-12">
-      <div class="card mb-4">
-        <div class="header m-3">
-          <h4>Underwriting Self-Assessment</h4>
-          <hr>
-        </div>
-        <div class="body ms-3 mb-5">
-          <button class="btn btn-lg get-started" style="width: 200px" (click)="showUnderwriting()">Self Assessment</button>
-        </div>
-      </div>
-    </div>
-  </div>
     <div class="row mb-3">
-      <div class="col-lg-6">
+      <div class="col-md-6">
         <div class="card mb-4">
           <div class="header m-3">
             <h4>My Goals</h4>
             <hr>
           </div>
           <div class="body ms-3 mb-5">
-            <div class="row">
-              <div class="col">
-                <h5 style="line-height: 28px; display: flex; align-items: center;">Set your goals now <i class="fa fa-exclamation-circle fa-2x"></i></h5>
+            <p>Get "Lender Compliant" to where my company qualifies for credit without a Personal Guarantee</p>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="row header m-3">
+            <div class="col-md-9">
+              <h4>Status</h4>
+            </div>
+            <div class="col-md-3">
+              <span class="pointer text-primary">view history</span>
+            </div>
+            <hr>
+          </div>
+          <div class="body">
+            <div class="row m-3 mt-0">
+              <div class="col-md-8">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
-              <div class="col">
-                <button class="btn btn-lg get-started" style="width: 200px" (click)="showGoals()">Complete now</button>
+              <div class="col-md-4 text-end">
+                <button class="btn btn-secondary disabled" style="border-radius: 16px">In progress</button>
               </div>
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="header m-3">
-            <h4>Status</h4>
-            <hr>
-          </div>
-          <div class="body text-center mb-5">
-            <button class="btn btn-secondary disabled" style="width: 90%">No data yet.</button>
-          </div>
-        </div>
       </div>
-      <div class="col-lg-6">
+      <div class="col-md-6">
         <div class="card" style="height: 395px;">
           <div class="header m-3">
             <h4>To Complete</h4>
             <hr>
           </div>
-          <div class="body text-center mb-5">
-            <button class="btn btn-secondary disabled" style="width: 90%"><i class="fa fa-arrow-left pe-3"></i>Set you goal first</button>
+          <div class="body ms-3 me-3 mb-5">
+            <div class="row">
+              <div class="col">
+                <h5 style="line-height: 28px; display: flex; align-items: center;">LCP Intake form<i class="fa fa-exclamation-circle fa-2x text-danger ms-2"></i></h5>
+              </div>
+              <div class="col text-end">
+                <button class="btn btn-lg get-started" style="width: 200px" (click)="showLcpIntakeForm()">Complete now</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row mb-3">
-      <div class="col-lg-6">
-        <div class="card" style="height: 395px;">
-          <div class="header m-3">
-            <h4>Personal Credit Profile</h4>
-            <hr>
-          </div>
-          <div class="body text-center mb-5 col-12">
-            <div class="row">
-              <div class="col">
-                <img src="/assets/images/dashboard/graph.png" width="130">
-              </div>
-              <div class="col" size="100">
-                <img src="/assets/images/dashboard/graph.png" width="130">
-              </div>
-              <div class="col" size="100">
-                <img src="/assets/images/dashboard/graph.png" width="130">
-              </div>
-            </div>
-          </div>
+  <div class="card col-md-6">
+    <div class="row header m-3">
+      <div class="col-md-9">
+        <h4>Your Credit Score (Personal)</h4>
+      </div>
+      <div class="col-md-3">
+        <span class="pointer text-primary">view details</span>
+      </div>
+      <hr>
+    </div>
+    <div class="body text-center mb-5">
+      <div class="row fw-bolder">
+        <div class="col-md-4">
+          EQUIFAX
+          <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+        </div>
+        <div class="col-md-4">
+          EXPERIAN
+          <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+        </div>
+        <div class="col-md-4">
+          TRANSUNION
+          <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="card" style="height: 395px;">
-          <div class="header m-3">
-            <h4>Corporate Credit Profile</h4>
-            <hr>
-          </div>
-          <div class="body text-center mb-5">
-            <div class="row">
-              <div class="col">
-                <img src="/assets/images/dashboard/graph.png" width="130">
-              </div>
-              <div class="col" size="100">
-                <img src="/assets/images/dashboard/graph.png" width="130">
-              </div>
-              <div class="col" size="100">
-                <img src="/assets/images/dashboard/graph.png" width="130">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
   </div>
 
 </div>
 
-
 <!--START UNDERWRITING MODAL-->
-<div id="underWriting" class="modal fade" tabindex="-1">
+<div id="lcpIntakeForm" class="modal fade" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content" style="margin-left: 15%;">
       <div class="modal-header" style="border-bottom: 0;">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h5 class="modal-title fw-bolder mb-4">Underwriting Self-Assessment</h5>
-        <div class="table-responsive">
-          <table class="table underwriting">
-            <colgroup>
-              <col span="2" style="background-color:white">
-              <col style="background-color:#EDF3F3">
-            </colgroup>
-            <thead>
-            <tr>
-              <th>#</th>
-              <th style="width: 60%;">QUESTIONS</th>
-              <th>RESPONSES</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Is your name accurately reporting on all 3 credit bureaus?</td>
-              <td>
-                <select class="form-select" multiple>
-                  <option class="container goals p-2 mb-2">
-                    No
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    Yes
-                  </option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Is your address accurately reporting on all 3 credit bureaus?</td>
-              <td>
-                <select class="form-select" multiple>
-                  <option class="container goals p-2 mb-2">
-                    No
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    Yes
-                  </option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Does your credit file contain more than 1 previous address?</td>
-              <td>
-                <select class="form-select" multiple>
-                  <option class="container goals p-2 mb-2">
-                    <i class="fa fa-check" style="color: white;" aria-hidden="true"></i>No
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    Yes
-                  </option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Do you currently own or rent your home?</td>
-              <td>
-                <select class="form-select" multiple>
-                  <option class="container goals p-2 mb-2">
-                     No
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    Yes
-                  </option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>Does your file have any fraud alerts or credit freezes?</td>
-              <td>
-                <select class="form-select" multiple>
-                  <option class="container goals p-2 mb-2">
-                    No
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    Yes
-                  </option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">6</th>
-              <td>Have you recently had any credit repair performed on your file?</td>
-              <td>
-                <select class="form-select" multiple>
-                  <option class="container goals p-2 mb-2">
-                    No
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    Yes
-                  </option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">7</th>
-              <td>Enter your annual income</td>
-              <td>
-                <input type="text" class="form-control">
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">8</th>
-              <td>Enter your desired loan amount</td>
-              <td>
-                <input type="text" class="form-control">
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">9</th>
-              <td>Enter desired loan terms (max of 5 years)</td>
-              <td>
-                <input type="text" class="form-control">
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">10</th>
-              <td>Do you need to create a website? Or Do you need assistance with your website?</td>
-              <td>
-                <select class="form-select" multiple>
-                  <option class="container goals p-2 mb-2">
-                    No
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    Yes
-                  </option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">11</th>
-              <td>What is the goal of the web content? Is it to book a call, buy a product, get a quote?</td>
-              <td>
-                <input type="text" class="form-control">
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">12</th>
-              <td>Who are your ideal customers? Please describe them in detail.</td>
-              <td>
-                <input type="text" class="form-control">
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">13</th>
-              <td>Additional info about your ideal customers:
-                <br>
-                What are the age ranges of your customers? (Select all that apply)
-              </td>
-              <td>
-                <span style="font-size: 13px; opacity: 0.5;">hold ctrl to multiple select that apply</span>
-                <select class="form-select radio" multiple style="height: 200px;">
-                  <option class="container goals p-2 mb-2">
-                    31 - 40
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    41 - 50
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    51 - 60
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    61 and above
-                  </option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">14</th>
-              <td>Gender</td>
-              <td>
-                <select class="form-select radio" multiple style="height: 100%;">
-                  <span style="font-size: 13px; opacity: 0.5;">select that apply</span>
-                  <option class="container goals p-2 mb-2">
-                    Male
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    Female
-                  </option>
-                  <option class="container goals p-2 mb-2">
-                    Mixed
-                  </option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">15</th>
-              <td>Where do they live? (Optional)</td>
-              <td>
-                <input type="text" class="form-control">
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">16</th>
-              <td>What is their typical life like? (Optional)</td>
-              <td>
-                <input type="text" class="form-control">
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">17</th>
-              <td>What are your customers interested in? What websites, blogs, books, magazines, people, shows, movies, software, Facebook pages, causes, charities would your audience be mostly to engage with? Feel free to elaborate as many as you like.
-                (Optional)</td>
-              <td>
-                <textarea class="form-control"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">15</th>
-              <td>Where do they live? (Optional)</td>
-              <td>
-                <textarea class="form-control"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">18</th>
-              <td>What are your ideal customer’s goals and values?</td>
-              <td>
-                <textarea class="form-control"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">19</th>
-              <td>What are your ideal customer's pain points and challenges? Describe what keeps them up at night.</td>
-              <td>
-                <textarea class="form-control"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">20</th>
-              <td>What will be their objections in buying your product/service? (Optional)</td>
-              <td>
-                <textarea class="form-control"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">21</th>
-              <td>What is the business all about? Please explain in detail what you do and how you provide value to your customers.</td>
-              <td>
-                <textarea class="form-control"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">22</th>
-              <td>What products/services do you sell? Kindly describe what the service is in detail.</td>
-              <td>
-                <textarea class="form-control"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">23</th>
-              <td>What benefits does your service give to your customers?</td>
-              <td>
-                <textarea class="form-control"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">24</th>
-              <td>Do you have any direct competitors offering the same service? If not, can you give us at least three of your closest competitors?</td>
-              <td>
-                <textarea class="form-control"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">25</th>
-              <td>What is your value proposition? What makes you unique from your competitors? What do customers get when they give you their money? This is also critical to our success, so feel free to elaborate.</td>
-              <td>
-                <textarea class="form-control"></textarea>
-              </td>
-            </tr>
-            </tbody>
-          </table>
+        <h5 class="modal-title fw-bolder mb-4">LCP Intake Form</h5>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="card border-0">
+            <div class="body">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item col-md-2 ms-5" role="presentation">
+                  <span class="nav-link active"  id="step-one" data-bs-toggle="tab" data-bs-target="#step-one-card" role="tab" aria-controls="home" aria-selected="true"></span>
+                </li>
+                <li class="nav-item col-md-2" role="presentation">
+                  <span class="nav-link" id="step-two" data-bs-toggle="tab" data-bs-target="#step-two-card" role="tab" aria-controls="profile" aria-selected="false"></span>
+                </li>
+                <li class="nav-item col-md-2" role="presentation">
+                  <span class="nav-link" id="step-three" data-bs-toggle="tab" data-bs-target="#step-three-card" role="tab" aria-controls="contact" aria-selected="false"></span>
+                </li>
+                <li class="nav-item col-md-2" role="presentation">
+                  <span class="nav-link" id="step-four" data-bs-toggle="tab" data-bs-target="#step-four-card" role="tab" aria-controls="contact" aria-selected="false"></span>
+                </li>
+                <li class="nav-item col-md-2" role="presentation">
+                  <span class="nav-link" id="step-five" data-bs-toggle="tab" data-bs-target="#step-five-card" role="tab" aria-controls="contact" aria-selected="false"></span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="step-one-card" role="tabpanel" aria-labelledby="home-tab">
+            <div class="header m-3 mb-5">
+              <h4>Personal Details</h4>
+            </div>
+            <div class="m-3">
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-6 mb-2">
+                  <p>First name</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+                <div class="col-md-6">
+                  <p>Last name</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-4 mb-2">
+                  <p>Personal email</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+                <div class="col-md-4 mb-2">
+                  <p>Personal phone</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+                <div class="col-md-4">
+                  <p>Date of birth (MM-DD-YYYY)</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-4 mb-2">
+                  <p>Complete SSN</p>
+                  <input type="text" class="form-control" value="046-54-8647">
+                </div>
+              </div>
+              <div class="text-end mt-5">
+                <button class="button" type="button" (click)="stepTwo()">Next</button>
+              </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="step-two-card" role="tabpanel" aria-labelledby="home-tab">
+            <div class="header m-3 mb-5">
+              <h4>Personal Financial Information</h4>
+            </div>
+
+            <div class="m-3">
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-4 mb-2">
+                  <p>Personal monthly income</p>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" value="">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <p>Total household monthly income</p>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" value="">
+                  </div>
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-4 mb-2">
+                  <p>House ownership: (e.g. Rent or Own)</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+                <div class="col-md-4 mb-2">
+                  <p>Monthly rent / Mortgage amount</p>
+                  <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" value="">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <p>Years and months in residence</p>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1">Lorem Ipsum</option>
+                    <option value="2">Lorem Ipsum</option>
+                    <option value="3">Lorem Ipsum</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-4 mb-2">
+                  <p>Type of work</p>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1">Lorem Ipsum</option>
+                    <option value="2">Lorem Ipsum</option>
+                    <option value="3">Lorem Ipsum</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <p>Specify</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-4">
+                  <p>Job title</p>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1">Lorem Ipsum</option>
+                    <option value="2">Lorem Ipsum</option>
+                    <option value="3">Lorem Ipsum</option>
+                  </select>
+                </div>
+              </div>
+              <hr>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-12">
+                  <p>Employer Street Address</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-12">
+                  <p>Employer Street Address 2</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-6 mb-2">
+                  <p>Employer City</p>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1">Lorem Ipsum</option>
+                    <option value="2">Lorem Ipsum</option>
+                    <option value="3">Lorem Ipsum</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <p>Employer State</p>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1">Lorem Ipsum</option>
+                    <option value="2">Lorem Ipsum</option>
+                    <option value="3">Lorem Ipsum</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-4 mb-2">
+                  <p>Employer Zip Code</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+                <div class="col-md-4">
+                  <p>Employer Phone</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <div class="row mt-5">
+                <div class="col text-start">
+                  <button class="button" type="button" (click)="stepOne()">Back</button>
+                </div>
+                <div class="col text-end">
+                  <button class="button" type="button" (click)="stepThree()">Next</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="step-three-card" role="tabpanel" aria-labelledby="home-tab">
+            <div class="header m-3 mb-5">
+              <h4>Payment Method</h4>
+            </div>
+
+            <div class="m-3">
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-8">
+                  <p>Name as it appears on the card</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-4 mb-2">
+                  <p>16 digits on the card</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+                <div class="col-md-4 mb-2">
+                  <p>Expiration Date on the Card</p>
+                  <input type="text" class="form-control" value="MM/YYYY">
+                </div>
+                <div class="col-md-4">
+                  <p>CVC</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-4">
+                  <p>Card Type (Visa/Mastercard)</p>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1">Lorem Ipsum</option>
+                    <option value="2">Lorem Ipsum</option>
+                    <option value="3">Lorem Ipsum</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mt-5">
+                <div class="col text-start">
+                  <button class="button" type="button" (click)="stepTwo()">Back</button>
+                </div>
+                <div class="col text-end">
+                  <button class="button" type="button" (click)="stepFour()">Next</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="step-four-card" role="tabpanel" aria-labelledby="home-tab">
+            <div class="header m-3 mb-5">
+              <h4>Home Address</h4>
+            </div>
+
+            <div class="m-3">
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-12">
+                  <p>Street Address</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-12">
+                  <p>Street Address 2</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-6 mb-2">
+                  <p>City</p>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1">Lorem Ipsum</option>
+                    <option value="2">Lorem Ipsum</option>
+                    <option value="3">Lorem Ipsum</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <p>State</p>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="1">Lorem Ipsum</option>
+                    <option value="2">Lorem Ipsum</option>
+                    <option value="3">Lorem Ipsum</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start">
+                <div class="col-md-4">
+                  <p>Zip code</p>
+                  <input type="text" class="form-control" value="">
+                </div>
+              </div>
+              <hr>
+              <div class="header m-3 text-start">
+                <h4>Billing Address</h4>
+              </div>
+                <div class="row clearfix mb-2 ms-md-4 text-start">
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Same as Home Address
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              <div class="row mt-5">
+                <div class="col text-start">
+                  <button class="button" type="button" (click)="stepThree()">Back</button>
+                </div>
+                <div class="col text-end">
+                  <button class="button" type="button" (click)="stepFive()">Next</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="step-five-card" role="tabpanel" aria-labelledby="home-tab">
+            <div class="header m-3 mb-5">
+              <h4>Business Information</h4>
+            </div>
+            <div class="m-3">
+              <div class="table-responsive">
+                <table class="table underwriting d-none d-sm-block">
+                  <colgroup>
+                    <col span="2" style="background-color:white">
+                    <col style="background-color:#EDF3F3">
+                  </colgroup>
+                  <thead>
+                  <tr style="height: 0">
+                    <th style="border-bottom: none"></th>
+                    <th style="width: 60%; border-bottom: none"></th>
+                    <th style="width: 40%; background-color: white; border-bottom: none"></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
+                        <span class="btn page-container"><span class="page-num">1</span></span>
+                      </th>
+                      <td>Business phone, is this a mobile or home phone?</td>
+                      <td>
+                        <div class="row">
+                          <div class="col">Yes</div>
+                          <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <span class="btn page-container"><span class="page-num">2</span></span>
+                      </th>
+                      <td>Lorem ipsum dolor sit amet?</td>
+                      <td>
+                        <div class="row">
+                          <div class="col">Yes</div>
+                          <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <span class="btn page-container"><span class="page-num">3</span></span>
+                      </th>
+                      <td>Lorem ipsum dolor sit amet?</td>
+                      <td>
+                        <div class="row">
+                          <div class="col">Yes</div>
+                          <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <span class="btn page-container"><span class="page-num">4</span></span>
+                      </th>
+                      <td>Lorem ipsum dolor sit amet?</td>
+                      <td>
+                        <div class="row">
+                          <div class="col">Yes</div>
+                          <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <span class="btn page-container"><span class="page-num">5</span></span>
+                      </th>
+                      <td>Lorem ipsum dolor sit amet?</td>
+                      <td>
+                        <div class="row">
+                          <div class="col">Yes</div>
+                          <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <span class="btn page-container"><span class="page-num">6</span></span>
+                      </th>
+                      <td>Lorem ipsum dolor sit amet?</td>
+                      <td>
+                        <div class="row">
+                          <div class="col">Yes</div>
+                          <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <span class="btn page-container"><span class="page-num">7</span></span>
+                      </th>
+                      <td>Lorem ipsum dolor sit amet?</td>
+                      <td>
+                        <div class="row">
+                          <div class="col">Yes</div>
+                          <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <span class="btn page-container"><span class="page-num">8</span></span>
+                      </th>
+                      <td>Lorem ipsum dolor sit amet?</td>
+                      <td>
+                        <div class="row">
+                          <div class="col">Yes</div>
+                          <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table class="table underwriting d-sm-none d-block">
+                  <thead>
+                  <tr style="height: 0">
+                    <th style="border-bottom: none"></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <div class="row text-center">
+                        <div class="col">
+                          <span class="btn page-container"><span class="page-num">1</span></span>
+                        </div>
+                      </div>
+                      <div class="row text-center">
+                        <div class="col">
+                          Business phone, is this a mobile or home phone?
+                        </div>
+                      </div>
+                      <div class="row" style="background-color:#EDF3F3">
+                        <div class="col">Yes</div>
+                        <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="row text-center">
+                        <div class="col">
+                          <span class="btn page-container"><span class="page-num">2</span></span>
+                        </div>
+                      </div>
+                      <div class="row text-center">
+                        <div class="col">
+                          Lorem ipsum dolor sit amet?
+                        </div>
+                      </div>
+                      <div class="row" style="background-color:#EDF3F3">
+                        <div class="col">Yes</div>
+                        <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="row text-center">
+                        <div class="col">
+                          <span class="btn page-container"><span class="page-num">3</span></span>
+                        </div>
+                      </div>
+                      <div class="row text-center">
+                        <div class="col">
+                          Lorem ipsum dolor sit amet?
+                        </div>
+                      </div>
+                      <div class="row" style="background-color:#EDF3F3">
+                        <div class="col">Yes</div>
+                        <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="row text-center">
+                        <div class="col">
+                          <span class="btn page-container"><span class="page-num">4</span></span>
+                        </div>
+                      </div>
+                      <div class="row text-center">
+                        <div class="col">
+                          Lorem ipsum dolor sit amet?
+                        </div>
+                      </div>
+                      <div class="row" style="background-color:#EDF3F3">
+                        <div class="col">Yes</div>
+                        <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="row text-center">
+                        <div class="col">
+                          <span class="btn page-container"><span class="page-num">5</span></span>
+                        </div>
+                      </div>
+                      <div class="row text-center">
+                        <div class="col">
+                          Lorem ipsum dolor sit amet?
+                        </div>
+                      </div>
+                      <div class="row" style="background-color:#EDF3F3">
+                        <div class="col">Yes</div>
+                        <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="row mt-4">
+                <div class="col text-start">
+                  <button class="button" type="button" (click)="stepFour()">Back</button>
+                </div>
+                <div class="col text-end">
+                  <button class="button" type="button">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
-      <div class="modal-footer justify-content-center">
-        <button class="btn btn-lg get-started w-50">Submit Underwriting Self-Assessment</button>
+
       </div>
     </div>
   </div>
 </div>
-<!--END UNDERWRITING MODAL-->

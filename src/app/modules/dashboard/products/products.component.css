@@ -1,0 +1,10 @@
+p{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  color: #787D8D;
+}
