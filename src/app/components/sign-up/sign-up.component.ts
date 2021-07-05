@@ -65,27 +65,5 @@ export class SignUpComponent implements OnInit {
         this.isSigningUp = false;
       }
     );
-    // const sgMail = require('@sendgrid/mail');
-    // const site = this.SITE;
-    // const email = this.signUpFormGroup.value.email;
-    // sgMail.setApiKey(this.SG_API);
-    // const msg = {
-    //   to: email, // Change to your recipient
-    //   from: 'bizsolutions841@gmail.com', // Change to your verified sender
-    //   subject: 'Welcome to Biz Solutions',
-    //   text: 'Welcome to Biz Solutions',
-    //   html: '<div class="container" style="height:200px; text-align: center;"><strong>Welcome to Biz Solutions<strong><br><br>' +
-    //         'Thank you for the verification, please click the button below!<br><br>' +
-    //         '<a href="' + site + '/registration"><button type="button">Click To Redirect To Registration Page!</button></a></div>',
-    // };
-    // return sgMail
-    //   .send(msg)
-    //   .then((response) => {
-    //     console.log(response);
-    //     this.isSigningUp = false;
-    //     this.signUpFormGroup.reset();
-    //     NotificationUtil.success('Email Verification Successful! Please check this inbox of your email!');
-    //   })
-    //   .catch((error: any) => console.log('Error sending email: ', error));
   }
 }

@@ -34,6 +34,10 @@ export class LandingPageComponent implements OnInit {
     this.routeService.navigate('/sign-up');
   }
 
+  registration(): void {
+    this.routeService.navigate('/registration');
+  }
+
   showProduct(): void {
     this.isProduct = true;
     this.isAuth = false;

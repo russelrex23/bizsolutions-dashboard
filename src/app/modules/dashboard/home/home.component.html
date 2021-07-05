@@ -1,5 +1,124 @@
 <div id="container">
-    <div class="row mb-3">
+  <div class="row mb-3" *ngIf="!isContractSubmit && steps != 'plan'">
+    <div class="col">
+      <div class="card">
+        <div class="body m-5">
+          <div class="card" style="box-shadow: 0px 8px 28px 2px rgba(240, 240, 238, 0.8); border: none">
+            <div class="body text-center mb-5">
+              <h3 class="modal-title fw-bolder text-dark">Agreement Contract</h3>
+            </div>
+            <div class="m-5 mt-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo. Aliquam metus metus, ullamcorper vitae facilisis in, pretium non nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis commodo tortor auctor laoreet. Nulla vel urna nec justo aliquam iaculis nec vitae tortor. Mauris ut metus non augue dapibus elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique mauris odio, vel tempor augue aliquet a. Quisque mattis ultricies orci, quis maximus ex condimentum sed.
+
+              Donec sed neque commodo, elementum dolor vitae, vehicula nulla. Morbi vel commodo lectus. Morbi mollis tempus lorem id condimentum. Proin tempor in felis quis blandit. Sed bibendum ac leo at convallis. Ut nec leo eu mi mollis hendrerit. Aenean hendrerit lectus at posuere consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Aenean et finibus lacus. Duis aliquet euismod arcu vitae rhoncus. Duis facilisis nunc id purus volutpat, sed viverra mauris placerat. Ut sodales risus eu massa iaculis elementum. Aenean bibendum sagittis pulvinar. Curabitur suscipit at massa ac ullamcorper.
+
+              Vestibulum nec pharetra lectus. Nullam quam libero, volutpat id aliquam convallis, finibus ac justo. Sed tellus velit, tincidunt sit amet dolor at, varius maximus erat. Curabitur nec sagittis risus. Ut facilisis finibus odio, vel iaculis enim maximus nec. Sed ac mollis elit. Nullam aliquet pellentesque arcu, id condimentum mauris ornare nec. Sed aliquet ligula molestie, maximus velit posuere, gravida velit. Duis luctus vulputate consequat. In convallis in nisi eu bibendum
+            </div>
+            <div class="container text-end" *ngIf="isSignatureDone">
+              <div class="row">
+                <div class="col align-self-end">
+                  <img src = "{{sigUrl}}" *ngIf="sigUrl" alt='from canvas' width="200"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col align-self-end">
+                  <p style="justify-content: flex-end;">Your Signature</p>
+                  <button type="button" class="btn btn-primary mt-3" (click)="displaySig()">Click to sign again</button>
+                </div>
+              </div>
+            </div>
+            <div class="container mb-4 ms-5" *ngIf="!isSignatureDone">
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-secondary" (click)="clear()">Clear</button>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-success" (click)="saveSig()" [disabled]="!sigUrl">Save</button>
+                </div>
+                <p>Please sign here:</p>
+                <div class="row" style="border: 1px solid; width: 62%;">
+                  <signature-pad  [options]="signaturePadOptions" (onEndEvent)="drawComplete()"></signature-pad>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mb-3">
+              <div class="form-check">
+                <input class="form-check-input float-none me-2" type="checkbox" value="" (change)="toggleEditable($event)">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Check if agree!
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-3">
+            <button class="btn btn-lg get-started w-50" [disabled]="!isChecked" (click)="agree()">Submit Agreement</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row mb-3" *ngIf="isContractSubmit">
+      <div class="col-md-6">
+        <div class="card" style="height: 395px;">
+          <div class="header m-3">
+            <h4>To Complete</h4>
+            <hr>
+          </div>
+          <div class="body ms-3 me-3 mb-5">
+            <div class="row" *ngIf="!isContractSubmit">
+              <div class="col">
+                <h5 style="line-height: 28px; display: flex; align-items: center;">Read and Accept your Agreement Contact<i class="fa fa-exclamation-circle fa-2x text-danger"></i></h5>
+              </div>
+              <div class="col text-end">
+                <button class="btn btn-lg get-started" style="width: 200px" (click)="showAgreement()">Complete now</button>
+              </div>
+            </div>
+            <div class="col" *ngIf="isContractSubmit && !isCreditReport && steps !== 'plan' && steps !== 'intake' && steps !== 'products' && steps !== 'underwriting'">
+              <button class="btn btn-secondary w-100 disabled">Set your goal -></button>
+            </div>
+            <div class="row" *ngIf="isCreditReport">
+              <div class="col">
+                <h5 style="line-height: 28px; display: flex; align-items: center;">Import credit reports and scores<i class="fa fa-exclamation-circle fa-2x text-danger"></i></h5>
+              </div>
+              <div class="col text-end">
+                <button class="btn btn-lg get-started" style="width: 200px" (click)="redirectToCreditReport()">Complete now</button>
+              </div>
+            </div>
+            <div class="row" *ngIf="steps === 'underwriting'">
+              <div class="col">
+                <h5 style="line-height: 28px; display: flex; align-items: center;">Take the Underwriting <br>Self-Assessment<i class="fa fa-exclamation-circle fa-2x text-danger"></i></h5>
+              </div>
+              <div class="col text-end">
+                <button class="btn btn-lg get-started" style="width: 200px" (click)="showUnderwriting()">Complete now</button>
+              </div>
+            </div>
+            <div class="row" *ngIf="steps === 'plan'">
+              <div class="col">
+                <h5 style="line-height: 28px; display: flex; align-items: center;">Review and Accept Proposal<i class="fa fa-exclamation-circle fa-2x text-danger"></i></h5>
+              </div>
+              <div class="col text-end">
+                <button class="btn btn-lg get-started" style="width: 200px" (click)="redirectToWorkPlan()">Complete now</button>
+              </div>
+            </div>
+            <div class="row" *ngIf="steps === 'intake'">
+              <div class="col">
+                <h5 style="line-height: 28px; display: flex; align-items: center;">LCP intake form<i class="fa fa-exclamation-circle fa-2x text-danger"></i></h5>
+              </div>
+              <div class="col text-end">
+                <button class="btn btn-lg get-started" style="width: 200px" (click)="showLcpIntakeForm()">Complete now</button>
+              </div>
+            </div>
+            <div class="row" *ngIf="steps === 'products'">
+              <div class="col">
+                <h5 style="line-height: 28px; display: flex; align-items: center;">LCP enhancement<i class="fa fa-exclamation-circle fa-2x text-danger"></i></h5>
+              </div>
+              <div class="col text-end">
+                <a href="/dashboard/products?steps=products"><button class="btn btn-lg get-started" style="width: 200px">Complete now</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="col-md-6">
         <div class="card mb-4">
           <div class="header m-3">
@@ -7,7 +126,27 @@
             <hr>
           </div>
           <div class="body ms-3 mb-5">
-            <p>Get "Lender Compliant" to where my company qualifies for credit without a Personal Guarantee</p>
+            <div class="col text-end me-3" *ngIf="!isContractSubmit">
+              <button class="btn btn-secondary w-100 disabled">No data yet.</button>
+            </div>
+            <div class="row" *ngIf="steps === 'plan' || steps === 'intake' || steps === 'products' || steps === 'underwriting'">
+              <div class="col">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo.</p>
+              </div>
+            </div>
+            <div class="row" *ngIf="isContractSubmit && !isGoalSelected && steps != 'plan' && steps !== 'intake' && steps !== 'products' && steps !== 'underwriting'">
+              <div class="col">
+                <h5 style="line-height: 28px; display: flex; align-items: center;">Set your goals now<i class="fa fa-exclamation-circle fa-2x text-danger"></i></h5>
+              </div>
+              <div class="col text-end me-3">
+                <button class="btn btn-lg get-started" style="width: 200px" (click)="showGoals()">Complete now</button>
+              </div>
+            </div>
+            <div class="row" *ngIf="isGoalSelected">
+              <div class="col">
+                <p>{{selectedObject}}</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card mb-4">
@@ -22,29 +161,8 @@
           </div>
           <div class="body">
             <div class="row m-3 mt-0">
-              <div class="col-md-8">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-              <div class="col-md-4 text-end">
-                <button class="btn btn-secondary disabled" style="border-radius: 16px">In progress</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card" style="height: 395px;">
-          <div class="header m-3">
-            <h4>To Complete</h4>
-            <hr>
-          </div>
-          <div class="body ms-3 me-3 mb-5">
-            <div class="row">
-              <div class="col">
-                <h5 style="line-height: 28px; display: flex; align-items: center;">LCP Intake form<i class="fa fa-exclamation-circle fa-2x text-danger ms-2"></i></h5>
-              </div>
               <div class="col text-end">
-                <button class="btn btn-lg get-started" style="width: 200px" (click)="showLcpIntakeForm()">Complete now</button>
+                <button class="btn btn-secondary w-100 disabled">No data yet.</button>
               </div>
             </div>
           </div>
@@ -52,7 +170,7 @@
       </div>
     </div>
 
-  <div class="card col-md-6">
+  <div class="card col-md-6" *ngIf="isContractSubmit">
     <div class="row header m-3">
       <div class="col-md-9">
         <h4>Your Credit Score (Personal)</h4>
@@ -82,7 +200,45 @@
 
 </div>
 
-<!--START UNDERWRITING MODAL-->
+<!--START AGREEMENT MODAL-->
+<div id="agreement" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="margin-left: 15%;">
+      <div class="modal-header" style="border-bottom: 0;">
+        <h5 class="modal-title fw-bolder mb-4">WadeWarren-agreement-contract-01Jan2021.pdf</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card" style="box-shadow: 0px 8px 28px 2px rgba(240, 240, 238, 0.8); border: none">
+          <div class="body text-center mb-5">
+            <h3 class="modal-title fw-bolder text-dark">Agreement Contract</h3>
+          </div>
+          <div class="m-5 mt-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo. Aliquam metus metus, ullamcorper vitae facilisis in, pretium non nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis commodo tortor auctor laoreet. Nulla vel urna nec justo aliquam iaculis nec vitae tortor. Mauris ut metus non augue dapibus elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique mauris odio, vel tempor augue aliquet a. Quisque mattis ultricies orci, quis maximus ex condimentum sed.
+
+            Donec sed neque commodo, elementum dolor vitae, vehicula nulla. Morbi vel commodo lectus. Morbi mollis tempus lorem id condimentum. Proin tempor in felis quis blandit. Sed bibendum ac leo at convallis. Ut nec leo eu mi mollis hendrerit. Aenean hendrerit lectus at posuere consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Aenean et finibus lacus. Duis aliquet euismod arcu vitae rhoncus. Duis facilisis nunc id purus volutpat, sed viverra mauris placerat. Ut sodales risus eu massa iaculis elementum. Aenean bibendum sagittis pulvinar. Curabitur suscipit at massa ac ullamcorper.
+
+            Vestibulum nec pharetra lectus. Nullam quam libero, volutpat id aliquam convallis, finibus ac justo. Sed tellus velit, tincidunt sit amet dolor at, varius maximus erat. Curabitur nec sagittis risus. Ut facilisis finibus odio, vel iaculis enim maximus nec. Sed ac mollis elit. Nullam aliquet pellentesque arcu, id condimentum mauris ornare nec. Sed aliquet ligula molestie, maximus velit posuere, gravida velit. Duis luctus vulputate consequat. In convallis in nisi eu bibendum
+          </div>
+          <div class="text-center mb-3">
+            <div class="form-check">
+              <input class="form-check-input float-none me-2" type="checkbox" value="" (change)="toggleEditable($event)">
+              <label class="form-check-label" for="flexCheckDefault">
+                Default checkbox
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button class="btn btn-lg get-started w-50" [disabled]="!isChecked" (click)="agree()">Submit Agreement</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END AGREEMENT MODAL-->
+
+<!--START LCP INTAKE FORM MODAL-->
 <div id="lcpIntakeForm" class="modal fade" tabindex="-1">
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content" style="margin-left: 15%;">
@@ -620,7 +776,7 @@
                   <button class="button" type="button" (click)="stepFour()">Back</button>
                 </div>
                 <div class="col text-end">
-                  <button class="button" type="button">Save</button>
+                  <a href="/dashboard/account?steps=lcp"><button class="button" type="button">Save</button></a>
                 </div>
               </div>
             </div>
@@ -631,3 +787,321 @@
     </div>
   </div>
 </div>
+
+<!--START GOALS MODAL-->
+<div id="goals" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title fw-bolder mb-4">Select your Goal</h5>
+        <select [(ngModel)]="selectedObject" class="form-select" multiple style="height: 500px;">
+          <option class="container goals p-2 mb-2" *ngFor="let item of goals">
+            {{item.data}}
+          </option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-lg get-started float-end" (click)="selectedGoal()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END GOALS MODAL-->
+
+<!--START UNDERWRITING MODAL-->
+<div id="underWriting" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="margin-left: 15%;">
+      <div class="modal-header" style="border-bottom: 0;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title fw-bolder mb-4">Underwriting Self-Assessment</h5>
+        <div class="table-responsive">
+          <table class="table underwriting">
+            <colgroup>
+              <col span="2" style="background-color:white">
+              <col style="background-color:#EDF3F3">
+            </colgroup>
+            <thead>
+            <tr>
+              <th>#</th>
+              <th style="width: 60%;">QUESTIONS</th>
+              <th>RESPONSES</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Is your name accurately reporting on all 3 credit bureaus?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container underwrite p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Is your address accurately reporting on all 3 credit bureaus?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container underwrite p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Does your credit file contain more than 1 previous address?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container underwrite p-2 mb-2">
+                    <i class="fa fa-check" style="color: white;" aria-hidden="true"></i>No
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Do you currently own or rent your home?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container underwrite p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Does your file have any fraud alerts or credit freezes?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container underwrite p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>Have you recently had any credit repair performed on your file?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container underwrite p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>Enter your annual income</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>Enter your desired loan amount</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">9</th>
+              <td>Enter desired loan terms (max of 5 years)</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10</th>
+              <td>Do you need to create a website? Or Do you need assistance with your website?</td>
+              <td>
+                <select class="form-select" multiple>
+                  <option class="container underwrite p-2 mb-2">
+                    No
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    Yes
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">11</th>
+              <td>What is the goal of the web content? Is it to book a call, buy a product, get a quote?</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">12</th>
+              <td>Who are your ideal customers? Please describe them in detail.</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">13</th>
+              <td>Additional info about your ideal customers:
+                <br>
+                What are the age ranges of your customers? (Select all that apply)
+              </td>
+              <td>
+                <span style="font-size: 13px; opacity: 0.5;">hold ctrl to multiple select that apply</span>
+                <select class="form-select radio" multiple style="height: 210px;">
+                  <option class="container underwrite p-2 mb-2">
+                    31 - 40
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    41 - 50
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    51 - 60
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    61 and above
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">14</th>
+              <td>Gender</td>
+              <td>
+                <select class="form-select radio" multiple style="height: 100%;">
+                  <span style="font-size: 13px; opacity: 0.5;">select that apply</span>
+                  <option class="container underwrite p-2 mb-2">
+                    Male
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    Female
+                  </option>
+                  <option class="container underwrite p-2 mb-2">
+                    Mixed
+                  </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>Where do they live? (Optional)</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">16</th>
+              <td>What is their typical life like? (Optional)</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">17</th>
+              <td>What are your customers interested in? What websites, blogs, books, magazines, people, shows, movies, software, Facebook pages, causes, charities would your audience be mostly to engage with? Feel free to elaborate as many as you like.
+                (Optional)</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>Where do they live? (Optional)</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">18</th>
+              <td>What are your ideal customer’s goals and values?</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">19</th>
+              <td>What are your ideal customer's pain points and challenges? Describe what keeps them up at night.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">20</th>
+              <td>What will be their objections in buying your product/service? (Optional)</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">21</th>
+              <td>What is the business all about? Please explain in detail what you do and how you provide value to your customers.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">22</th>
+              <td>What products/services do you sell? Kindly describe what the service is in detail.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">23</th>
+              <td>What benefits does your service give to your customers?</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">24</th>
+              <td>Do you have any direct competitors offering the same service? If not, can you give us at least three of your closest competitors?</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">25</th>
+              <td>What is your value proposition? What makes you unique from your competitors? What do customers get when they give you their money? This is also critical to our success, so feel free to elaborate.</td>
+              <td>
+                <textarea class="form-control"></textarea>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <a href="/dashboard/home?steps=plan"><button class="btn btn-lg get-started w-100">Submit Underwriting Self-Assessment</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END UNDERWRITING MODAL-->

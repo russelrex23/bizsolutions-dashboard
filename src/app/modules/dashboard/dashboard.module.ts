@@ -8,6 +8,9 @@ import { PlanComponent } from './plan/plan.component';
 import { OtherComponent } from './other/other.component';
 import { AccountComponent } from './account/account.component';
 import { MorrisJsModule } from 'angular-morris-js';
+import { SignaturePadModule } from 'angular2-signaturepad';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LcpPersonalComponent } from './lcp-personal/lcp-personal.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,16 @@ import { MorrisJsModule } from 'angular-morris-js';
     ProductsComponent,
     PlanComponent,
     OtherComponent,
-    AccountComponent
+    AccountComponent,
+    LcpPersonalComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MorrisJsModule
+    MorrisJsModule,
+    SignaturePadModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }

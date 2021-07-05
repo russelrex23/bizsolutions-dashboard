@@ -62,13 +62,13 @@ input{
   border-radius: 16px;
 }
 
-select{
-  border: 1px solid #cfd5d5 !important;
-  height: 40px;
-  background-color: white;
-  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
-  border-radius: 16px;
-}
+/*select{*/
+/*  border: 1px solid #cfd5d5 !important;*/
+/*  height: 40px;*/
+/*  background-color: white;*/
+/*  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);*/
+/*  border-radius: 16px;*/
+/*}*/
 
 p{
   font-family: Overpass, sans-serif;
@@ -100,4 +100,45 @@ p{
   font-size: 20px;
   letter-spacing: 0.05em;
   text-shadow: 0px 1px 6px rgba(225, 255, 255, 0.5);
+}
+
+.goals{
+  width: 80%;
+  height: 70px;
+  background: #FFFFFF;
+  border: 2px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.08);
+  border-radius: 16px;
+  white-space: normal;
+  color: #27ACE7;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.underwrite{
+  width: 50%;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.08);
+  border-radius: 16px;
+  white-space: normal;
+  color: #27ACE7;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.radio option{
+  display: block;
+  width: 100%;
+}
+
+.form-select{
+  overflow: hidden;
+  border:0;
+  box-shadow: none;
+  padding: 0;
 }

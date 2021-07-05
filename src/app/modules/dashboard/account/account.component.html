@@ -1,23 +1,29 @@
 <div id="container">
   <div class="card mb-4">
+    <div class="col mt-3" *ngIf="isCreditReportDone">
+      <a href="/dashboard/home?steps=underwriting"><button class="button mb-3" style="width: 200px">Back To Dashboard</button></a>
+    </div>
+    <div class="col mt-3" *ngIf="steps === 'lcp'">
+      <a href="/dashboard/home?steps=products"><button class="button mb-3" style="width: 200px">Proceed to Products</button></a>
+    </div>
     <div class="header m-4">
       <h4 class="fw-bolder">My Account</h4>
     </div>
     <div class="body ms-3 mb-5">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
+        <li class="nav-item" role="presentation" *ngIf="creditReportTab && !isCreditReportDone && steps === 'lcp'">
           <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="home" aria-selected="true">Personal Info</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item" role="presentation" *ngIf="creditReportTab && !isCreditReportDone && steps === 'lcp'">
           <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#financial" type="button" role="tab" aria-controls="profile" aria-selected="false">Financial Info</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item" role="presentation" *ngIf="creditReportTab && !isCreditReportDone && steps === 'lcp'">
           <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#payment" type="button" role="tab" aria-controls="contact" aria-selected="false">Payment Info</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item" role="presentation" *ngIf="creditReportTab && !isCreditReportDone && steps === 'lcp'">
           <button class="nav-link" id="address-tab" data-bs-toggle="tab" data-bs-target="#address" type="button" role="tab" aria-controls="contact" aria-selected="false">Address</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item" role="presentation" *ngIf="creditReportTab && !isCreditReportDone && steps === 'lcp'">
           <button class="nav-link" id="underwriting-tab" data-bs-toggle="tab" data-bs-target="#under-writing" type="button" role="tab" aria-controls="contact" aria-selected="false">Underwriting</button>
         </li>
         <li class="nav-item" role="presentation">
@@ -29,7 +35,7 @@
 
   <div class="tab-content" id="myTabContent">
     <!-- Start Personal Details Tab -->
-      <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="home-tab">
+      <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="home-tab" *ngIf="steps === 'lcp'">
         <div class="card mt-3 ms-4 me-4">
           <div class="header m-3">
             <h4>Personal details</h4>
@@ -360,32 +366,32 @@
       </div>
     </div>
 
-    <!-- Start Credit Report Tab -->
-    <div class="tab-pane fade active" id="credit" role="tabpanel" aria-labelledby="cre-tab">
-      <div class="card w-75 w-sm-100 mt-3 mb-4">
-        <div class="header m-3 text-center">
-          <img class="pe-2" src="/assets/images/dashboard/identity-iq.png">
+    <div class="card w-75 w-sm-100 mt-3 mb-4" *ngIf="!isCreditReportDone && steps === undefined">
+      <div class="header m-3 text-center">
+        <img class="pe-2" src="/assets/images/dashboard/identity-iq.png">
+      </div>
+      <div class="m-4 justify-content-center">
+        <p>Your IdentityIQ information will be required in order to generate
+          a credit analysis for you. If you already have an IdentityIQ account,
+          please provide your credentials. If not, please proceed with registration. </p>
+      </div>
+      <div class="row text-center mb-5">
+        <div class="col">
+          <button class="button mb-3" style="width: 200px">No</button>
+          <p>I don’t have an existing<br>
+            IdentityIQ account</p>
         </div>
-        <div class="m-4 justify-content-center">
-          <p>Your IdentityIQ information will be required in order to generate
-            a credit analysis for you. If you already have an IdentityIQ account,
-            please provide your credentials. If not, please proceed with registration. </p>
-        </div>
-        <div class="row text-center mb-5">
-          <div class="col">
-            <button class="button mb-3" style="width: 200px">No</button>
-            <p>I don’t have an existing<br>
-              IdentityIQ account</p>
-          </div>
-          <div class="col">
-            <button class="btn btn-lg mb-3 get-started" style="width: 200px" (click)="showIdentityIqModal()">Yes</button>
-            <p>I have an existing<br>
-              IdentityIQ account</p>
-          </div>
+        <div class="col">
+          <button class="btn btn-lg mb-3 get-started" style="width: 200px" (click)="showIdentityIqModal()">Yes</button>
+          <p>I have an existing<br>
+            IdentityIQ account</p>
         </div>
       </div>
+    </div>
 
-      <div class="row mb-3">
+    <!-- Start Credit Report Tab -->
+    <div class="tab-pane fade show active" id="credit" role="tabpanel" aria-labelledby="cre-tab">
+      <div class="row mb-3" *ngIf="!creditReportTab && isCreditReportDone">
         <div class="col-lg-6 mb-4">
           <div class="card mb-4">
             <div class="header m-3 mb-0">
@@ -490,7 +496,7 @@
         </div>
       </div>
       <div class="text-center mb-5">
-        <button class="btn btn-lg get-started w-75">Import my Credit Report</button>
+        <button class="btn btn-lg get-started w-75" (click)="importCreditReport()">Import my Credit Report</button>
       </div>
     </div>
   </div>

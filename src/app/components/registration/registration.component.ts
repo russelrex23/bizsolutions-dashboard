@@ -64,6 +64,11 @@ export class RegistrationComponent implements OnInit {
     );
   }
 
+  redirectToDashboard(): void {
+    PageUtil.hideModal('showTransactionComplete');
+    this.routeService.navigate('/dashboard');
+  }
+
   showSecondaryLCP(): void {
     PageUtil.showModal('showSecondaryLcpPersonal');
   }

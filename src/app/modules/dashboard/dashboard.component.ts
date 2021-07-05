@@ -11,35 +11,19 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  goals = [
-    {
-      data: 'Get "Lender Compliant" to where my company qualifies for credit without a Personal Guarantee'
-    },
-    {
-      data: 'Get "Lender Compliant" for the purpose of securing funding for my business'
-    },
-    {
-      data: 'Get "Lender Compliant" for the purpose of Purchasing Equipment for my business and or project'
-    },
-    {
-      data: 'Get "Lender Compliant" for the purpose of Purchasing Real Estate'
-    },
-    {
-      data: 'Get "Lender Compliant" for the purpose of a business deal (e.g. Government Contract, Prospective Partnership, New Business Launch, etc.)'
-    },
-    {
-      data: 'Other: PLEASE SPECIFY'
-    }
-  ];
-
-  selectedObject: any = this.goals[0];
+  steps = '';
 
   constructor(
     private authenticationService: AuthenticationService,
     private routeService: RouteService,
     private router: Router,
-    private route: ActivatedRoute
-  ) { }
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.steps = params.steps;
+      console.log(this.steps);
+    });
+  }
 
   ngOnInit(): void {
   }
@@ -54,10 +38,6 @@ export class DashboardComponent implements OnInit {
 
   showGoals(): void {
     PageUtil.showModal('showGoals');
-  }
-
-  selectedGoal(): void{
-    console.log(this.selectedObject);
   }
 
   openNav(): void{

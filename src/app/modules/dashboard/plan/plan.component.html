@@ -12,38 +12,134 @@
     </div>
   </div>
 
-  <div class="tab-content" id="myTabContent">
+  <div class="tab-content">
     <!-- Start Personal Details Tab -->
+<!--    <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="home-tab">-->
+<!--      <div class="card mt-3 ms-4 me-4">-->
+<!--        <div class="header m-3">-->
+<!--          <h4>Credit Analysis</h4>-->
+<!--          <hr>-->
+<!--        </div>-->
+<!--        <div class="row body mb-5 m-3">-->
+<!--          <div class="body ms-3">-->
+<!--            <span class="fw-bold pointer text-primary">WadeWarren-credit-analysis-01Jan2021.pdf</span>-->
+<!--            <i class="fa fa-file pointer ms-4" aria-hidden="true" style="color: #66ace9;"></i>-->
+<!--           <i class="fa fa-download pointer ms-4" aria-hidden="true" style="color: #66ace9;" (click)="openPDF()"></i>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card mse-10" style="box-shadow: 0px 8px 28px 2px rgba(240, 240, 238, 0.8); border: none" id="data-to-export">-->
+<!--          <div class="row body m-md-5">-->
+<!--            <div class="row">-->
+<!--              <div class="col text-end me-5" *ngIf="isEdit">-->
+<!--                <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>-->
+<!--              </div>-->
+<!--              <div class="col text-end me-5" *ngIf="!isEdit">-->
+<!--                <button class="button me-3" type="button" (click)="back()">Back</button>-->
+<!--                <button class="button submit-btn" type="button" (click)="submit()">Submit</button>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            <table id="my-table">-->
+<!--              <thead>-->
+<!--              <tr>-->
+<!--                <th></th>-->
+<!--                <th></th>-->
+<!--                <th></th>-->
+<!--                <th></th>-->
+<!--                <th></th>-->
+<!--              </tr>-->
+<!--              </thead>-->
+<!--              <tbody>-->
+<!--              <tr>-->
+<!--                <td><span *ngIf="isSubmit">{{name001}}</span></td>-->
+<!--                <td><span *ngIf="isSubmit">{{name002}}</span></td>-->
+<!--                <td><span *ngIf="isSubmit">{{name003}}</span></td>-->
+<!--                <td><span *ngIf="isSubmit">{{name004}}</span></td>-->
+<!--                <td>-->
+<!--                  <div class="row clearfix mb-2 text-start" *ngIf="!isSubmit">-->
+<!--                    <div class="col-md-3 mb-2">-->
+<!--                      <p>Input001</p>-->
+<!--                      <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name001">-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 mb-2">-->
+<!--                      <p>Input002</p>-->
+<!--                      <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name002">-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3">-->
+<!--                      <p>Input003</p>-->
+<!--                      <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name003">-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3">-->
+<!--                      <p>Input004</p>-->
+<!--                      <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name004">-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <br>-->
+<!--                  <div class="container text-end" *ngIf="isSignatureDone">-->
+<!--                    <div class="row">-->
+<!--                      <div class="col align-self-end">-->
+<!--                        <img src = "{{sigUrl}}" *ngIf="sigUrl" alt='from canvas' width="200"/>-->
+<!--                        <br>-->
+<!--                        <br>-->
+<!--                        <p>Your Signature</p>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </td>-->
+<!--              </tr>-->
+<!--              </tbody>-->
+<!--            </table>-->
+
+<!--            <div class="container text-end" *ngIf="isSignatureDone">-->
+<!--              <div class="row">-->
+<!--                <div class="col align-self-end">-->
+<!--                  <button type="button" class="btn btn-primary" (click)="displaySig()">Click to sign again</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="container mt-4" *ngIf="!isSignatureDone">-->
+<!--              <div class="row">-->
+<!--                <div class="col">-->
+<!--                  <button type="button" class="btn btn-secondary" (click)="clear()">Clear</button>-->
+<!--                </div>-->
+<!--                <div class="col">-->
+<!--                  <button type="button" class="btn btn-success" (click)="saveSig()" [disabled]="!sigUrl">Save</button>-->
+<!--                </div>-->
+<!--                <p>Please sign here:</p>-->
+<!--                <div class="row" style="border: 1px solid; width: 62%;">-->
+<!--                  <signature-pad  [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
     <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="home-tab">
       <div class="card mt-3 ms-4 me-4">
         <div class="header m-3">
           <h4>Credit Analysis</h4>
           <hr>
         </div>
-        <div class="row body mb-5 m-3">
-          <div class="body ms-3">
-            <span class="fw-bold pointer text-primary">WadeWarren-credit-analysis-01Jan2021.pdf</span>
-            <i class="fa fa-file pointer ms-4" aria-hidden="true" style="color: #66ace9;"></i>
-            <i class="fa fa-download pointer ms-4" aria-hidden="true" style="color: #66ace9;"></i>
+        <div class="card mse-10" style="box-shadow: 0px 8px 28px 2px rgba(240, 240, 238, 0.8); border: none" id="data-to-export">
+          <div class="row body m-md-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo. Aliquam metus metus, ullamcorper vitae facilisis in, pretium non nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis commodo tortor auctor laoreet. Nulla vel urna nec justo aliquam iaculis nec vitae tortor. Mauris ut metus non augue dapibus elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique mauris odio, vel tempor augue aliquet a. Quisque mattis ultricies orci, quis maximus ex condimentum sed.
+
+            Donec sed neque commodo, elementum dolor vitae, vehicula nulla. Morbi vel commodo lectus. Morbi mollis tempus lorem id condimentum. Proin tempor in felis quis blandit. Sed bibendum ac leo at convallis. Ut nec leo eu mi mollis hendrerit. Aenean hendrerit lectus at posuere consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Aenean et finibus lacus. Duis aliquet euismod arcu vitae rhoncus. Duis facilisis nunc id purus volutpat, sed viverra mauris placerat. Ut sodales risus eu massa iaculis elementum. Aenean bibendum sagittis pulvinar. Curabitur suscipit at massa ac ullamcorper.
+          </div>
+          <div class="text-center mb-3">
+            <div class="form-check">
+              <input class="form-check-input float-none me-2" type="checkbox" value="" (change)="toggleEditable($event)">
+              <label class="form-check-label">
+                Check the Proposal
+              </label>
+            </div>
           </div>
         </div>
-        <div class="card mse-10" style="box-shadow: 0px 8px 28px 2px rgba(240, 240, 238, 0.8); border: none">
-          <div class="row body m-md-5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo.
-              Aliquam metus metus, ullamcorper vitae facilisis in, pretium non nisl. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Donec venenatis commodo tortor auctor laoreet. Nulla vel urna nec justo
-              aliquam iaculis nec vitae tortor. Mauris ut metus non augue dapibus elementum. Vestibulum ante ipsum
-              primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique mauris odio,
-              vel tempor augue aliquet a. Quisque mattis ultricies orci, quis maximus ex condimentum sed.</p>
-
-            <p>Donec sed neque commodo, elementum dolor vitae, vehicula nulla. Morbi vel commodo lectus. Morbi mollis
-              tempus lorem id condimentum. Proin tempor in felis quis blandit. Sed bibendum ac leo at convallis.
-              Ut nec leo eu mi mollis hendrerit. Aenean hendrerit lectus at posuere consectetur. Vestibulum ante ipsum
-              primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Aenean et finibus
-              lacus. Duis aliquet euismod arcu vitae rhoncus. Duis facilisis nunc id purus volutpat, sed viverra mauris
-              placerat. Ut sodales risus eu massa iaculis elementum. Aenean bibendum sagittis pulvinar.
-              Curabitur suscipit at massa ac ullamcorper.</p>
-          </div>
+        <div class="text-center mt-3 mb-3">
+          <a href="/dashboard/home?steps=intake"><button class="btn btn-lg get-started" [disabled]="!isChecked">Submit Proposal</button></a>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import {AccountComponent} from './account/account.component';
 import {OtherComponent} from './other/other.component';
 import {PlanComponent} from './plan/plan.component';
 import {ProductsComponent} from './products/products.component';
+import {LcpPersonalComponent} from './lcp-personal/lcp-personal.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: 'lcp-personal',
+    component: LcpPersonalComponent
   },
   {
     path: 'plan',
