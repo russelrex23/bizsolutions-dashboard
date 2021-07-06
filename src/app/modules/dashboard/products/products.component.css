@@ -8,3 +8,7 @@ p{
   align-items: center;
   color: #787D8D;
 }
+
+input, select, textarea{
+  border-radius: 16px;
+}

@@ -377,7 +377,7 @@
       </div>
       <div class="row text-center mb-5">
         <div class="col">
-          <button class="button mb-3" style="width: 200px">No</button>
+          <button class="button mb-3" style="width: 200px" (click)="showNoIdentityIqModal()">No</button>
           <p>I don’t have an existing<br>
             IdentityIQ account</p>
         </div>
@@ -502,6 +502,215 @@
   </div>
 </div>
 <!--END IDENTITY IQ CREDENTIAL MODAL-->
+
+<!--START NO IDENTITY IQ CREDENTIAL MODAL-->
+<div id="showNoIdentityIq" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body m-4 mt-0 mb-2 text-center">
+        <h5 class="modal-title fw-bolder mb-5">Select from the options</h5>
+        <div class="col mb-4">
+          <a href="https://member.identityiq.com/help-you-to-save-money.aspx?offercode=431136US" target="_blank"><button class="btn btn-lg get-started w-75">Create an Identity IQ account</button></a>
+        </div>
+        <div class="col mb-4">
+          <button class="btn btn-lg get-started w-75" (click)="creditReportCredentials()" style="font-size: 18px;">Give credentials of other provider</button>
+        </div>
+        <div class="col mb-4">
+          <button class="btn btn-lg get-started w-75" (click)="uploadDocument()">Upload report</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END NO IDENTITY IQ CREDENTIAL MODAL-->
+
+<!--START CREDIT REPORT CREDENTIAL MODAL-->
+<div id="creditReportCredentials" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="margin-left: 15%;">
+      <div class="modal-header" style="border-bottom: 0;">
+        <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="backToSelect('credit');"><i class="lnr lnr-menu fa fa-chevron-circle-left" style="color: black; font-size: 20px;"></i></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body m-4 mt-0 mb-2">
+        <h5 class="modal-title fw-bolder mb-3">Credit report access details</h5>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <p>Recent Provider</p>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <p>Username</p>
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-md-6 mb-4">
+            <p>Password</p>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <p>Phone number</p>
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-md-3 mb-4">
+            <p>SSN (last 4 digits)</p>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <button class="btn btn-lg get-started w-75" (click)="credentialSuccess()">Submit and Continue</button>
+          </div>
+          <div class="col-md-2 mb-4">
+            <img class="pe-2" src="/assets/images/img-norton.png">
+          </div>
+          <div class="col-md-2 mb-4">
+            <img class="pe-2" src="/assets/images/img-ssl.png">
+          </div>
+        </div>
+        <p>By clicking <strong>Submit and Continue</strong> you accept our <span class="text-primary">Terms & Conditions</span> and <span class="text-primary">Privacy Policy.</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END CREDIT REPORT CREDENTIAL MODAL-->
+
+<!--START SUCCESS CREDENTIAL MODAL-->
+<div id="credentialSuccess" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0;">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body m-4 mt-0 mb-2 text-center">
+        <h5 class="modal-title fw-bolder mb-5">Credentials successfully submitted</h5>
+        <div class="col mb-4">
+          <img class="pe-2" src="/assets/images/transaction-complete.png"></div>
+        <div class="col mb-4 m-5">
+          Your credentials have been submitted and
+          will be reviewed by our Solutionist.
+        </div>
+        <div class="col mb-4">
+          <button class="btn btn-lg get-started w-75">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END SUCCESS CREDENTIAL MODAL-->
+
+<!--START UPLOAD DOCUMENT MODAL-->
+<div id="uploadDocument" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0;">
+        <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="backToSelect('upload');"><i class="lnr lnr-menu fa fa-chevron-circle-left" style="color: black; font-size: 20px;"></i></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body m-5 mt-0 mb-0 text-start" style="padding-left: 10%; padding-right: 10%;">
+        <h5 class="modal-title fw-bolder">Upload document</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [(ngModel)]="type" [value]="1" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                1 document (3in1)
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" [(ngModel)]="type" [value]="0" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                3 separate documents
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-3">
+        <div class="row">
+          <div class="col" *ngIf="type == 1">
+            <div class="dropzone" *ngIf="!fileToUpload">
+              <input class="file" type="file" [multiple]="false" id="file" (change)="handleFileInput($event.target.files)" style="border-radius: 0">
+              <p>drag file here or <span class="text-primary">browse</span></p>
+            </div>
+            <div class="row m-5 mb-5 mt-0" *ngIf="fileToUpload" style="margin-left: 90px!important; margin-right: 130px!important; background: rgba(237, 243, 243, 0.6); height: 40px;">
+              <div class="col-md-10">
+                <img src="/assets/images/transaction-complete.png" width="20">
+                {{fileToUpload.name}}
+              </div>
+              <div class="col-md-2 text-end">
+                <i class="fa fa-trash pointer" (click)="deleteFile()"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="type == 0">
+          <div class="col-md-4 mt-3">
+            <div class="dropzone" *ngIf="!file01">
+              <input class="file" type="file" #fileDropRef [multiple]="false" (change)="handleFile01($event.target.files)" style="border-radius: 0">
+              <img src="/assets/images/equifax.png">
+              <br>
+              <p class="pt-2">drag file here or <span class="text-primary">browse</span></p>
+            </div>
+            <div class="row ms-1 me-1" *ngIf="file01" style="background: rgba(237, 243, 243, 0.6);">
+              <div class="col-md-10">
+                <img src="/assets/images/transaction-complete.png" width="20">
+                {{file01.name}}
+              </div>
+              <div class="col-md-2 text-end">
+                <i class="fa fa-trash pointer" (click)="deleteFile01()"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3">
+            <div class="dropzone" *ngIf="!file02">
+              <input class="file" type="file" #fileDropRef [multiple]="false" (change)="handleFile02($event.target.files)" style="border-radius: 0">
+              <img src="/assets/images/experian.png">
+              <br>
+              <p class="pt-2">drag file here or <span class="text-primary">browse</span></p>
+            </div>
+            <div class="row ms-1 me-1" *ngIf="file02" style="background: rgba(237, 243, 243, 0.6);">
+              <div class="col-md-10">
+                <img src="/assets/images/transaction-complete.png" width="20">
+                {{file02.name}}
+              </div>
+              <div class="col-md-2 text-end">
+                <i class="fa fa-trash pointer" (click)="deleteFile02()"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3">
+            <div class="dropzone" *ngIf="!file03">
+              <input class="file" type="file" #fileDropRef [multiple]="false" (change)="handleFile03($event.target.files)" style="border-radius: 0">
+              <img src="/assets/images/transunion.png">
+              <br>
+              <p class="pt-2">drag file here or <span class="text-primary">browse</span></p>
+            </div>
+            <div class="row ms-1 me-1" *ngIf="file03" style="background: rgba(237, 243, 243, 0.6);">
+              <div class="col-md-10">
+                <img src="/assets/images/transaction-complete.png" width="20">
+                {{file03.name}}
+              </div>
+              <div class="col-md-2 text-end">
+                <i class="fa fa-trash pointer" (click)="deleteFile03()"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END UPLOAD DOCUMENT MODAL-->
 
 <!--START UNDERWRITING MODAL-->
 <div id="underWriting" class="modal fade" tabindex="-1">
