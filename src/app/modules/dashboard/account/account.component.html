@@ -1,10 +1,11 @@
 <div id="container">
   <div class="card mb-4">
     <div class="col mt-3" *ngIf="isCreditReportDone">
-      <a href="/dashboard/home?steps=underwriting"><button class="button mb-3" style="width: 200px">Back To Dashboard</button></a>
+      <a href="/dashboard/home?steps=underwriting" class="link-info ms-3">Back To Dashboard</a>
+<!--      <a href="/dashboard/home?steps=underwriting"><button class="button mb-3" style="width: 200px">Back To Dashboard</button></a>-->
     </div>
     <div class="col mt-3" *ngIf="steps === 'lcp'">
-      <a href="/dashboard/home?steps=products"><button class="button mb-3" style="width: 200px">Proceed to Products</button></a>
+      <a href="/dashboard/home?steps=products" class="link-info ms-3">Click to proceed to Products</a>
     </div>
     <div class="header m-4">
       <h4 class="fw-bolder">My Account</h4>
@@ -532,7 +533,7 @@
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content" style="margin-left: 15%;">
       <div class="modal-header" style="border-bottom: 0;">
-        <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="backToSelect('credit');"><i class="lnr lnr-menu fa fa-chevron-circle-left" style="color: black; font-size: 20px;"></i></button>
+        <button type="button" class="btn btn-secondary float-right" (click)="backToSelect('credit');">Go back to the previous page</button>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body m-4 mt-0 mb-2">

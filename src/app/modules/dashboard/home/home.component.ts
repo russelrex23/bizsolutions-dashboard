@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {RouteService} from '../../../services/route.service';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import {SignaturePad} from "angular2-signaturepad";
+import {SignaturePad} from 'angular2-signaturepad';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +20,13 @@ export class HomeComponent implements OnInit {
   isContractSubmit = false;
   isGoalSelected = false;
   isCreditReport = false;
+  isReadOnly = true;
+  isEdit = true;
+  isSubmit = false;
+  name001 = '';
+  name002 = '';
+  name003 = '';
+  name004 = '';
 
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
 
@@ -59,7 +66,6 @@ export class HomeComponent implements OnInit {
       '#F15A24',
       '#F5891D'
     ],
-    // labelColor: '#cc241c',
   };
 
   public chartDonutData = [
@@ -155,5 +161,22 @@ export class HomeComponent implements OnInit {
 
   showUnderwriting(): void {
     PageUtil.showModal('underWriting');
+  }
+
+  edit(): void{
+    this.isReadOnly = false;
+    this.isEdit = false;
+    this.isSubmit = false;
+  }
+
+  back(): void{
+    this.isReadOnly = true;
+    this.isEdit = true;
+  }
+
+  submit(): void{
+    this.isReadOnly = true;
+    this.isEdit = true;
+    this.isSubmit = true;
   }
 }

@@ -14,6 +14,40 @@
 
               Vestibulum nec pharetra lectus. Nullam quam libero, volutpat id aliquam convallis, finibus ac justo. Sed tellus velit, tincidunt sit amet dolor at, varius maximus erat. Curabitur nec sagittis risus. Ut facilisis finibus odio, vel iaculis enim maximus nec. Sed ac mollis elit. Nullam aliquet pellentesque arcu, id condimentum mauris ornare nec. Sed aliquet ligula molestie, maximus velit posuere, gravida velit. Duis luctus vulputate consequat. In convallis in nisi eu bibendum
             </div>
+            <div class="row">
+              <div class="col text-end me-5" *ngIf="isEdit">
+                <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>
+              </div>
+              <div class="col text-end me-5" *ngIf="!isEdit">
+                <button class="button me-3" type="button" (click)="back()">Back</button>
+                <button class="button submit-btn" type="button" (click)="submit()">Submit</button>
+              </div>
+            </div>
+
+            <div class="row clearfix m-5 mt-0 text-start" *ngIf="isSubmit">
+              <p>{{name001}}</p>
+              <p>{{name002}}</p>
+              <p>{{name003}}</p>
+              <p>{{name004}}</p>
+            </div>
+            <div class="row clearfix m-5 mt-0 text-start" *ngIf="!isSubmit">
+              <div class="col-md-3 mb-2">
+                <p>Input001</p>
+                <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name001">
+              </div>
+              <div class="col-md-3 mb-2">
+                <p>Input002</p>
+                <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name002">
+              </div>
+              <div class="col-md-3">
+                <p>Input003</p>
+                <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name003">
+              </div>
+              <div class="col-md-3">
+                <p>Input004</p>
+                <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name004">
+              </div>
+            </div>
             <div class="container text-end" *ngIf="isSignatureDone">
               <div class="row">
                 <div class="col align-self-end">
