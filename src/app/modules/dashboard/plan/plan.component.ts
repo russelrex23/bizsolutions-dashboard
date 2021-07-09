@@ -46,14 +46,14 @@ export class PlanComponent implements OnInit {
     const img = this.sigUrl;
     autoTable(doc, {
       html: '#my-table',
-      theme: 'plain',
-      didDrawCell: function(data) {
-        if (data.column.index === 0 && data.section === 'body') {
-          doc.addImage(img, 'JPEG', data.cell.x + 143, data.cell.y + 3, 20, 10);
-        }
-      }
+      theme: 'plain'
+      // didDrawCell: function(data) {
+      //   if (data.column.index === 0 && data.section === 'body') {
+      //     doc.addImage(img, 'JPEG', data.cell.x + 143, data.cell.y + 3, 20, 10);
+      //   }
+      // }
     });
-    doc.save('table.pdf');
+    doc.save('work-plan.pdf');
 
   }
 

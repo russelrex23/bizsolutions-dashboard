@@ -1,194 +1,228 @@
-<div class="card mb-4">
-  <div class="row header m-3 mb-0">
-    <div class="col-md-6">
-      <p>Steps to be Performed</p>
+<div *ngIf="!stepCorporate && !ULine">
+  <div class="card mb-4">
+    <div class="row header m-3 mb-0">
+      <div class="col-md-6">
+        <p>Steps to be Performed</p>
+      </div>
+      <div class="col-md-3">
+        <p>Status</p>
+      </div>
+      <div class="col-md-3">
+        <p>Date</p>
+      </div>
+      <hr>
     </div>
-    <div class="col-md-3">
-      <p>Status</p>
+    <div class="body">
+      <div class="row fw-bolder m-3">
+        <div class="col-md-6">
+          Business name check
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btn btn-success" style="border-radius: 16px">Done</button>
+        </div>
+        <div class="col-md-2">
+          01 Jun 2021
+        </div>
+        <div class="col-md-1">
+          <i class="fa fa-angle-right fw-bolder pointer"></i>
+        </div>
+        <hr class="mt-4">
+      </div>
+      <div class="row fw-bolder m-3">
+        <div class="col-md-6">
+          Corporate address set-up and Lender Compliance check
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btn btn-warning" style="border-radius: 16px">In progress</button>
+        </div>
+        <div class="col-md-2">
+          24 Jun 2021
+        </div>
+        <div class="col-md-1">
+          <i class="fa fa-angle-right fw-bolder pointer" (click)="showStepCorporate()"></i>
+        </div>
+        <hr class="mt-4">
+      </div>
+      <div class="row fw-bolder m-3">
+        <div class="col-md-6">
+          EIN and entity setup
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-1">
+          <i class="fa fa-angle-right fw-bolder pointer"></i>
+        </div>
+        <hr class="mt-4">
+      </div>
+      <div class="row fw-bolder m-3">
+        <div class="col-md-6">
+          411 Listing
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-1">
+          <i class="fa fa-angle-right fw-bolder pointer"></i>
+        </div>
+        <hr class="mt-4">
+      </div>
+      <div class="row fw-bolder m-3">
+        <div class="col-md-6">
+          Professional email set-up and Lender Compliance check
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-1">
+          <i class="fa fa-angle-right fw-bolder pointer"></i>
+        </div>
+        <hr class="mt-4">
+      </div>
     </div>
-    <div class="col-md-3">
-      <p>Date</p>
-    </div>
-    <hr>
   </div>
-  <div class="body">
-    <div class="row fw-bolder m-3">
-      <div class="col-md-6">
-        Business name check
-      </div>
-      <div class="col-md-3">
 
+  <div class="card">
+    <div class="row header m-3">
+      <div class="col">
+        <h4>LCP Enhancement</h4>
       </div>
-      <div class="col-md-2">
-
-      </div>
-      <div class="col-md-1">
-        <i class="fa fa-angle-right fw-bolder pointer"></i>
-      </div>
-      <hr class="mt-4">
     </div>
-    <div class="row fw-bolder m-3">
-      <div class="col-md-6">
-        Corporate address set-up and Lender Compliance check
+    <div class="body text-center m-5 mt-0">
+      <div class="body ms-3 mb-5">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="tier-1-tab" data-bs-toggle="tab" data-bs-target="#tier-1" type="button" role="tab" aria-controls="tier-1" aria-selected="true">Tier 1</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tier-2-tab" data-bs-toggle="tab" data-bs-target="#tier-2" type="button" role="tab" aria-controls="tier-2" aria-selected="false">Tier 2</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tier-3-tab" data-bs-toggle="tab" data-bs-target="#tier-3" type="button" role="tab" aria-controls="tier-3" aria-selected="false">Tier 3</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tier-4-tab" data-bs-toggle="tab" data-bs-target="#tier-4" type="button" role="tab" aria-controls="tier-4" aria-selected="false">Tier 4</button>
+          </li>
+        </ul>
       </div>
-      <div class="col-md-3">
 
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="tier-1" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row body text-center mb-5 m-3">
+            <div class="card col p-0 m-2 pointer" style="border-radius: 16px;" (click)="showULine()">
+              <div class="card-header" style="border-radius: 16px; height: 60px">
+                  <img src="/assets/images/u-line.png" class="text-center" alt="...">
+              </div>
+              <div class="card-body">
+                <p class="card-text">ULINE</p>
+                <p class="card-text">$ 70</p>
+              </div>
+            </div>
+            <div class="card col p-0 m-2" style="border-radius: 16px;">
+              <div class="card-header" style="border-radius: 16px; height: 60px">
+                <img src="/assets/images/kd-supply.png" class="text-center" alt="...">
+              </div>
+              <div class="card-body">
+                <p class="card-text">HD SUPPLY</p>
+                <p class="card-text">$ 70</p></div>
+            </div>
+            <div class="card col m-2" style="border-radius: 16px;">
+              <div class="card-body">
+                <p>Select vendor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tier-2" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row body text-center mb-5 m-3">
+            Tier 2
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tier-3" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row body text-center mb-5 m-3">
+            Tier 3
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tier-4" role="tabpanel" aria-labelledby="home-tab">
+          <div class="row body text-center mb-5 m-3">
+            Tier 4
+          </div>
+        </div>
       </div>
-      <div class="col-md-2">
-
-      </div>
-      <div class="col-md-1">
-        <i class="fa fa-angle-right fw-bolder pointer"></i>
-      </div>
-      <hr class="mt-4">
-    </div>
-    <div class="row fw-bolder m-3">
-      <div class="col-md-6">
-        EIN and entity setup
-      </div>
-      <div class="col-md-3">
-
-      </div>
-      <div class="col-md-2">
-
-      </div>
-      <div class="col-md-1">
-        <i class="fa fa-angle-right fw-bolder pointer"></i>
-      </div>
-      <hr class="mt-4">
-    </div>
-    <div class="row fw-bolder m-3">
-      <div class="col-md-6">
-        411 Listing
-      </div>
-      <div class="col-md-3">
-
-      </div>
-      <div class="col-md-2">
-
-      </div>
-      <div class="col-md-1">
-        <i class="fa fa-angle-right fw-bolder pointer"></i>
-      </div>
-      <hr class="mt-4">
-    </div>
-    <div class="row fw-bolder m-3">
-      <div class="col-md-6">
-        Professional email set-up and Lender Compliance check
-      </div>
-      <div class="col-md-3">
-
-      </div>
-      <div class="col-md-2">
-
-      </div>
-      <div class="col-md-1">
-        <i class="fa fa-angle-right fw-bolder pointer"></i>
-      </div>
-      <hr class="mt-4">
     </div>
   </div>
 </div>
 
-<div class="card">
-  <div class="row header m-3">
-    <div class="col">
-      <h4>LCP Enhancement</h4>
-    </div>
-  </div>
-  <div class="body text-center m-5 mt-0">
-    <div class="row">
-      <div class="col-md-6 m-5 mt-0">
-        <p>Credit builder account</p>
-        <input type="text" class="form-control">
+<div *ngIf="stepCorporate">
+  <div class="row mb-3">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="row header m-3 mb-0 ms-0">
+          <div class="col-md-1">
+            <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="backToSteps()"><i class="lnr lnr-menu fa fa-chevron-circle-left" style="color: black ; font-size: 20px;"></i></button>
+          </div>
+          <div class="col">
+            <h5>Corporate address set-up and Lender Compliance check</h5>
+          </div>
+        </div>
+          <hr>
+        <div class="body ms-3 me-3 mb-5">
+          <div class="col">
+            <p><input type="checkbox" class="form-check-input me-2 m-0">
+            Lorem ipsum dolor sit amet</p>
+          </div>
+            <hr class="mt-4">
+          <div class="col">
+            <p><input type="checkbox" class="form-check-input me-2 m-0">
+            Praesent lacinia odio non velit ullamcorper cursus</p>
+          </div>
+            <hr class="mt-4">
+          <div class="col">
+            <p><input type="checkbox" class="form-check-input me-2 m-0">
+            Mauris vel diam auctor</p>
+          </div>
+            <hr class="mt-4">
+          <div class="col">
+            <p><input type="checkbox" class="form-check-input me-2 m-0">
+            Sed efficitur lectus non orci</p>
+          </div>
+            <hr class="mt-4">
+        </div>
       </div>
     </div>
-    <div class="row m-5 mt-0 mb-3">
-      <hr>
-      <div class="col-md-6 p-0">
-        <p>Reporting to</p>
-        <select class="form-select" aria-label="Default select example">
-          <option selected></option>
-          <option value="1">Lorem Ipsum</option>
-          <option value="2">Lorem Ipsum</option>
-          <option value="3">Lorem Ipsum</option>
-        </select>
-        <br>
-        <p>Credit vendor / Lender status</p>
-        <select class="form-select" aria-label="Default select example">
-          <option selected></option>
-          <option value="1">Lorem Ipsum</option>
-          <option value="2">Lorem Ipsum</option>
-          <option value="3">Lorem Ipsum</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <p>Vendor / Lender Details</p>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-      </div>
-    </div>
-    <div class="row m-5 mt-0 mb-3">
-      <div class="col-md-6 p-0">
-        <p>Credit limit</p>
-        <input type="text" class="form-control">
-      </div>
-      <div class="col-md-6">
-        <p>Username</p>
-        <input type="text" class="form-control">
-      </div>
-    </div>
-    <div class="row m-5 mt-0 mb-3">
-      <div class="col-md-6 p-0">
-        <p>Account type</p>
-        <select class="form-select" aria-label="Default select example">
-          <option selected></option>
-          <option value="1">Lorem Ipsum</option>
-          <option value="2">Lorem Ipsum</option>
-          <option value="3">Lorem Ipsum</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <p>Password</p>
-        <input type="text" class="form-control">
-      </div>
-    </div>
-    <div class="row m-5 mt-0 mb-3">
-      <div class="col-md-6 p-0">
-        <p>Payment status</p>
-        <select class="form-select" aria-label="Default select example">
-          <option selected></option>
-          <option value="1">Lorem Ipsum</option>
-          <option value="2">Lorem Ipsum</option>
-          <option value="3">Lorem Ipsum</option>
-        </select>
-      </div>
-    </div>
-    <div class="row m-5 mt-0 mb-3">
-      <div class="col p-0">
-        <p>Upload</p>
-        <div class="card" style="background: #EDF3F399;">
-          <div class="card-body">
-            <div class="row text-start">
-              <div class="col-md-6">
-                Filename
-              </div>
-              <div class="col-md-3">
-                Size
-              </div>
-              <div class="col-md-3">
-                Date
-              </div>
-            </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="header m-3">
+          <button type="button" class="btn btn-warning" style="border-radius: 16px">In progress</button>
+        </div>
+          <hr>
+        <div class="body ms-3 me-3 mb-2">
+          <div class="col">
+            <p>Projected Date of Completion</p>
+            24 Jun 2021
+            <br><br>
+            <p>Cost</p>
+            $ 100.00
+            <br><br>
             <hr>
-            <div class="row text-start fw-bolder">
-              <div class="col-md-6">
-                loremipsum.pdf
+          </div>
+          <div class="col">
+            <p>Assigned Solutionist</p>
+            <div class="row">
+              <div class="col-1">
+                <img src="/assets/images/dashboard/user-pic01.png" class="text-center" alt="...">
               </div>
-              <div class="col-md-3">
-                3 MB
-              </div>
-              <div class="col-md-3">
-                01 Jun 2021
+              <div class="col ms-3">
+                <p>Floyd Miles</p>
               </div>
             </div>
           </div>
@@ -196,4 +230,109 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="header m-3">
+          <h5>Comments</h5>
+        </div>
+        <hr>
+        <div class="body ms-3 me-3 mb-5">
+          <div class="row">
+            <div class="col-1">
+              <img src="/assets/images/dashboard/user-pic01.png" class="text-center" alt="...">
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-3" style="width: 18%;">
+                  <p>Floyd Miles</p>
+                </div>
+                <div class="col">
+                  <span class="date">01 Jun 2021  13:00</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8 container chat ms-3">
+                  <p>Aenean sed lobortis odio. Sed efficitur lectus non orci vehicula hendrerit.
+                    Phasellus commodo felis mi</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1">
+              <img src="/assets/images/dashboard/user-pic01.png" class="text-center" alt="...">
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-3" style="width: 18%;">
+                  <p>Floyd Miles</p>
+                </div>
+                <div class="col">
+                  <span class="date">01 Jun 2021  13:00</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8 container chat ms-3">
+                  <p>Aenean sed lobortis odio. Sed efficitur lectus non orci vehicula hendrerit.
+                    Phasellus commodo felis mi</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-1">
+              <img src="/assets/images/dashboard/profile-default.png" class="text-center" width="40" alt="...">
+            </div>
+            <div class="col">
+              <textarea class="form-control w-50"></textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<div *ngIf="ULine">
+  <div class="row clearfix">
+    <div class="col-lg-8 col-md-8">
+      <div class="card">
+        <div class="header">
+          <h2>My Wallets</h2>
+
+        </div>
+        <div class="body">
+          <div class="row clearfix">
+
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="header">
+          <h2>ToDo List <small>This Month task list</small></h2>
+        </div>
+        <div class="body todo_list">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+      <div class="card">
+        <div class="header">
+          <h2>Twitter Feed</h2>
+        </div>
+        <div class="body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

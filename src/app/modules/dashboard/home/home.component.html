@@ -3,90 +3,72 @@
     <div class="col">
       <div class="card">
         <div class="body m-5">
-          <div class="card" style="box-shadow: 0px 8px 28px 2px rgba(240, 240, 238, 0.8); border: none">
-            <div class="body text-center mb-5">
-              <h3 class="modal-title fw-bolder text-dark">Agreement Contract</h3>
-            </div>
-            <div class="m-5 mt-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo. Aliquam metus metus, ullamcorper vitae facilisis in, pretium non nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis commodo tortor auctor laoreet. Nulla vel urna nec justo aliquam iaculis nec vitae tortor. Mauris ut metus non augue dapibus elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique mauris odio, vel tempor augue aliquet a. Quisque mattis ultricies orci, quis maximus ex condimentum sed.
+          <table id="my-table">
+            <thead>
+            <tr>
+              <th>
+                <div class="body text-center mb-5">
+                  <h3 class="modal-title fw-bolder text-dark">Agreement Contract</h3>
+                </div>
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="m-5 mt-0 mb-0">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo. Aliquam metus metus, ullamcorper vitae facilisis in, pretium non nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis commodo tortor auctor laoreet. Nulla vel urna nec justo aliquam iaculis nec vitae tortor. Mauris ut metus non augue dapibus elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique mauris odio, vel tempor augue aliquet a. Quisque mattis ultricies orci, quis maximus ex condimentum sed.
 
-              Donec sed neque commodo, elementum dolor vitae, vehicula nulla. Morbi vel commodo lectus. Morbi mollis tempus lorem id condimentum. Proin tempor in felis quis blandit. Sed bibendum ac leo at convallis. Ut nec leo eu mi mollis hendrerit. Aenean hendrerit lectus at posuere consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Aenean et finibus lacus. Duis aliquet euismod arcu vitae rhoncus. Duis facilisis nunc id purus volutpat, sed viverra mauris placerat. Ut sodales risus eu massa iaculis elementum. Aenean bibendum sagittis pulvinar. Curabitur suscipit at massa ac ullamcorper.
+                  Donec sed neque commodo, elementum dolor vitae, vehicula nulla. Morbi vel commodo lectus. Morbi mollis tempus lorem id condimentum. Proin tempor in felis quis blandit. Sed bibendum ac leo at convallis. Ut nec leo eu mi mollis hendrerit. Aenean hendrerit lectus at posuere consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Aenean et finibus lacus. Duis aliquet euismod arcu vitae rhoncus. Duis facilisis nunc id purus volutpat, sed viverra mauris placerat. Ut sodales risus eu massa iaculis elementum. Aenean bibendum sagittis pulvinar. Curabitur suscipit at massa ac ullamcorper.
 
-              Vestibulum nec pharetra lectus. Nullam quam libero, volutpat id aliquam convallis, finibus ac justo. Sed tellus velit, tincidunt sit amet dolor at, varius maximus erat. Curabitur nec sagittis risus. Ut facilisis finibus odio, vel iaculis enim maximus nec. Sed ac mollis elit. Nullam aliquet pellentesque arcu, id condimentum mauris ornare nec. Sed aliquet ligula molestie, maximus velit posuere, gravida velit. Duis luctus vulputate consequat. In convallis in nisi eu bibendum
-            </div>
+                  Vestibulum nec pharetra lectus. Nullam quam libero, volutpat id aliquam convallis, finibus ac justo. Sed tellus velit, tincidunt sit amet dolor at, varius maximus erat. Curabitur nec sagittis risus. Ut facilisis finibus odio, vel iaculis enim maximus nec. Sed ac mollis elit. Nullam aliquet pellentesque arcu, id condimentum mauris ornare nec. Sed aliquet ligula molestie, maximus velit posuere, gravida velit. Duis luctus vulputate consequat. In convallis in nisi eu bibendum.
+                </div>
+                <br><br>
+                <div class="row clearfix m-5 mt-0 mb-0 text-start">
+                  <h5>First Name:</h5>
+                  <br>
+                  <p class="ms-5">{{firstName}}</p>
+                  <br>
+                  <h5>Last Name:</h5>
+                  <br>
+                  <p class="ms-5">{{lastName}}</p>
+                </div>
+                <br><br>
+                <div class="container" *ngIf="isSignatureDone">
+                  <div class="row">
+                    <div class="col">
+                      <img src = "{{sigUrl}}" *ngIf="sigUrl" alt='from canvas' width="200"/>
+                    </div>
+                  </div>
+                  <div class="row ms-5">
+                    <div class="col">
+                      <p>Your Signature</p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="container mb-4 ms-5" *ngIf="!isSignatureDone">
             <div class="row">
-              <div class="col text-end me-5" *ngIf="isEdit">
-                <button class="button" type="button" (click)="edit()"><img class="pe-2" src="/assets/images/dashboard/pencil.png">edit</button>
+              <div class="col">
+                <button type="button" class="btn btn-secondary" (click)="clear()">Clear</button>
               </div>
-              <div class="col text-end me-5" *ngIf="!isEdit">
-                <button class="button me-3" type="button" (click)="back()">Back</button>
-                <button class="button submit-btn" type="button" (click)="submit()">Submit</button>
+              <div class="col">
+                <button type="button" class="btn btn-success" (click)="saveSig()" [disabled]="!sigUrl">Save</button>
+              </div>
+              <p>Please sign here:</p>
+              <div class="row" style="border: 1px solid; width: 62%;">
+                <signature-pad  [options]="signaturePadOptions" (onEndEvent)="drawComplete()"></signature-pad>
               </div>
             </div>
+          </div>
+          <div class="text-center mt-5">
+            <button class="btn btn-lg get-started w-50" [disabled]="!isChecked && !isSignatureDone" (click)="agree()">Submit Agreement</button>
+          </div>
 
-            <div class="row clearfix m-5 mt-0 text-start" *ngIf="isSubmit">
-              <p>{{name001}}</p>
-              <p>{{name002}}</p>
-              <p>{{name003}}</p>
-              <p>{{name004}}</p>
-            </div>
-            <div class="row clearfix m-5 mt-0 text-start" *ngIf="!isSubmit">
-              <div class="col-md-3 mb-2">
-                <p>Input001</p>
-                <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name001">
-              </div>
-              <div class="col-md-3 mb-2">
-                <p>Input002</p>
-                <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name002">
-              </div>
-              <div class="col-md-3">
-                <p>Input003</p>
-                <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name003">
-              </div>
-              <div class="col-md-3">
-                <p>Input004</p>
-                <input type="text" class="form-control" value="wadewarren@gmail.com" [readonly]="isReadOnly" [(ngModel)]="name004">
-              </div>
-            </div>
-            <div class="container text-end" *ngIf="isSignatureDone">
-              <div class="row">
-                <div class="col align-self-end">
-                  <img src = "{{sigUrl}}" *ngIf="sigUrl" alt='from canvas' width="200"/>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col align-self-end">
-                  <p style="justify-content: flex-end;">Your Signature</p>
-                  <button type="button" class="btn btn-primary mt-3" (click)="displaySig()">Click to sign again</button>
-                </div>
-              </div>
-            </div>
-            <div class="container mb-4 ms-5" *ngIf="!isSignatureDone">
-              <div class="row">
-                <div class="col">
-                  <button type="button" class="btn btn-secondary" (click)="clear()">Clear</button>
-                </div>
-                <div class="col">
-                  <button type="button" class="btn btn-success" (click)="saveSig()" [disabled]="!sigUrl">Save</button>
-                </div>
-                <p>Please sign here:</p>
-                <div class="row" style="border: 1px solid; width: 62%;">
-                  <signature-pad  [options]="signaturePadOptions" (onEndEvent)="drawComplete()"></signature-pad>
-                </div>
-              </div>
-            </div>
-            <div class="text-center mb-3">
-              <div class="form-check">
-                <input class="form-check-input float-none me-2" type="checkbox" value="" (change)="toggleEditable($event)">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Check if agree!
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="text-center mt-3">
-            <button class="btn btn-lg get-started w-50" [disabled]="!isChecked" (click)="agree()">Submit Agreement</button>
-          </div>
+          <i class="fa fa-download pointer m-5 mb-0 mt-3" aria-hidden="true" style="color: #66ace9;" (click)="downloadPDF()" *ngIf="isSignatureDone"> Click to export pdf</i>
         </div>
       </div>
     </div>
@@ -210,7 +192,7 @@
         <h4>Your Credit Score (Personal)</h4>
       </div>
       <div class="col-md-3">
-        <span class="pointer text-primary">view details</span>
+        <a href="/dashboard/account?steps=credit-details"><span class="pointer text-primary">view details</span></a>
       </div>
       <hr>
     </div>

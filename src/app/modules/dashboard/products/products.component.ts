@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PageUtil} from '../../../utils';
 
 @Component({
   selector: 'app-products',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
+
+  stepCorporate = false;
+  ULine = false;
+
   public chartDonutOptions = {
     resize: true,
     toto: 'roro',
@@ -25,6 +30,18 @@ export class ProductsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showStepCorporate(): void{
+    this.stepCorporate = true;
+  }
+
+  showULine(): void{
+    this.ULine = true;
+  }
+
+  backToSteps(): void{
+    this.stepCorporate = false;
   }
 
 }

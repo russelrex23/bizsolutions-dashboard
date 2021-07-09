@@ -27,6 +27,8 @@ export class HomeComponent implements OnInit {
   name002 = '';
   name003 = '';
   name004 = '';
+  firstName = '';
+  lastName = '';
 
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
 
@@ -77,6 +79,8 @@ export class HomeComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private routeService: RouteService) {
     this.activatedRoute.queryParams.subscribe(params => {
       this.steps = params.steps;
+      this.firstName = params.firstName;
+      this.lastName = params.lastName;
       if (this.steps !== undefined){
         this.isContractSubmit = true;
       }
@@ -84,6 +88,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.firstName);
+    console.log(this.lastName);
   }
 
   selectedGoal(): void{
@@ -178,5 +184,27 @@ export class HomeComponent implements OnInit {
     this.isReadOnly = true;
     this.isEdit = true;
     this.isSubmit = true;
+  }
+
+  importCreditReport(): void{
+    this.routeService.navigate('/dashboard/account');
+  }
+
+  downloadPDF(): void {
+
+    const doc = new jsPDF();
+    const img = this.sigUrl;
+    autoTable(doc, {
+      html: '#my-table',
+      theme: 'plain',
+      headStyles: { halign : 'center'},
+      didDrawCell: function(data) {
+        if (data.column.index === 0 && data.section === 'body') {
+          doc.addImage(img, 'JPEG', data.cell.x + 2, data.cell.y + 85, 15, 10);
+        }
+      }
+    });
+    doc.save('agreement.pdf');
+
   }
 }
