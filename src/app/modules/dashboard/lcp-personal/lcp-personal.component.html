@@ -1,172 +1,341 @@
-<div class="row">
-  <div class="col-md-6">
-    <div class="card mb-3">
-      <div class="header m-3">
-        <h4>Your Credit Score</h4>
-        <hr>
+<div *ngIf="!hutton">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-3">
+        <div class="header m-3">
+          <h4>Your Credit Score</h4>
+          <hr>
+        </div>
+        <div class="body text-center mb-5">
+          <div class="row fw-bolder">
+            <div class="col-md-3">
+              <img src="/assets/images/equifax.png" width="70">
+              <div class="row mt-3">
+                <div class="col">
+                  583
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  222
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  523
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  667
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <img src="/assets/images/experian.png" width="70">
+              <div class="row mt-3">
+                <div class="col">
+                  988
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  676
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  554
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  112
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <img src="/assets/images/transunion.png" width="70">
+              <div class="row mt-3">
+                <div class="col">
+                  154
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  876
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  098
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  444
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div mkMorrisJs="Bar" [options]="chart" [data]="chartAreaData" style="height: 250px"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="body text-center mb-5">
-        <div class="row fw-bolder">
-          <div class="col-md-4">
-            EQUIFAX
-            <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card mb-3">
+        <div class="row header m-3">
+          <div class="col">
+            <h4>Dispute Status</h4>
           </div>
-          <div class="col-md-4">
-            EXPERIAN
-            <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+          <div class="col mb-2">
+            <select class="form-select" aria-label="Default select example">
+              <option selected></option>
+              <option value="1">Lorem Ipsum</option>
+              <option value="2">Lorem Ipsum</option>
+              <option value="3">Lorem Ipsum</option>
+            </select>
           </div>
-          <div class="col-md-4">
-            TRANSUNION
-            <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style=" height: 200px;"></div>
+          <hr>
+        </div>
+        <div class="body text-center mb-5">
+          <div class="row fw-bolder">
+            <div class="col-md-3">
+              <img src="/assets/images/equifax.png" width="70">
+              <div class="row mt-3">
+                <div class="col">
+                  583
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  222
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  523
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  667
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <img src="/assets/images/experian.png" width="70">
+              <div class="row mt-3">
+                <div class="col">
+                  988
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  676
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  554
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  112
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <img src="/assets/images/transunion.png" width="70">
+              <div class="row mt-3">
+                <div class="col">
+                  154
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  876
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  098
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  444
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div mkMorrisJs="Donut" [options]="chartDonutOptions" [data]="chartDonutData" style="height: 250px"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="col-md-6">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card mb-3">
+        <div class="row header m-3">
+          <div class="col">
+            <h4>Revolving Utilization Analysis</h4>
+          </div>
+          <hr>
+        </div>
+        <div class="body text-center mb-5">
+          <div class="card m-3" style="background: #EDF3F399;">
+            <div class="card-body">
+              <div class="row text-start">
+                <div class="col-md-4">
+                  Open Revolving Tradelines
+                </div>
+                <div class="col-md-2">
+                  Balance
+                </div>
+                <div class="col-md-2">
+                  Credit limit
+                </div>
+                <div class="col-md-2">
+                  Utilization Rate
+                </div>
+                <div class="col-md-2">
+                  Amount to Pay
+                </div>
+              </div>
+              <hr>
+              <div class="row text-start fw-bolder">
+                <div class="col-md-4">
+                  Bank of America
+                </div>
+                <div class="col-md-2">
+                  1,500
+                </div>
+                <div class="col-md-2">
+                  3,000
+                </div>
+                <div class="col-md-2">
+                  <span class="text-danger">50%</span>
+                </div>
+                <div class="col-md-2">
+                  200
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-3 h-75">
+        <div class="row header m-3">
+          <div class="col">
+            <h4>Average of account</h4>
+          </div>
+        </div>
+        <div class="body text-center mb-5 mt-3">
+          <button class="btn btn-lg get-started" (click)="showSimulate()">Simulate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="row header m-3">
+          <div class="col mb-3">
+            <h4>LCP Enhancement</h4>
+          </div>
+          <hr>
+        </div>
+        <div class="body text-center m-5 mt-0">
+          <div class="row">
+            <div class="card col p-0 m-2 pointer" style="border-radius: 16px;" (click)="showHutton()">
+              <div class="card-header" style="border-radius: 16px; height: 60px">
+                <img src="/assets/images/hutton.png" class="text-center" alt="...">
+              </div>
+              <div class="card-body">
+                <p class="card-text">Hutton Chase Department Store</p>
+                <div class="row">
+                  <div class="col">
+                    <p class="card-text">$ 200</p>
+                  </div>
+                  <div class="col">
+                    <button type="button" class="btn btn-warning" style="border-radius: 16px">In progress</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card col p-0 m-2 pointer" style="border-radius: 16px;">
+              <div class="card-header" style="border-radius: 16px; height: 60px">
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+            <div class="card col p-0 m-2 pointer" style="border-radius: 16px;">
+              <div class="card-header" style="border-radius: 16px; height: 60px">
+              </div>
+              <div class="card-body">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col mt-3">
     <div class="card mb-3">
       <div class="row header m-3">
         <div class="col">
-          <h4>Dispute Status</h4>
-        </div>
-        <div class="col mb-2">
-          <select class="form-select" aria-label="Default select example">
-            <option selected></option>
-            <option value="1">Lorem Ipsum</option>
-            <option value="2">Lorem Ipsum</option>
-            <option value="3">Lorem Ipsum</option>
-          </select>
+          <h4>LCP Removal</h4>
         </div>
         <hr>
       </div>
-      <div class="body text-center mb-5">
-        <div class="row fw-bolder">
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col">
-  <div class="card mb-3">
-    <div class="row header m-3">
-      <div class="col">
-        <h4>Average of account</h4>
-      </div>
-      <div class="col text-end mb-2">
-        <button class="btn btn-lg get-started">Simulate</button>
-      </div>
-      <hr>
-    </div>
-    <div class="body text-center mb-5">
-      <div class="row fw-bolder">
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="row header m-3">
-    <div class="col">
-      <h4>LCP Enhancement</h4>
-    </div>
-  </div>
-  <div class="body text-center m-5 mt-0">
-    <div class="row">
-      <div class="col-md-6 m-5 mt-0">
-        <p>Credit builder account</p>
-        <input type="text" class="form-control">
-      </div>
-    </div>
-    <div class="row m-5 mt-0 mb-3">
-      <hr>
-      <div class="col-md-6 p-0">
-        <p>Reporting to</p>
-        <select class="form-select" aria-label="Default select example">
-          <option selected></option>
-          <option value="1">Lorem Ipsum</option>
-          <option value="2">Lorem Ipsum</option>
-          <option value="3">Lorem Ipsum</option>
-        </select>
-        <br>
-        <p>Credit vendor / Lender status</p>
-        <select class="form-select" aria-label="Default select example">
-          <option selected></option>
-          <option value="1">Lorem Ipsum</option>
-          <option value="2">Lorem Ipsum</option>
-          <option value="3">Lorem Ipsum</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <p>Vendor / Lender Details</p>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-      </div>
-    </div>
-    <div class="row m-5 mt-0 mb-3">
-      <div class="col-md-6 p-0">
-        <p>Credit limit</p>
-        <input type="text" class="form-control">
-      </div>
-      <div class="col-md-6">
-        <p>Username</p>
-        <input type="text" class="form-control">
-      </div>
-    </div>
-    <div class="row m-5 mt-0 mb-3">
-      <div class="col-md-6 p-0">
-        <p>Account type</p>
-        <select class="form-select" aria-label="Default select example">
-          <option selected></option>
-          <option value="1">Lorem Ipsum</option>
-          <option value="2">Lorem Ipsum</option>
-          <option value="3">Lorem Ipsum</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <p>Password</p>
-        <input type="text" class="form-control">
-      </div>
-    </div>
-    <div class="row m-5 mt-0 mb-3">
-      <div class="col-md-6 p-0">
-        <p>Payment status</p>
-        <select class="form-select" aria-label="Default select example">
-          <option selected></option>
-          <option value="1">Lorem Ipsum</option>
-          <option value="2">Lorem Ipsum</option>
-          <option value="3">Lorem Ipsum</option>
-        </select>
-      </div>
-    </div>
-    <div class="row m-5 mt-0 mb-3">
-      <div class="col p-0">
-        <p>Upload</p>
+      <div class="body text-center m-5 mt-0">
         <div class="card" style="background: #EDF3F399;">
           <div class="card-body">
             <div class="row text-start">
-              <div class="col-md-6">
-                Filename
+              <div class="col-md-2">
+                Negative item type
               </div>
-              <div class="col-md-3">
-                Size
+              <div class="col-md-4">
+                Description
               </div>
-              <div class="col-md-3">
-                Date
+              <div class="col-md-2">
+                Experian
+              </div>
+              <div class="col-md-2">
+                Equifax
+              </div>
+              <div class="col-md-2">
+                Transunion
               </div>
             </div>
             <hr>
             <div class="row text-start fw-bolder">
-              <div class="col-md-6">
-                loremipsum.pdf
+              <div class="col-md-2">
+                Loremipsum
               </div>
-              <div class="col-md-3">
-                3 MB
+              <div class="col-md-4">
+                Loremipsum
               </div>
-              <div class="col-md-3">
-                01 Jun 2021
+              <div class="col-md-2">
+                Loremipsum
+              </div>
+              <div class="col-md-2">
+                Loremipsum
+              </div>
+              <div class="col-md-2">
+                Loremipsum
               </div>
             </div>
           </div>
@@ -176,53 +345,203 @@
   </div>
 </div>
 
-<div class="col mt-3">
-  <div class="card mb-3">
-    <div class="row header m-3">
-      <div class="col">
-        <h4>LCP Removal</h4>
+<div *ngIf="hutton">
+  <div class="row clearfix">
+    <div class="col-lg-8 col-md-8">
+      <div class="card mb-3">
+        <div class="row header m-3 mb-0 ms-0">
+          <div class="col-md-1">
+            <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="backToSteps()"><i class="lnr lnr-menu fa fa-chevron-circle-left" style="color: black ; font-size: 20px;"></i></button>
+          </div>
+          <div class="col">
+            <h5>Hutton Chase Department Store</h5>
+          </div>
+        </div>
+        <hr>
+        <div class="body ms-3 me-3 mb-5">
+          <div class="col">
+            <p><input type="checkbox" class="form-check-input me-2 m-0">
+              Lorem ipsum dolor sit amet</p>
+          </div>
+          <hr class="mt-4">
+          <div class="col">
+            <p><input type="checkbox" class="form-check-input me-2 m-0">
+              Praesent lacinia odio non velit ullamcorper cursus</p>
+          </div>
+          <hr class="mt-4">
+          <div class="col">
+            <p><input type="checkbox" class="form-check-input me-2 m-0">
+              Mauris vel diam auctor</p>
+          </div>
+          <hr class="mt-4">
+          <div class="col">
+            <p><input type="checkbox" class="form-check-input me-2 m-0">
+              Sed efficitur lectus non orci</p>
+          </div>
+          <hr class="mt-4">
+        </div>
       </div>
-      <div class="col text-end mb-2">
-        <button class="btn btn-lg get-started">Add item</button>
+      <div class="card mb-3">
+        <div class="row header m-3 mb-0 ms-0">
+          <div class="col">
+            <h5>Details</h5>
+          </div>
+        </div>
+        <hr>
+        <div class="body ms-3 me-3 mb-5">
+          <div class="row clearfix">
+            <div class="col-lg-6 col-md-6">
+              <div class="row clearfix text-start">
+                <div class="col-md-12 mb-2">
+                  <p>Reporting to</p>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="row clearfix text-start">
+                <div class="col-md-12 mb-2">
+                  <p>Credit vendor / Lender status</p>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="row clearfix text-start">
+                <div class="col-md-12 mb-2">
+                  <p>Credit limit</p>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="row clearfix text-start">
+                <div class="col-md-12 mb-2">
+                  <p>Account type</p>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <div class="row clearfix text-start">
+                <div class="col-md-12 mb-2">
+                  <p>Vendor / Lender details</p>
+                  <input type="text" class="form-control" style="height: 125px;">
+                </div>
+              </div>
+              <div class="row clearfix text-start">
+                <div class="col-md-12 mb-2">
+                  <p>Username</p>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="row clearfix text-start">
+                <div class="col-md-12 mb-2">
+                  <p>Password</p>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <hr>
-    </div>
-    <div class="body text-center m-5 mt-0">
-      <div class="card" style="background: #EDF3F399;">
-        <div class="card-body">
-          <div class="row text-start">
-            <div class="col-md-2">
-              Negative item type
+
+      <div class="card mb-3">
+        <div class="header m-3">
+          <h5>Comments</h5>
+        </div>
+        <hr>
+        <div class="body ms-3 me-3 mb-5">
+          <div class="row">
+            <div class="col-1">
+              <img src="/assets/images/dashboard/user-pic01.png" class="text-center" alt="...">
             </div>
-            <div class="col-md-4">
-              Description
+            <div class="col">
+              <div class="row">
+                <div class="col-3" style="width: 18%;">
+                  <p>Floyd Miles</p>
+                </div>
+                <div class="col">
+                  <span class="date">01 Jun 2021  13:00</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8 container chat ms-3">
+                  <p>Aenean sed lobortis odio. Sed efficitur lectus non orci vehicula hendrerit.
+                    Phasellus commodo felis mi</p>
+                </div>
+              </div>
             </div>
-            <div class="col-md-2">
-              Experian
+          </div>
+          <div class="row">
+            <div class="col-1">
+              <img src="/assets/images/dashboard/user-pic01.png" class="text-center" alt="...">
             </div>
-            <div class="col-md-2">
-              Equifax
-            </div>
-            <div class="col-md-2">
-              Transunion
+            <div class="col">
+              <div class="row">
+                <div class="col-3" style="width: 18%;">
+                  <p>Floyd Miles</p>
+                </div>
+                <div class="col">
+                  <span class="date">01 Jun 2021  13:00</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8 container chat ms-3">
+                  <p>Aenean sed lobortis odio. Sed efficitur lectus non orci vehicula hendrerit.
+                    Phasellus commodo felis mi</p>
+                </div>
+              </div>
             </div>
           </div>
           <hr>
-          <div class="row text-start fw-bolder">
-            <div class="col-md-2">
-              Loremipsum
+          <div class="row">
+            <div class="col-1">
+              <img src="/assets/images/dashboard/profile-default.png" class="text-center" width="40" alt="...">
             </div>
-            <div class="col-md-4">
-              Loremipsum
+            <div class="col">
+              <textarea class="form-control w-75"></textarea>
             </div>
-            <div class="col-md-2">
-              Loremipsum
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+      <div class="card mb-3">
+        <div class="header m-3">
+          <button type="button" class="btn btn-warning" style="border-radius: 16px">In progress</button>
+        </div>
+        <hr>
+        <div class="body ms-3 me-3 mb-5">
+          <div class="col">
+            <img src="/assets/images/hutton.png" class="text-center w-100" alt="...">
+          </div>
+          <hr class="mt-4">
+          <div class="row clearfix text-start">
+            <div class="col-md-12 mb-2">
+              <p>Credit Builder Account</p>
+              <h5>Hutton Chase Department Store</h5>
             </div>
-            <div class="col-md-2">
-              Loremipsum
+          </div>
+          <div class="row clearfix text-start">
+            <div class="col-md-12 mb-2">
+              <p>Website</p>
+              <h5>https://www.uline.com</h5>
             </div>
-            <div class="col-md-2">
-              Loremipsum
+          </div>
+          <div class="row clearfix text-start">
+            <div class="col-md-12 mb-2">
+              <p>Projected Date of Completion</p>
+              <h5>24 Jun 2021</h5>
+            </div>
+          </div>
+          <div class="row clearfix text-start">
+            <div class="col-md-12 mb-2">
+              <p>Cost</p>
+              <h5>$ 100.00</h5>
+            </div>
+          </div>
+          <hr>
+          <div class="row clearfix text-start">
+            <div class="col-1 mt-3 me-3">
+              <img src="/assets/images/dashboard/user-pic01.png" class="text-center" alt="...">
+            </div>
+            <div class="col mt-3 ">
+              <p>Floyd Miles</p>
             </div>
           </div>
         </div>
@@ -231,3 +550,78 @@
   </div>
 </div>
 
+<!--START SIMULATE MODAL-->
+<div id="simulate" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0;">
+        <h5 class="modal-title fw-bolder">Average Age of Account Calculator</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body m-3 ms-0 me-0 mb-0">
+        <div class="row text-start fw-bolder">
+          <div class="col-md-4">
+            <p>Creditor</p>
+          </div>
+          <div class="col-md-2">
+            <p>Date Opened</p>
+          </div>
+          <div class="col-md-3">
+            <p>Age of account</p>
+          </div>
+          <div class="col-md-3">
+            <p>Future Age of account</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row text-start fw-bolder">
+          <div class="col-md-4">
+            <p><input type="checkbox" class="form-check-input me-2 m-0">
+              1</p>
+          </div>
+          <div class="col-md-2">
+            <p>Date Opened</p>
+          </div>
+          <div class="col-md-3">
+            <p>Age of account</p>
+          </div>
+          <div class="col-md-3">
+            <p>Future Age of account</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row text-start fw-bolder">
+          <div class="col-md-4">
+            <p><input type="checkbox" class="form-check-input me-2 m-0">
+              2</p>
+          </div>
+          <div class="col-md-2">
+            <p>Date Opened</p>
+          </div>
+          <div class="col-md-3">
+            <p>Age of account</p>
+          </div>
+          <div class="col-md-3">
+            <p>Future Age of account</p>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="row m-3 mb-5">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+          Current AAoA <img src="/assets/images/info.png">
+          <input type="text" class="form-control mt-2 ave">
+        </div>
+        <div class="col-md-3">
+          Future AAoA <img src="/assets/images/info.png">
+          <input type="text" class="form-control mt-2 ave">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END SIMULATE MODAL-->

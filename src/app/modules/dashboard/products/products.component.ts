@@ -42,6 +42,7 @@ export class ProductsComponent implements OnInit {
 
   backToSteps(): void{
     this.stepCorporate = false;
+    this.ULine = false;
   }
 
 }
