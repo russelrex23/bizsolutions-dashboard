@@ -44,7 +44,7 @@ select option:hover {
 
 select{
   height: 50px;
-  background-color: #EDF3F3;
+  /*background-color: #EDF3F3;*/
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
@@ -138,7 +138,8 @@ p{
 
 .form-select{
   overflow: hidden;
-  border:0;
-  box-shadow: none;
+  border: 1px solid #cfd5d5;
   padding: 0;
+  box-shadow: 0px 4px 10px -4px rgb(236 239 244 / 70%);
+  border-radius: 16px;
 }

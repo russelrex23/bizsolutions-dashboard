@@ -9,8 +9,9 @@ p{
   color: #787D8D;
 }
 
-input, select, textarea{
+input, select{
   border-radius: 16px;
+  background: rgba(237, 243, 243, 0.6);
 }
 
 .ave{
@@ -24,3 +25,17 @@ input, select, textarea{
   background: rgba(237, 243, 243, 0.6);
   border-radius: 8px;
 }
+
+.date{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+
+  /* label - light */
+
+  color: #C9CBD1;
+}
+

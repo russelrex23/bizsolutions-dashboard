@@ -458,6 +458,14 @@
             </div>
 
             <div class="m-3">
+              <div class="row clearfix mb-3 text-start">
+                <div class="col-md-1 text-end">
+                  <img src="/assets/images/info.png">
+                </div>
+                <div class="col-md-11">
+                  <span class="p-0">This payment information will be used in transacting with lenders and other 3rd party service providers.</span>
+                </div>
+              </div>
               <div class="row clearfix mb-2 text-start">
                 <div class="col-md-8">
                   <p>Name as it appears on the card</p>
@@ -548,16 +556,115 @@
               <div class="header m-3 text-start">
                 <h4>Billing Address</h4>
               </div>
-                <div class="row clearfix mb-2 ms-md-4 text-start">
+                <div class="row clearfix mb-4 ms-md-4 text-start">
                   <div class="col-md-4">
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
+                      <input class="form-check-input" type="checkbox" checked (change)="billAdd($event)">
+                      <label class="form-check-label">
                         Same as Home Address
                       </label>
                     </div>
                   </div>
                 </div>
+              <div class="row clearfix mb-2 text-start" *ngIf="!isBillingAddress">
+                <div class="col-md-12">
+                    <div class="row clearfix mb-2 text-start">
+                      <div class="col-md-12">
+                        <p>Street Address</p>
+                        <input type="text" class="form-control" value="">
+                      </div>
+                    </div>
+                    <div class="row clearfix mb-2 text-start">
+                      <div class="col-md-12">
+                        <p>Street Address 2</p>
+                        <input type="text" class="form-control" value="">
+                      </div>
+                    </div>
+                    <div class="row clearfix mb-2 text-start">
+                      <div class="col-md-6 mb-2">
+                        <p>City</p>
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected></option>
+                          <option value="1">Lorem Ipsum</option>
+                          <option value="2">Lorem Ipsum</option>
+                          <option value="3">Lorem Ipsum</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <p>State</p>
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected></option>
+                          <option value="1">Lorem Ipsum</option>
+                          <option value="2">Lorem Ipsum</option>
+                          <option value="3">Lorem Ipsum</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row clearfix mb-2 text-start">
+                      <div class="col-md-4">
+                        <p>Zip code</p>
+                        <input type="text" class="form-control" value="">
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <hr>
+              <div class="header m-3 text-start">
+                <h4>Shipping Address</h4>
+              </div>
+              <div class="row clearfix mb-4 ms-md-4 text-start">
+                <div class="col-md-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" checked (change)="shipAdd($event)">
+                    <label class="form-check-label">
+                      Same as Home Address
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row clearfix mb-2 text-start" *ngIf="!isShippingAddress">
+                <div class="col-md-12">
+                  <div class="row clearfix mb-2 text-start">
+                    <div class="col-md-12">
+                      <p>Street Address</p>
+                      <input type="text" class="form-control" value="">
+                    </div>
+                  </div>
+                  <div class="row clearfix mb-2 text-start">
+                    <div class="col-md-12">
+                      <p>Street Address 2</p>
+                      <input type="text" class="form-control" value="">
+                    </div>
+                  </div>
+                  <div class="row clearfix mb-2 text-start">
+                    <div class="col-md-6 mb-2">
+                      <p>City</p>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected></option>
+                        <option value="1">Lorem Ipsum</option>
+                        <option value="2">Lorem Ipsum</option>
+                        <option value="3">Lorem Ipsum</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <p>State</p>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected></option>
+                        <option value="1">Lorem Ipsum</option>
+                        <option value="2">Lorem Ipsum</option>
+                        <option value="3">Lorem Ipsum</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row clearfix mb-2 text-start">
+                    <div class="col-md-4">
+                      <p>Zip code</p>
+                      <input type="text" class="form-control" value="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
               <div class="row mt-5">
                 <div class="col text-start">
                   <button class="button" type="button" (click)="stepThree()">Back</button>

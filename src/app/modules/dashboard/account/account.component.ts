@@ -3,6 +3,7 @@ import {PageUtil} from '../../../utils';
 import { MorrisJsModule } from 'angular-morris-js';
 import {RouteService} from '../../../services/route.service';
 import {ActivatedRoute} from '@angular/router';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-account',
@@ -38,15 +39,30 @@ export class AccountComponent implements OnInit {
   isImportCreditReportDone = false;
   type = 1;
   creditSteps = 0;
+  editUnderwriting = false;
 
-  constructor(private routeService: RouteService, private activatedRoute: ActivatedRoute) {
+// ********Underwriting********//
+  response01 = 'Yes';
+  countryForm = this.fb.group({
+    countryControl: new FormControl('')
+  });
+
+  languages = [
+    {value: 'y', title : 'Yes'},
+    {value: 'n', title : 'No'}
+  ];
+  selectedValues = ['y'];
+
+  constructor(private routeService: RouteService, private activatedRoute: ActivatedRoute, private fb: FormBuilder) {
     this.activatedRoute.queryParams.subscribe(params => {
       this.steps = params.steps;
     });
   }
 
   ngOnInit(): void {
-
+    this.countryForm = this.fb.group({
+      countryControl: ['Canada']
+    });
   }
 
   handleFileInput(files: FileList): void {

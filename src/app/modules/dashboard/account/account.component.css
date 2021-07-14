@@ -110,3 +110,12 @@ select{
   top: 0;
   left: 0;
 }
+
+table tr td {
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 28px;
+  color: #261A30;
+}

@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
   name004 = '';
   firstName = '';
   lastName = '';
+  isBillingAddress = true;
+  isShippingAddress = true;
 
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
 
@@ -88,8 +90,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.firstName);
-    console.log(this.lastName);
+    // this.isBillingAddress = false;
   }
 
   selectedGoal(): void{
@@ -100,6 +101,15 @@ export class HomeComponent implements OnInit {
 
   toggleEditable(event): void {
     this.isChecked = event.target.checked;
+    this.isBillingAddress = event.target.checked;
+  }
+
+  billAdd(event): void {
+    this.isBillingAddress = event.target.checked;
+  }
+
+  shipAdd(event): void {
+    this.isShippingAddress = event.target.checked;
   }
 
   redirectToCreditReport(): void {
