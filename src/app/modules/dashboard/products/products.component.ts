@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PageUtil} from '../../../utils';
+import {AngularEditorConfig} from "@kolkov/angular-editor";
 
 @Component({
   selector: 'app-products',
@@ -7,9 +8,81 @@ import {PageUtil} from '../../../utils';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  fileToUpload: File;
+  comment = '';
+  msg = '';
+  url: string | ArrayBuffer = '';
+  isCommentSend = false;
+  commentMsg = '';
+  commentUrl: string | ArrayBuffer = '';
   stepCorporate = false;
   ULine = false;
+  fieldTextType: boolean;
+
+  editorConfig: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: 'auto',
+    minHeight: '0',
+    maxHeight: 'auto',
+    width: 'auto',
+    minWidth: '0',
+    translate: 'yes',
+    enableToolbar: true,
+    showToolbar: true,
+    placeholder: 'Enter text here...',
+    defaultParagraphSeparator: '',
+    defaultFontName: '',
+    defaultFontSize: '',
+    fonts: [
+      {class: 'arial', name: 'Arial'},
+      {class: 'times-new-roman', name: 'Times New Roman'},
+      {class: 'calibri', name: 'Calibri'},
+      {class: 'comic-sans-ms', name: 'Comic Sans MS'}
+    ],
+    customClasses: [
+      {
+        name: 'quote',
+        class: 'quote',
+      },
+      {
+        name: 'redText',
+        class: 'redText'
+      },
+      {
+        name: 'titleText',
+        class: 'titleText',
+        tag: 'h1',
+      },
+    ],
+    uploadUrl: 'v1/image',
+    // @ts-ignore
+    upload: (file: File) => {
+      this.fileToUpload = file;
+      const mimeType = file.type;
+
+      if (mimeType.match(/image\/*/) == null) {
+        this.msg = 'Only images are supported';
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      // tslint:disable-next-line:variable-name
+      reader.onload = (_event) => {
+        this.msg = '';
+        this.url = reader.result;
+      };
+    },
+    uploadWithCredentials: false,
+    sanitize: true,
+    toolbarPosition: 'top',
+    toolbarHiddenButtons: [
+      ['bold', 'italic'],
+      ['fontSize']
+    ]
+  };
 
   public chartDonutOptions = {
     resize: true,
@@ -18,7 +91,6 @@ export class ProductsComponent implements OnInit {
       '#F15A24',
       '#F5891D'
     ],
-    // labelColor: '#cc241c',
   };
 
   public chartDonutData = [
@@ -30,6 +102,10 @@ export class ProductsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleFieldTextType(): void {
+    this.fieldTextType = !this.fieldTextType;
   }
 
   showStepCorporate(): void{
@@ -45,4 +121,9 @@ export class ProductsComponent implements OnInit {
     this.ULine = false;
   }
 
+  sendComment(): void{
+    this.isCommentSend = true;
+    this.commentMsg = this.comment;
+    this.commentUrl = this.url;
+  }
 }

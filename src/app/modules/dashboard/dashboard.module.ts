@@ -11,6 +11,7 @@ import { MorrisJsModule } from 'angular-morris-js';
 import { SignaturePadModule } from 'angular2-signaturepad';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LcpPersonalComponent } from './lcp-personal/lcp-personal.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LcpPersonalComponent } from './lcp-personal/lcp-personal.component';
     MorrisJsModule,
     SignaturePadModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AngularEditorModule
   ]
 })
 export class DashboardModule { }
