@@ -31,6 +31,13 @@ export class HomeComponent implements OnInit {
   lastName = '';
   isBillingAddress = true;
   isShippingAddress = true;
+  type = 1;
+  creditSteps = 0;
+  fileToUpload: File | null = null;
+  file01: File | null = null;
+  file02: File | null = null;
+  file03: File | null = null;
+  editUnderwriting = false;
 
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
 
@@ -93,10 +100,53 @@ export class HomeComponent implements OnInit {
     // this.isBillingAddress = false;
   }
 
+  handleFileInput(files: FileList): void {
+    this.fileToUpload = files.item(0);
+  }
+
+  handleFile01(files: FileList): void {
+    this.file01 = files.item(0);
+  }
+
+  handleFile02(files: FileList): void {
+    this.file02 = files.item(0);
+  }
+
+  handleFile03(files: FileList): void {
+    this.file03 = files.item(0);
+  }
+
+  deleteFile(): void{
+    this.fileToUpload = null;
+  }
+
+  deleteFile01(): void{
+    this.file01 = null;
+  }
+
+  deleteFile02(): void{
+    this.file02 = null;
+  }
+
+  deleteFile03(): void{
+    this.file03 = null;
+  }
+
+  backToSelect($type): void{
+    if ($type === 'credit'){
+      PageUtil.showModal('showNoIdentityIq');
+      PageUtil.hideModal('showIdentityIq');
+    }else{
+      PageUtil.showModal('showNoIdentityIq');
+      PageUtil.hideModal('uploadDocument');
+    }
+  }
+
   selectedGoal(): void{
     this.isGoalSelected = true;
     this.isCreditReport = true;
     PageUtil.hideModal('goals');
+    PageUtil.click('pills-third-tab');
   }
 
   toggleEditable(event): void {
@@ -124,6 +174,7 @@ export class HomeComponent implements OnInit {
     PageUtil.hideModal('agreement');
     this.isContractSubmit = true;
     this.isGoalSelected = false;
+    PageUtil.click('pills-second-tab');
   }
 
   showGoals(): void {
@@ -215,6 +266,67 @@ export class HomeComponent implements OnInit {
       }
     });
     doc.save('agreement.pdf');
+  }
 
+  showTier(): void{
+    PageUtil.showModal('showTier');
+  }
+
+  showNoIdentityIqModal(): void{
+    PageUtil.showModal('showNoIdentityIq');
+  }
+
+  showIdentityIqModal(): void{
+    PageUtil.showModal('showIdentityIq');
+  }
+
+  creditReportCredentials(): void{
+    this.creditSteps = 1;
+    PageUtil.hideModal('showNoIdentityIq');
+    PageUtil.showModal('creditReportCredentials');
+  }
+
+  credentialSuccess(): void{
+    PageUtil.hideModal('creditReportCredentials');
+    PageUtil.showModal('credentialSuccess');
+  }
+
+  uploadDocument(): void{
+    PageUtil.hideModal('credentialSuccess');
+    PageUtil.showModal('uploadDocument');
+  }
+
+  firstStep(): void{
+    PageUtil.click('pills-first-tab');
+  }
+
+  secondStep(): void{
+    PageUtil.click('pills-second-tab');
+  }
+
+  thirdStep(): void{
+    PageUtil.click('pills-third-tab');
+  }
+
+  fourthStep(): void{
+    PageUtil.hideModal('credentialSuccess');
+    PageUtil.hideModal('showIdentityIq');
+    PageUtil.click('pills-fourth-tab');
+  }
+
+  fifthStep(): void{
+    PageUtil.click('pills-fifth-tab');
+  }
+
+  sixthStep(): void{
+    PageUtil.click('pills-sixth-tab');
+  }
+
+  seventhStep(): void{
+    PageUtil.click('pills-seventh-tab');
+  }
+
+  done(): void{
+    PageUtil.click('');
   }
 }

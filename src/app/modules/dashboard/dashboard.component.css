@@ -46,102 +46,6 @@ a:focus {
   margin: 40px 0;
 }
 
-/*!* ---------------------------------------------------*/
-/*    SIDEBAR STYLE*/
-/*----------------------------------------------------- *!*/
-
-/*.wrapper {*/
-/*  display: flex;*/
-/*  width: 100%;*/
-/*  align-items: stretch;*/
-/*}*/
-
-/*#sidebar {*/
-/*  min-width: 300px;*/
-/*  max-width: 300px;*/
-/*  background: #1D2B51;*/
-/*  color: #fff;*/
-/*  transition: all 0.3s;*/
-/*}*/
-
-/*#sidebar.active {*/
-/*  margin-left: -300px;*/
-/*}*/
-
-/*#sidebar .sidebar-header {*/
-/*  padding: 20px;*/
-/*  background: #1D2B51;*/
-/*}*/
-
-/*#sidebar ul.components {*/
-/*  padding: 20px 0;*/
-/*  border-bottom: 1px solid #47748b;*/
-/*}*/
-
-/*#sidebar ul p {*/
-/*  color: #fff;*/
-/*  padding: 10px;*/
-/*}*/
-
-/*#sidebar ul li a {*/
-/*  padding: 10px;*/
-/*  font-size: 1.1em;*/
-/*  display: block;*/
-/*}*/
-
-/*#sidebar ul li a:hover {*/
-/*  color: #7386D5;*/
-/*  background: #261A3066;*/
-/*}*/
-
-/*#sidebar ul li.active>a,*/
-/*a[aria-expanded="true"] {*/
-/*  color: #fff;*/
-/*  background: #261A3066;*/
-/*}*/
-
-/*a[data-toggle="collapse"] {*/
-/*  position: relative;*/
-/*}*/
-
-/*.dropdown-toggle::after {*/
-/*  display: block;*/
-/*  position: absolute;*/
-/*  top: 50%;*/
-/*  right: 20px;*/
-/*  transform: translateY(-50%);*/
-/*}*/
-
-/*ul ul a {*/
-/*  font-size: 0.9em !important;*/
-/*  padding-left: 30px !important;*/
-/*  background: #6d7fcc;*/
-/*}*/
-
-/*ul.CTAs a {*/
-/*  text-align: center;*/
-/*  font-size: 0.9em !important;*/
-/*  display: block;*/
-/*  border-radius: 5px;*/
-/*  margin-bottom: 5px;*/
-/*}*/
-
-/*a.download {*/
-/*  background: #fff;*/
-/*  color: #7386D5;*/
-/*}*/
-
-/*a.article,*/
-/*a.article:hover {*/
-/*  background: #6d7fcc !important;*/
-/*  color: #fff !important;*/
-/*}*/
-
-
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
-
 .wrapper {
   display: flex;
   align-items: stretch;
@@ -310,4 +214,45 @@ button.button:hover {
   color: black;
   font-weight: bolder;
   opacity: 0.4;
+}
+
+.payment-container {
+  background: white;
+  color: black;
+  padding: 2rem;
+}
+
+.page-container{
+  width: 38px;
+  height: 38px;
+  color: #1D2B51;
+  background: #858fa2;
+  border-radius: 20px;
+  text-align: center;
+  padding: 0;
+}
+
+.page-num{
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-shadow: 0px 1px 6px rgba(225, 255, 255, 0.5);
+}
+
+.nav-pills .link.active, .nav-pills .show>.link {
+  color: white;
+  background: linear-gradient(103.88deg, #27ACE7 8.14%, #4BEBCF 93.22%);
+}
+
+.nav-pills .nav-payment.active, .nav-pills .show>.nav-payment {
+  position: relative;
+  background: linear-gradient(103.88deg, #27ACE7 8.14%, #4BEBCF 93.22%);
+  padding: 2px;
+}
+
+.list-text
+{
+  color: #CCFFFF;
 }

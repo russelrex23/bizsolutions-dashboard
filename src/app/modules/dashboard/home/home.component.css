@@ -3,31 +3,31 @@
   padding: 20px;
 }
 
-.underwriting {
-  font-weight: bolder;
-  text-align: start;
-}
+/*.underwriting {*/
+/*  font-weight: bolder;*/
+/*  text-align: start;*/
+/*}*/
 
-.underwriting tr {
-  height: 70px;
-  vertical-align: middle;
-}
+/*.underwriting tr {*/
+/*  height: 70px;*/
+/*  vertical-align: middle;*/
+/*}*/
 
-.underwriting tr td input {
-  background: #FFFFFF;
-  border: 1px solid #27ACE7;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
-  border-radius: 16px;
-}
+/*.underwriting tr td input {*/
+/*  background: #FFFFFF;*/
+/*  border: 1px solid #27ACE7;*/
+/*  box-sizing: border-box;*/
+/*  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);*/
+/*  border-radius: 16px;*/
+/*}*/
 
-.underwriting tr td textarea {
-  background: #FFFFFF;
-  border: 1px solid #27ACE7;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
-  border-radius: 16px;
-}
+/*.underwriting tr td textarea {*/
+/*  background: #FFFFFF;*/
+/*  border: 1px solid #27ACE7;*/
+/*  box-sizing: border-box;*/
+/*  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);*/
+/*  border-radius: 16px;*/
+/*}*/
 
 .custom-button{
   width: 100px;
@@ -44,7 +44,7 @@ select option:hover {
 
 select{
   height: 50px;
-  /*background-color: #EDF3F3;*/
+  background-color: #EDF3F3;
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
@@ -102,20 +102,6 @@ p{
   text-shadow: 0px 1px 6px rgba(225, 255, 255, 0.5);
 }
 
-.goals{
-  width: 80%;
-  height: 70px;
-  background: #FFFFFF;
-  border: 2px solid #27ACE7;
-  box-sizing: border-box;
-  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.08);
-  border-radius: 16px;
-  white-space: normal;
-  color: #27ACE7;
-  font-weight: bold;
-  font-size: 16px;
-}
-
 .underwrite{
   width: 50%;
   cursor: pointer;
@@ -138,8 +124,99 @@ p{
 
 .form-select{
   overflow: hidden;
-  border: 1px solid #cfd5d5;
+  border:0;
+  box-shadow: none;
   padding: 0;
-  box-shadow: 0px 4px 10px -4px rgb(236 239 244 / 70%);
+}
+
+.dropzone{
+  height: 130px;
+  padding: 2rem;
+  text-align: center;
+  border: dashed 2px grey;
+  background: rgba(237, 243, 243, 0.6);
   border-radius: 16px;
+  position: relative;
+}
+
+.file{
+  opacity: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.underwriting tr {
+  height: 70px;
+  vertical-align: middle;
+}
+
+.underwriting tr td input {
+  background: #FFFFFF;
+  border: 1px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
+  border-radius: 16px;
+}
+
+.underwriting tr td textarea {
+  background: #FFFFFF;
+  border: 1px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
+  border-radius: 16px;
+}
+
+.goals{
+  width: 50%;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.08);
+  border-radius: 16px;
+  white-space: normal;
+  color: #27ACE7;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.goal-select{
+  width: 80%;
+  height: 70px;
+  background: #FFFFFF;
+  text-align: center;
+  border: 2px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.08);
+  border-radius: 16px;
+  white-space: normal;
+  color: #27ACE7;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+.header-card{
+  /* H/32 */
+
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  align-items: center;
+  text-align: center;
+  color: #261A30;
+  opacity: 0.1;
 }

@@ -52,8 +52,77 @@
 
 
 <section class="wrapper">
+  <!--Start On-boarding Sidebar-->
+  <nav id="sidebar" *ngIf="steps === 'on-boarding'">
+
+    <div class="navbar-brand">
+      <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="toggleSidebar()"><i class="lnr lnr-menu fa fa-chevron-circle-left" style="color: white; font-size: 20px;"></i></button>
+    </div>
+
+    <h4 class="ps-3 pt-4 pb-4">Onboarding</h4>
+
+    <hr class="hr-custom">
+    <p class="ps-3">Steps</p>
+    <ul class="nav nav-pills list-unstyled flex-column components pt-0 list-group" id="page-tab" role="tablist">
+<!--      list-text-->
+      <li class="ms-4 mb-4">
+        <button class="btn link active page-container" id="pills-first-tab" data-bs-toggle="pill" data-bs-target="#pills-first" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="page-num">1</span>
+        </button>
+        Agreement Contract
+      </li>
+      <li class="ms-4 mb-4">
+        <button class="btn link page-container" id="pills-second-tab" data-bs-toggle="pill" data-bs-target="#pills-second" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="page-num">2</span>
+        </button>
+        My Goal
+      </li>
+      <li class="ms-4 mb-4">
+        <button class="btn link page-container" id="pills-third-tab" data-bs-toggle="pill" data-bs-target="#pills-third" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="page-num">3</span>
+        </button>
+        Import credit report
+      </li>
+      <li class="ms-4 mb-4 row">
+        <button class="btn link page-container col-1" id="pills-fourth-tab" data-bs-toggle="pill" data-bs-target="#pills-fourth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="page-num">4</span>
+        </button>
+        <span class="col">Underwriting <br> self-assessment</span>
+      </li>
+      <li class="ms-4 mb-4">
+        <button class="btn link page-container" id="pills-fifth-tab" data-bs-toggle="pill" data-bs-target="#pills-fifth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="page-num">5</span>
+        </button>
+        Work plan
+      </li>
+      <li class="ms-4 mb-4">
+        <button class="btn link page-container" id="pills-sixth-tab" data-bs-toggle="pill" data-bs-target="#pills-sixth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="page-num">6</span>
+        </button>
+        LCP intake
+      </li>
+      <li class="ms-4 mb-4">
+        <button class="btn link page-container" id="pills-seventh-tab" data-bs-toggle="pill" data-bs-target="#pills-seventh" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="page-num">7</span>
+        </button>
+        LCP Enhancement
+      </li>
+    </ul>
+
+    <ul class="list-unstyled CTAs">
+      <li>
+        <p class="m-0">powered by</p>
+        <a class="text-start p-0" href="/">
+          <img src="assets/images/landing/Subtract.png">
+          <img src="assets/images/landing/bizsolutions.png">
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!--End On-boarding Sidebar-->
+
   <!--Start Sidebar-->
-  <nav id="sidebar">
+  <nav id="sidebar" *ngIf="steps === undefined">
 
     <div class="navbar-brand">
       <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="toggleSidebar()"><i class="lnr lnr-menu fa fa-chevron-circle-left" style="color: white; font-size: 20px;"></i></button>
@@ -69,16 +138,16 @@
             <li [routerLinkActive]="['active']" class="ms-3 mb-2">
               <a [routerLink]="['home']" href="#"><img class="me-3" src="../../../assets/images/dashboard/dashboard.png">Dashboard</a>
             </li>
-            <li [routerLinkActive]="['active']" class="ms-3 mb-2" *ngIf="steps != 'plan' && steps === 'products'">
+            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
               <a [routerLink]="['products']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/check.png">LCP Corporate</a>
             </li>
-            <li [routerLinkActive]="['active']" class="ms-3 mb-2" *ngIf="steps != 'plan' && steps === 'products'">
+            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
               <a [routerLink]="['lcp-personal']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/check.png">LCP Personal</a>
             </li>
-            <li [routerLinkActive]="['active']" class="ms-3 mb-2" *ngIf="steps === 'plan'">
+            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
               <a [routerLink]="['plan']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/plan.png">Work Plan</a>
             </li>
-            <li [routerLinkActive]="['active']" class="ms-3 mb-2" *ngIf="steps !== 'plan' && steps === 'products'">
+            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
               <a [routerLink]="['other']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/user.png">Other informations</a>
             </li>
             <li [routerLinkActive]="['active']" class="ms-3 mb-2">
