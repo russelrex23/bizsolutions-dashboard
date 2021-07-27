@@ -260,3 +260,7 @@ button.button:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #5c6370;
 }
+
+.btn-close{
+  font-size: 10px;
+}

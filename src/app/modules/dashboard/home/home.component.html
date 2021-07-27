@@ -2826,7 +2826,7 @@
 <!--END UPLOAD DOCUMENT MODAL-->
 
 <!--START TIER MODAL-->
-<div id="showTier" class="modal fade" tabindex="-1">
+<div id="tier" class="modal fade" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-md">
     <div class="modal-content">
       <div class="modal-header" style="border-bottom: 0;">
@@ -2846,9 +2846,128 @@
         </p>
       </div>
       <div class="text-center mb-5">
-        <a href="/dashboard/home"><button class="btn btn-lg get-started w-50">Ok, got it</button></a>
+          <button class="btn btn-lg get-started w-50" (click)="showChooseVendor()">Ok, got it</button>
       </div>
     </div>
   </div>
 </div>
+<!--END TIER MODAL-->
+
+<!--START TIER MODAL-->
+<div id="chooseVendor" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="row" style="--bs-gutter-x: 0 !important;">
+            <div class="col m-5">
+              <h4>Choose vendor</h4>
+              <div class="input-group input-group-sm mb-3 mt-2">
+              <input type="text" class="form-control" placeholder="search vendor" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px; height: 40px">
+                <span class="input-group-text pointer" id="inputGroup-sizing-sm" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px; background-color: white"><i class="fa fa-search"></i></span>
+              </div>
+              <ul class="nav nav-pills list-unstyled flex-column components pt-0 list-group" role="tablist">
+                <li class="nav-item vendor-list" role="presentation">
+                  <span class="nav-link active" id="vendor-one-tab" data-bs-toggle="tab" data-bs-target="#vendor-one" type="button" role="tab" aria-controls="home" aria-selected="true">Nav</span>
+                </li>
+                <hr class="m-0">
+                <li class="nav-item" role="presentation">
+                  <span class="nav-link" id="vendor-two-tab" data-bs-toggle="tab" data-bs-target="#vendor-two" type="button" role="tab" aria-controls="profile" aria-selected="false">Shirtsy</span>
+                </li>
+                <hr class="m-0">
+                <li class="nav-item" role="presentation">
+                  <span class="nav-link" id="vendor-three-tab" data-bs-toggle="tab" data-bs-target="#vendor-three" type="button" role="tab" aria-controls="contact" aria-selected="false">Supply Works</span>
+                </li>
+                <hr class="m-0">
+                <li class="nav-item" role="presentation">
+                  <span class="nav-link" id="vendor-four-tab" data-bs-toggle="tab" data-bs-target="#vendor-four" type="button" role="tab" aria-controls="contact" aria-selected="false">The CEO Creative</span>
+                </li>
+                <hr class="m-0">
+                <li class="nav-item" role="presentation">
+                  <span class="nav-link" id="vendor-five-tab" data-bs-toggle="tab" data-bs-target="#vendor-five" type="button" role="tab" aria-controls="contact" aria-selected="false">ULINE</span>
+                </li>
+                <hr class="m-0">
+                <li class="nav-item" role="presentation">
+                  <span class="nav-link" id="vendor-six-tab" data-bs-toggle="tab" data-bs-target="#vendor-six" type="button" role="tab" aria-controls="contact" aria-selected="false">WEX Fleet</span>
+                </li>
+                <hr class="m-0">
+                <li class="nav-item" role="presentation">
+                  <span class="nav-link" id="vendor-seven-tab" data-bs-toggle="tab" data-bs-target="#vendor-seven" type="button" role="tab" aria-controls="contact" aria-selected="false">Wilmar</span>
+                </li>
+                <hr class="m-0">
+              </ul>
+            </div>
+          <div class="col" style="background: rgba(237, 243, 243, 0.6);">
+            <div class="modal-header" style="border-bottom: 0;">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="tab-content m-4" id="myTabContent">
+              <div class="tab-pane fade show active" id="vendor-one" role="tabpanel" aria-labelledby="home-tab">NAV</div>
+              <div class="tab-pane fade" id="vendor-two" role="tabpanel" aria-labelledby="profile-tab">SHIRTSY</div>
+              <div class="tab-pane fade" id="vendor-three" role="tabpanel" aria-labelledby="contact-tab">SUPPLY WORKS</div>
+              <div class="tab-pane fade" id="vendor-four" role="tabpanel" aria-labelledby="contact-tab">THE CEO CREATIVE</div>
+              <div class="tab-pane fade" id="vendor-five" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="row mb-3">
+                  <div class="col">
+                    <p>Vendor name</p>
+                    <h5>ULINE</h5>
+                  </div>
+                  <div class="col">
+                    <img src="/assets/images/u-line.png" style="width: 150px;">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col">
+                    <p>Estimated Cost</p>
+                    <div class="row">
+                      <div class="col-1">
+                        <img src="/assets/images/warning.png">
+                      </div>
+                      <div class="col">
+                        <h5>DISCLAIMER</h5>
+                      </div>
+                      <h5 style="font-size: 14px;">Prices may be changed at any time without further notice.</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col">
+                    <p>Description</p>
+                    <h5 style="font-size: 14px;">ULINE is the leading distributor of Shipping, Industrial and Packing materials.  99.5% of ULINE’s orders ship the same day with no backorders.</h5>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col">
+                    <p>Account type</p>
+                    <h5>Net 30</h5>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <p>Reporting to</p>
+                  <div class="col">
+                    <img src="/assets/images/bradstreet.png">
+                  </div>
+                  <div class="col">
+                    <img src="/assets/images/experian.png">
+                  </div>
+                </div>
+                <div class="text-end">
+                  <a href="/dashboard/home"><button class="btn btn-lg get-started w-50">Select</button></a>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="vendor-six" role="tabpanel" aria-labelledby="contact-tab">WEX FLEET</div>
+              <div class="tab-pane fade" id="vendor-seven" role="tabpanel" aria-labelledby="contact-tab">WILMAR</div>
+            </div>
+            </div>
+          </div>
+        </div>
+<!--        <div class="row">-->
+<!--          <div class="col">-->
+
+<!--          </div>-->
+<!--          <div class="col">-->
+<!--            -->
+<!--          </div>-->
+<!--        </div>-->
+    </div>
+  </div>
 <!--END TIER MODAL-->

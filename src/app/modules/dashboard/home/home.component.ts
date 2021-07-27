@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
   file02: File | null = null;
   file03: File | null = null;
   editUnderwriting = false;
+  progress = 0;
 
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
 
@@ -145,6 +146,7 @@ export class HomeComponent implements OnInit {
   selectedGoal(): void{
     this.isGoalSelected = true;
     this.isCreditReport = true;
+    this.progress = 3;
     PageUtil.hideModal('goals');
     PageUtil.click('pills-third-tab');
   }
@@ -174,6 +176,7 @@ export class HomeComponent implements OnInit {
     PageUtil.hideModal('agreement');
     this.isContractSubmit = true;
     this.isGoalSelected = false;
+    this.progress = 2;
     PageUtil.click('pills-second-tab');
   }
 
@@ -269,7 +272,7 @@ export class HomeComponent implements OnInit {
   }
 
   showTier(): void{
-    PageUtil.showModal('showTier');
+    PageUtil.showModal('tier');
   }
 
   showNoIdentityIqModal(): void{
@@ -278,6 +281,10 @@ export class HomeComponent implements OnInit {
 
   showIdentityIqModal(): void{
     PageUtil.showModal('showIdentityIq');
+  }
+
+  showChooseVendor(): void{
+    PageUtil.showModal('chooseVendor');
   }
 
   creditReportCredentials(): void{
@@ -309,6 +316,7 @@ export class HomeComponent implements OnInit {
   }
 
   fourthStep(): void{
+    this.progress = 4;
     PageUtil.hideModal('credentialSuccess');
     PageUtil.hideModal('showIdentityIq');
     PageUtil.click('pills-fourth-tab');

@@ -220,3 +220,15 @@ p{
   color: #261A30;
   opacity: 0.1;
 }
+
+.v-divider{
+  margin-left:5px;
+  margin-right:5px;
+  width:1px;
+  height:100%;
+  border-left:1px solid gray;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background: rgba(237, 243, 243, 0.6);
+  color: black;
+}
