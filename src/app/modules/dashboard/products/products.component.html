@@ -590,7 +590,7 @@
               <h5>$ 90.00</h5>
             </div>
           </div>
-          <button type="button" class="btn btn-primary" style="border-radius: 16px">see payment history</button>
+          <button type="button" class="btn btn-primary" style="border-radius: 16px" (click)="showPaymentHistory()">see payment history</button>
           <hr>
           <div class="row clearfix text-start">
             <div class="col-1 mt-3 me-3">
@@ -606,4 +606,81 @@
   </div>
 </div>
 
+<!--START PAYMENT HISTORY MODAL-->
+<div id="payment-history" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0;">
+        <h5 class="modal-title fw-bolder">Payment history</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body m-3 ms-0 me-0 mb-0">
+        <div class="row text-start fw-bolder">
+          <div class="col-md-2">
+            <p>Invoice #</p>
+          </div>
+          <div class="col-md-2">
+            <p>Min Payment</p>
+          </div>
+          <div class="col-md-2">
+            <p>Amount Paid</p>
+          </div>
+          <div class="col-md-2">
+            <p>Due Date</p>
+          </div>
+          <div class="col-md-2">
+            <p>Date Paid</p>
+          </div>
+          <div class="col-md-2">
+            <p>Status</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row text-start fw-bolder">
+          <div class="col-md-2">
+            60934-38890
+          </div>
+          <div class="col-md-2">
+            $ 36.00
+          </div>
+          <div class="col-md-2">
+            $ 36.00
+          </div>
+          <div class="col-md-2">
+            09-09-2020
+          </div>
+          <div class="col-md-2">
+            09-09-2020
+          </div>
+          <div class="col-md-2">
+            Paid
+          </div>
+        </div>
+        <hr>
+        <div class="row text-start fw-bolder">
+          <div class="col-md-2">
+            60934-38463
+          </div>
+          <div class="col-md-2">
+            $ 36.00
+          </div>
+          <div class="col-md-2">
+            $ 36.00
+          </div>
+          <div class="col-md-2">
+            08-06-2020
+          </div>
+          <div class="col-md-2">
+            08-06-2020
+          </div>
+          <div class="col-md-2">
+            <span class="text-danger">Failed</span>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END PAYMENT HISTORY MODAL-->
 

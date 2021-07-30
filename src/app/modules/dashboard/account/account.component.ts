@@ -1,9 +1,12 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import {Component, OnInit, HostListener, ViewChild} from '@angular/core';
 import {PageUtil} from '../../../utils';
 import { MorrisJsModule } from 'angular-morris-js';
 import {RouteService} from '../../../services/route.service';
 import {ActivatedRoute} from '@angular/router';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {SignaturePad} from 'angular2-signaturepad';
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 @Component({
   selector: 'app-account',
@@ -40,6 +43,19 @@ export class AccountComponent implements OnInit {
   type = 1;
   creditSteps = 0;
   editUnderwriting = false;
+  firstName = '';
+  lastName = '';
+  sigUrl: any;
+  isSignatureDone = false;
+  isChecked = false;
+
+  @ViewChild(SignaturePad) signaturePad: SignaturePad;
+
+  public signaturePadOptions: any = {
+    minWidth: 1,
+    canvasWidth: 400,
+    canvasHeight: 100
+  };
 
 // ********Underwriting********//
   response01 = 'Yes';
@@ -63,6 +79,27 @@ export class AccountComponent implements OnInit {
     this.countryForm = this.fb.group({
       countryControl: ['Canada']
     });
+  }
+
+  agree(): void {
+
+  }
+
+  downloadPDF(): void {
+
+    const doc = new jsPDF();
+    const img = this.sigUrl;
+    autoTable(doc, {
+      html: '#my-table',
+      theme: 'plain',
+      headStyles: { halign : 'center'},
+      didDrawCell: function(data) {
+        if (data.column.index === 0 && data.section === 'body') {
+          doc.addImage(img, 'JPEG', data.cell.x + 2, data.cell.y + 85, 15, 10);
+        }
+      }
+    });
+    doc.save('agreement.pdf');
   }
 
   handleFileInput(files: FileList): void {
@@ -160,5 +197,18 @@ export class AccountComponent implements OnInit {
   uploadDocument(): void{
     PageUtil.hideModal('credentialSuccess');
     PageUtil.showModal('uploadDocument');
+  }
+
+  clear(): void {
+    this.signaturePad.clear();
+  }
+
+  saveSig(): void {
+    this.isSignatureDone = true;
+  }
+
+  drawComplete(): void {
+    this.sigUrl = this.signaturePad.toDataURL();
+    console.log('Sign: ' + this.sigUrl);
   }
 }

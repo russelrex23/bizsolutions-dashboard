@@ -232,3 +232,13 @@ p{
   background: rgba(237, 243, 243, 0.6);
   color: black;
 }
+
+.notif-date{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: right;
+  color: #C9CBD1;
+}

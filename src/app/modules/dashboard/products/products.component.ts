@@ -116,6 +116,10 @@ export class ProductsComponent implements OnInit {
     this.ULine = true;
   }
 
+  showPaymentHistory(): void{
+    PageUtil.showModal('payment-history');
+  }
+
   backToSteps(): void{
     this.stepCorporate = false;
     this.ULine = false;

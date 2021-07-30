@@ -1,9 +1,106 @@
-<div *ngIf="!hutton">
+<div *ngIf="!creditHistory && !hutton">
+  <div class="card mb-4">
+    <div class="row header m-3 mb-0">
+      <div class="col-md-6">
+        <p>Steps to be Performed</p>
+      </div>
+      <div class="col-md-3">
+        <p>Status</p>
+      </div>
+      <div class="col-md-3">
+        <p>Date</p>
+      </div>
+      <hr>
+    </div>
+    <div class="body">
+      <div class="row fw-bolder m-3 mb-0 mt-0">
+        <div class="col-md-6">
+          Business name check
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btn btn-success" style="border-radius: 16px">Done</button>
+        </div>
+        <div class="col-md-2">
+          01 Jun 2021
+        </div>
+        <div class="col-md-1">
+          <i class="fa fa-angle-right fw-bolder pointer"></i>
+        </div>
+        <hr class="mt-2 mb-2">
+      </div>
+      <div class="row fw-bolder m-3 mb-0 mt-0">
+        <div class="col-md-6">
+          Corporate address set-up and Lender Compliance check
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btn btn-warning" style="border-radius: 16px">In progress</button>
+        </div>
+        <div class="col-md-2">
+          24 Jun 2021
+          <p>(7 days left)</p>
+        </div>
+        <div class="col-md-1">
+<!--          <i class="fa fa-angle-right fw-bolder pointer" (click)="showStepCorporate()"></i>-->
+        </div>
+        <hr class="mt-2 mb-2">
+      </div>
+      <div class="row fw-bolder m-3 mb-0 mt-0">
+        <div class="col-md-6">
+          EIN and entity setup
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-1">
+          <i class="fa fa-angle-right fw-bolder pointer"></i>
+        </div>
+        <hr class="mt-2">
+      </div>
+      <div class="row fw-bolder m-3 mb-0 mt-0">
+        <div class="col-md-6">
+          411 Listing
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-1">
+          <i class="fa fa-angle-right fw-bolder pointer"></i>
+        </div>
+        <hr class="mt-2">
+      </div>
+      <div class="row fw-bolder m-3 mb-0 mt-0">
+        <div class="col-md-6">
+          Professional email set-up and Lender Compliance check
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-1">
+          <i class="fa fa-angle-right fw-bolder pointer"></i>
+        </div>
+        <hr class="mt-2">
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-6">
       <div class="card mb-3">
-        <div class="header m-3">
-          <h4>Your Credit Score</h4>
+        <div class="header m-3 row">
+          <div class="col">
+            <h4>Your Credit Score</h4>
+          </div>
+          <div class="col mb-2">
+            <button class="btn btn-lg get-started" (click)="showCreditHistory()">Show credit history</button>
+          </div>
           <hr>
         </div>
         <div class="body text-center mb-5">
@@ -345,6 +442,407 @@
   </div>
 </div>
 
+<div *ngIf="creditHistory">
+  <div class="card mb-4">
+    <div class="row header m-3">
+      <div class="col-md-1" style="width: 5%;">
+        <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="backToSteps()"><i class="lnr lnr-menu fa fa-chevron-circle-left" style="font-size: 20px;"></i></button>
+      </div>
+      <div class="col">
+        <h5>Credit history</h5>
+      </div>
+    </div>
+    <div class="body">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button" role="tab" aria-controls="home" aria-selected="true">Account History</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="inquiries-tab" data-bs-toggle="tab" data-bs-target="#inquiries" type="button" role="tab" aria-controls="profile" aria-selected="false">Inquiries</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="information-tab" data-bs-toggle="tab" data-bs-target="#information" type="button" role="tab" aria-controls="contact" aria-selected="false">Public Information</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content container" id="pills-page-tab">
+
+      <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="row m-2 mt-4 mb-0" style="background-color: dimgrey">
+          <div class="col">
+            <h5 class="text-white">CAP ONE AUTO</h5>
+          </div>
+        </div>
+        <div class="row m-2 mt-0">
+          <div class="col-md-3">
+
+          </div>
+          <div class="col-md-3" style="background-color: cadetblue">
+            <h5 class="text-white">TransUnion</h5>
+          </div>
+          <div class="col-md-3" style="background-color: blue">
+            <h5 class="text-white">Experian</h5>
+          </div>
+          <div class="col-md-3" style="background-color: maroon">
+            <h5 class="text-white">Equifax</h5>
+          </div>
+        </div>
+        <div class="row m-2 mt-4">
+          <div class="col-md-3 text-end">
+            <strong>Account #</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>620812345678*****</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>620812345678*****</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>620812345678*****</strong>
+          </div>
+          <hr class="mt-3">
+        </div>
+        <div class="row m-2">
+          <div class="col-md-3 text-end">
+            <strong>Account Type</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Installment</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Installment*****</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Installment</strong>
+          </div>
+          <hr class="mt-3">
+        </div>
+        <div class="row m-2">
+          <div class="col-md-3 text-end">
+            <strong>Account Type - Detail</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Auto Loan</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Auto Loan</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Auto Loan</strong>
+          </div>
+          <hr class="mt-3">
+        </div>
+        <div class="row m-2">
+          <div class="col-md-3 text-end">
+            <strong>Bureau Code</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Individual</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Individual</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Individual</strong>
+          </div>
+          <hr class="mt-3">
+        </div>
+        <div class="row m-2">
+          <div class="col-md-3 text-end">
+            <strong>Account Status</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Closed</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Paid</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Paid</strong>
+          </div>
+          <hr class="mt-3">
+        </div>
+        <div class="row m-2">
+          <div class="col-md-3">
+            <strong>Two-Year payment history</strong>
+          </div>
+          <hr class="mt-3">
+        </div>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+            <tr>
+              <th scope="col">Month</th>
+              <th scope="col">May</th>
+              <th scope="col">Apr</th>
+              <th scope="col">Mar</th>
+              <th scope="col">Feb</th>
+              <th scope="col">Jan</th>
+              <th scope="col">Dec</th>
+              <th scope="col">Nov</th>
+              <th scope="col">Oct</th>
+              <th scope="col">Sep</th>
+              <th scope="col">Aug</th>
+              <th scope="col">Jul</th>
+              <th scope="col">Jun</th>
+              <th scope="col">May</th>
+              <th scope="col">Apr</th>
+              <th scope="col">Mar</th>
+              <th scope="col">Feb</th>
+              <th scope="col">Jan</th>
+              <th scope="col">Dec</th>
+              <th scope="col">Nov</th>
+              <th scope="col">Oct</th>
+              <th scope="col">Sep</th>
+              <th scope="col">Aug</th>
+              <th scope="col">Jul</th>
+              <th scope="col">Jun</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Year</td>
+              <td>20</td>
+              <td>20</td>
+              <td>20</td>
+              <td>20</td>
+              <td>20</td>
+              <td>19</td>
+              <td>19</td>
+              <td>19</td>
+              <td>19</td>
+              <td>19</td>
+              <td>19</td>
+              <td>19</td>
+              <td>19</td>
+              <td>19</td>
+              <td>19</td>
+              <td>19</td>
+              <td>19</td>
+              <td>18</td>
+              <td>18</td>
+              <td>18</td>
+              <td>18</td>
+              <td>18</td>
+              <td>18</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>Transunion</td>
+              <td></td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+            </tr>
+            <tr>
+              <td>Experian</td>
+              <td></td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+            </tr>
+            <tr>
+              <td>Equifax</td>
+              <td></td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td></td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+              <td class="table-success">OK</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="inquiries" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="row m-2 mt-4 mb-0" style="background-color: dimgrey">
+          <div class="col">
+            <h5 class="text-white">Inquiries</h5>
+          </div>
+        </div>
+        <div class="row m-2">
+          <div class="col-md-1 m-auto text-end">
+            <img src="/assets/images/info.png" class="text-center" alt="..." style="width: 25px">
+          </div>
+          <div class="col">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum convallis tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum convallis tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum convallis tincidunt.</p>
+          </div>
+        </div>
+        <div class="row m-2" style="background-color: cadetblue">
+          <div class="col-md-3">
+            <h5 class="text-white">Creditor Name</h5>
+          </div>
+          <div class="col-md-3">
+            <h5 class="text-white">Type of Business</h5>
+          </div>
+          <div class="col-md-3">
+            <h5 class="text-white">Date of Inquiry</h5>
+          </div>
+          <div class="col-md-3">
+            <h5 class="text-white">Credit Bureau</h5>
+          </div>
+        </div>
+        <div class="row m-2">
+          <div class="col-md-3">
+            <strong>SYNCB</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Finance/Personal</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>06/03/2021</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>TransUnion</strong>
+          </div>
+          <hr class="mt-2">
+        </div>
+        <div class="row m-2">
+          <div class="col-md-3">
+            <strong>CITIBANK</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>All Banks</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>06/03/2021</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Experian</strong>
+          </div>
+          <hr class="mt-2">
+        </div>
+        <div class="row m-2">
+          <div class="col-md-3">
+            <strong>RENTGROW</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Tenant Screeners</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>06/03/2021</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Experian</strong>
+          </div>
+          <hr class="mt-2">
+        </div>
+        <div class="row m-2">
+          <div class="col-md-3">
+            <strong>CREDITPLUS</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>-</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>06/03/2021</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Equifax</strong>
+          </div>
+          <hr class="mt-2">
+        </div>
+        <div class="row m-2">
+          <div class="col-md-3">
+            <strong>CREDITPLUS</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>Mortgage Reporters</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>06/03/2021</strong>
+          </div>
+          <div class="col-md-3">
+            <strong>TransUnion</strong>
+          </div>
+          <hr class="mt-2">
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="information" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="row m-2 mt-4 mb-0" style="background-color: dimgrey">
+          <div class="col">
+            <h5 class="text-white">Public Information</h5>
+          </div>
+        </div>
+        <div class="row m-2">
+          <div class="col-md-1 m-auto text-end">
+            <img src="/assets/images/info.png" class="text-center" alt="..." style="width: 25px">
+          </div>
+          <div class="col">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum convallis tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum convallis tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum convallis tincidunt.</p>
+          </div>
+        </div>
+        <div class="row m-2">
+          <div class="col text-center">
+            <h5>None Reported</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div *ngIf="hutton">
   <div class="row clearfix">
     <div class="col-lg-8 col-md-8">
@@ -615,7 +1113,7 @@
               <h5>$ 100.00</h5>
             </div>
           </div>
-          <button type="button" class="btn btn-primary" style="border-radius: 16px">see payment history</button>
+          <button type="button" class="btn btn-primary" style="border-radius: 16px" (click)="showPaymentHistory()">see payment history</button>
           <hr>
           <div class="row clearfix text-start">
             <div class="col-1 mt-3 me-3">
@@ -706,3 +1204,81 @@
   </div>
 </div>
 <!--END SIMULATE MODAL-->
+
+<!--START PAYMENT HISTORY MODAL-->
+<div id="payment-history" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0;">
+        <h5 class="modal-title fw-bolder">Payment history</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body m-3 ms-0 me-0 mb-0">
+        <div class="row text-start fw-bolder">
+          <div class="col-md-2">
+            <p>Invoice #</p>
+          </div>
+          <div class="col-md-2">
+            <p>Min Payment</p>
+          </div>
+          <div class="col-md-2">
+            <p>Amount Paid</p>
+          </div>
+          <div class="col-md-2">
+            <p>Due Date</p>
+          </div>
+          <div class="col-md-2">
+            <p>Date Paid</p>
+          </div>
+          <div class="col-md-2">
+            <p>Status</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row text-start fw-bolder">
+          <div class="col-md-2">
+            60934-38890
+          </div>
+          <div class="col-md-2">
+            $ 36.00
+          </div>
+          <div class="col-md-2">
+            $ 36.00
+          </div>
+          <div class="col-md-2">
+            09-09-2020
+          </div>
+          <div class="col-md-2">
+            09-09-2020
+          </div>
+          <div class="col-md-2">
+            Paid
+          </div>
+        </div>
+        <hr>
+        <div class="row text-start fw-bolder">
+          <div class="col-md-2">
+            60934-38463
+          </div>
+          <div class="col-md-2">
+            $ 36.00
+          </div>
+          <div class="col-md-2">
+            $ 36.00
+          </div>
+          <div class="col-md-2">
+            08-06-2020
+          </div>
+          <div class="col-md-2">
+            08-06-2020
+          </div>
+          <div class="col-md-2">
+            <span class="text-danger">Failed</span>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END PAYMENT HISTORY MODAL-->

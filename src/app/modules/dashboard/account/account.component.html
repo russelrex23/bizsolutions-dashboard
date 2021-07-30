@@ -1,14 +1,5 @@
 <div id="container">
   <div class="card mb-4">
-    <div class="col mt-3" *ngIf="isCreditReportDone">
-      <a href="/dashboard/home?steps=underwriting" class="link-info ms-3">Back To Dashboard</a>
-    </div>
-    <div class="col mt-3" *ngIf="steps === 'credit-details'">
-      <a href="/dashboard/home?steps=underwriting" class="link-info ms-3">Back To Underwriting</a>
-    </div>
-    <div class="col mt-3" *ngIf="steps === 'lcp'">
-      <a href="/dashboard/home?steps=products" class="link-info ms-3">Click to proceed to Products</a>
-    </div>
     <div class="header m-4">
       <h4 class="fw-bolder">My Account</h4>
     </div>
@@ -31,6 +22,9 @@
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="credit-tab" data-bs-toggle="tab" data-bs-target="#credit" type="button" role="tab" aria-controls="credit" aria-selected="true">Credit Report</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contract-tab" data-bs-toggle="tab" data-bs-target="#contract" type="button" role="tab" aria-controls="credit" aria-selected="true">Agreement Contract</button>
         </li>
       </ul>
     </div>
@@ -736,32 +730,32 @@
       </div>
     </div>
 
-    <div class="card w-75 w-sm-100 mt-3 mb-4">
-      <div class="header m-3 text-center">
-        <img class="pe-2" src="/assets/images/dashboard/identity-iq.png">
-      </div>
-      <div class="m-4 justify-content-center">
-        <p>Your IdentityIQ information will be required in order to generate
-          a credit analysis for you. If you already have an IdentityIQ account,
-          please provide your credentials. If not, please proceed with registration. </p>
-      </div>
-      <div class="row text-center mb-5">
-        <div class="col">
-          <button class="button mb-3" style="width: 200px" (click)="showNoIdentityIqModal()">No</button>
-          <p>I don’t have an existing<br>
-            IdentityIQ account</p>
-        </div>
-        <div class="col">
-          <button class="btn btn-lg mb-3 get-started" style="width: 200px" (click)="showIdentityIqModal()">Yes</button>
-          <p>I have an existing<br>
-            IdentityIQ account</p>
-        </div>
-      </div>
-    </div>
+<!--    <div class="card w-75 w-sm-100 mt-3 mb-4">-->
+<!--      <div class="header m-3 text-center">-->
+<!--        <img class="pe-2" src="/assets/images/dashboard/identity-iq.png">-->
+<!--      </div>-->
+<!--      <div class="m-4 justify-content-center">-->
+<!--        <p>Your IdentityIQ information will be required in order to generate-->
+<!--          a credit analysis for you. If you already have an IdentityIQ account,-->
+<!--          please provide your credentials. If not, please proceed with registration. </p>-->
+<!--      </div>-->
+<!--      <div class="row text-center mb-5">-->
+<!--        <div class="col">-->
+<!--          <button class="button mb-3" style="width: 200px" (click)="showNoIdentityIqModal()">No</button>-->
+<!--          <p>I don’t have an existing<br>-->
+<!--            IdentityIQ account</p>-->
+<!--        </div>-->
+<!--        <div class="col">-->
+<!--          <button class="btn btn-lg mb-3 get-started" style="width: 200px" (click)="showIdentityIqModal()">Yes</button>-->
+<!--          <p>I have an existing<br>-->
+<!--            IdentityIQ account</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
     <!-- Start Credit Report Tab -->
-    <div class="tab-pane fade show active" id="credit" role="tabpanel" aria-labelledby="cre-tab">
-      <div class="row mb-3" *ngIf="!creditReportTab && isCreditReportDone || steps === 'credit-details'">
+    <div class="tab-pane fade active" id="credit" role="tabpanel" aria-labelledby="cre-tab">
+      <div class="row mb-3">
         <div class="col-lg-6 mb-4">
           <div class="card mb-4">
             <div class="header m-3 mb-0">
@@ -833,6 +827,83 @@
                   <div><i class="fa fa-circle" style="color: #B3285A"></i><span class="ps-2 fw-bolder">499 and lower</span><span class="ps-2 opacity-50">(Very Bad)</span></div><i class="fa fa-angle-right fw-bolder pointer"></i>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Start Agreement Contract Tab -->
+    <div class="tab-pane fade" id="contract" role="tabpanel" aria-labelledby="cre-tab">
+      <div class="row mb-3">
+        <div class="col">
+          <div class="card">
+            <div class="body m-5">
+              <table id="my-table">
+                <thead>
+                <tr>
+                  <th>
+                    <div class="body text-center mb-5">
+                      <h3 class="modal-title fw-bolder text-dark">Agreement Contract</h3>
+                    </div>
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>
+                    <div class="m-5 mt-0 mb-0">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo. Aliquam metus metus, ullamcorper vitae facilisis in, pretium non nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis commodo tortor auctor laoreet. Nulla vel urna nec justo aliquam iaculis nec vitae tortor. Mauris ut metus non augue dapibus elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique mauris odio, vel tempor augue aliquet a. Quisque mattis ultricies orci, quis maximus ex condimentum sed.
+
+                      Donec sed neque commodo, elementum dolor vitae, vehicula nulla. Morbi vel commodo lectus. Morbi mollis tempus lorem id condimentum. Proin tempor in felis quis blandit. Sed bibendum ac leo at convallis. Ut nec leo eu mi mollis hendrerit. Aenean hendrerit lectus at posuere consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Aenean et finibus lacus. Duis aliquet euismod arcu vitae rhoncus. Duis facilisis nunc id purus volutpat, sed viverra mauris placerat. Ut sodales risus eu massa iaculis elementum. Aenean bibendum sagittis pulvinar. Curabitur suscipit at massa ac ullamcorper.
+
+                      Vestibulum nec pharetra lectus. Nullam quam libero, volutpat id aliquam convallis, finibus ac justo. Sed tellus velit, tincidunt sit amet dolor at, varius maximus erat. Curabitur nec sagittis risus. Ut facilisis finibus odio, vel iaculis enim maximus nec. Sed ac mollis elit. Nullam aliquet pellentesque arcu, id condimentum mauris ornare nec. Sed aliquet ligula molestie, maximus velit posuere, gravida velit. Duis luctus vulputate consequat. In convallis in nisi eu bibendum.
+                    </div>
+                    <br><br>
+                    <div class="row clearfix m-5 mt-0 mb-0 text-start">
+                      <h5>First Name:</h5>
+                      <br>
+                      <p class="ms-5">{{firstName}}</p>
+                      <br>
+                      <h5>Last Name:</h5>
+                      <br>
+                      <p class="ms-5">{{lastName}}</p>
+                    </div>
+                    <br><br>
+                    <div class="container" *ngIf="isSignatureDone">
+                      <div class="row">
+                        <div class="col">
+                          <img src = "{{sigUrl}}" *ngIf="sigUrl" alt='from canvas' width="200"/>
+                        </div>
+                      </div>
+                      <div class="row ms-5">
+                        <div class="col">
+                          <p>Your Signature</p>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+              <div class="container mb-4 ms-5" *ngIf="!isSignatureDone">
+                <div class="row">
+                  <div class="col">
+                    <button type="button" class="btn btn-secondary" (click)="clear()">Clear</button>
+                  </div>
+                  <div class="col">
+                    <button type="button" class="btn btn-success" (click)="saveSig()" [disabled]="!sigUrl">Save</button>
+                  </div>
+                  <p>Please sign here:</p>
+                  <div class="row" style="border: 1px solid; width: 62%;">
+                    <signature-pad  [options]="signaturePadOptions" (onEndEvent)="drawComplete()"></signature-pad>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mt-5">
+                <button class="btn btn-lg get-started w-50" [disabled]="!isChecked && !isSignatureDone" (click)="agree()">Submit Agreement</button>
+              </div>
+              <i class="fa fa-download pointer m-5 mb-0 mt-3" aria-hidden="true" style="color: #66ace9;" (click)="downloadPDF()" *ngIf="isSignatureDone"> Click to export pdf</i>
             </div>
           </div>
         </div>

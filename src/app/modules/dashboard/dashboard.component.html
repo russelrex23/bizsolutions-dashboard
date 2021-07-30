@@ -1,56 +1,3 @@
-<!--<div class="wrapper">-->
-<!--  &lt;!&ndash; Sidebar  &ndash;&gt;-->
-<!--  <nav id="sidebar" class="sidebar-scroll">-->
-
-<!--    <div class="navbar-brand">-->
-<!--      <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="closeNav()"><i class="lnr lnr-menu fa fa-chevron-circle-left"></i></button>-->
-<!--    </div>-->
-<!--    <div class="sidebar-header text-center">-->
-<!--      <div class="user" style="background-image:url('../../../assets/images/dashboard/profile-default.png')"></div>-->
-<!--      <h4 class="pt-4 pb-4">Wade Warren</h4>-->
-<!--      <button class="button" [routerLink]="['account']">My Account</button>-->
-<!--    </div>-->
-<!--    <hr class="hr-custom">-->
-<!--    <ul class="list-unstyled components">-->
-<!--      <li [routerLinkActive]="['active']" class="ms-3 mb-2">-->
-<!--        <a [routerLink]="['home']" href="#"><img class="me-3" src="../../../assets/images/dashboard/dashboard.png">Dashboard</a>-->
-<!--      </li>-->
-<!--      <li [routerLinkActive]="['active']" class="ms-3 mb-2">-->
-<!--        <a [routerLink]="['products']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/check.png">LCP Corporate</a>-->
-<!--      </li>-->
-<!--      <li [routerLinkActive]="['active']" class="ms-3 mb-2">-->
-<!--        <a [routerLink]="['plan']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/plan.png">Work Plan</a>-->
-<!--      </li>-->
-<!--      <li [routerLinkActive]="['active']" class="ms-3 mb-2">-->
-<!--        <a [routerLink]="['other']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/user.png">Other informations</a>-->
-<!--      </li>-->
-<!--      <li [routerLinkActive]="['active']" class="ms-3 mb-2">-->
-<!--        <a href="#"><img class="me-3" src="../../../assets/images/dashboard/logout.png">Log out</a>-->
-<!--      </li>-->
-<!--    </ul>-->
-
-<!--    <ul class="list-unstyled CTAs">-->
-<!--      <li>-->
-<!--        <p class="m-0">powered by</p>-->
-<!--        <a class="text-start p-0" href="/">-->
-<!--          <img src="assets/images/landing/Subtract.png">-->
-<!--          <img src="assets/images/landing/bizsolutions.png">-->
-<!--        </a>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--  </nav>-->
-
-<!--  <div id="content">-->
-<!--    <button type="button" id="sidebarCollapse" class="btn btn-info">-->
-<!--      <i class="fas fa-align-left"></i>-->
-<!--      <span>Toggle Sidebar</span>-->
-<!--    </button>-->
-<!--    <router-outlet></router-outlet>-->
-<!--  </div>-->
-
-<!--</div>-->
-
-
 <section class="wrapper">
   <!--Start On-boarding Sidebar-->
   <nav id="sidebar" *ngIf="steps === 'on-boarding'">
@@ -139,13 +86,13 @@
               <a [routerLink]="['home']" href="#"><img class="me-3" src="../../../assets/images/dashboard/dashboard.png">Dashboard</a>
             </li>
             <li [routerLinkActive]="['active']" class="ms-3 mb-2">
+              <a [routerLink]="['plan']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/plan.png">Work Plan</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
               <a [routerLink]="['products']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/check.png">LCP Corporate</a>
             </li>
             <li [routerLinkActive]="['active']" class="ms-3 mb-2">
               <a [routerLink]="['lcp-personal']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/check.png">LCP Personal</a>
-            </li>
-            <li [routerLinkActive]="['active']" class="ms-3 mb-2">
-              <a [routerLink]="['plan']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/plan.png">Work Plan</a>
             </li>
             <li [routerLinkActive]="['active']" class="ms-3 mb-2">
               <a [routerLink]="['other']" href="#"><img class="me-3"  src="../../../assets/images/dashboard/user.png">Other informations</a>

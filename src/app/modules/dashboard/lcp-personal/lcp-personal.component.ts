@@ -19,6 +19,7 @@ export class LcpPersonalComponent implements OnInit {
   commentUrl: string | ArrayBuffer = '';
   fieldTextType: boolean;
   hutton = false;
+  creditHistory = false;
 
   editorConfig: AngularEditorConfig = {
     editable: true,
@@ -129,8 +130,17 @@ export class LcpPersonalComponent implements OnInit {
     PageUtil.showModal('simulate');
   }
 
+  showCreditHistory(): void{
+    this.creditHistory = true;
+  }
+
+  showPaymentHistory(): void{
+    PageUtil.showModal('payment-history');
+  }
+
   backToSteps(): void{
     this.hutton = false;
+    this.creditHistory = false;
   }
 
   showHutton(): void{

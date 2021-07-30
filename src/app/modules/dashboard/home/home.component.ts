@@ -86,6 +86,21 @@ export class HomeComponent implements OnInit {
     { label: 'Sales03', value: 20 },
   ];
 
+  public chartCorporateScore = {
+    resize: true,
+    toto: 'roro',
+    gridTextSize: 15,
+    colors: [
+      '#6FCF97',
+      '#F2F2F2'
+    ],
+  };
+
+  public chartCorporateData = [
+    { label: '', value: 70 },
+    { label: '', value: 30 },
+  ];
+
   constructor(private activatedRoute: ActivatedRoute, private routeService: RouteService) {
     this.activatedRoute.queryParams.subscribe(params => {
       this.steps = params.steps;
