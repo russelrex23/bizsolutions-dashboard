@@ -227,6 +227,10 @@ export class HomeComponent implements OnInit {
     PageUtil.click('step-five');
   }
 
+  stepSix(): void{
+    PageUtil.click('step-six');
+  }
+
   clear(): void {
     this.signaturePad.clear();
   }

@@ -242,3 +242,15 @@ p{
   text-align: right;
   color: #C9CBD1;
 }
+
+.steps{
+  border-radius: 16px;
+  border: none;
+  pointer-events: none;
+}
+
+.select-intake{
+  height: 40px;
+  background-color: white;
+  border-radius: 16px;
+}
