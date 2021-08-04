@@ -11,6 +11,8 @@ import { ProductsComponent } from './modules/products/products.component';
 import { CheckoutComponent } from './modules/checkout/checkout.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import {DashboardModule} from "./modules/dashboard/dashboard.module";
+import {SignaturePadModule} from "angular2-signaturepad";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { RegistrationComponent } from './components/registration/registration.co
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DashboardModule,
+    SignaturePadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

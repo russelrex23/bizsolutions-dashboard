@@ -22,6 +22,9 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     AccountComponent,
     LcpPersonalComponent
   ],
+  exports: [
+    HomeComponent
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,

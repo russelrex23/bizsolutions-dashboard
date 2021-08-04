@@ -10,6 +10,7 @@ import {LcpPersonalComponent} from './lcp-personal/lcp-personal.component';
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     redirectTo: 'home'
   },
   {

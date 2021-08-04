@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, EventEmitter, Output, Input} from '@angular/core';
 import {PageUtil} from '../../../utils';
 import {ActivatedRoute} from '@angular/router';
 import {RouteService} from '../../../services/route.service';
@@ -11,6 +11,7 @@ import {SignaturePad} from 'angular2-signaturepad';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
   sigUrl: any;
@@ -281,7 +282,7 @@ export class HomeComponent implements OnInit {
       html: '#my-table',
       theme: 'plain',
       headStyles: { halign : 'center'},
-      didDrawCell: function(data) {
+      didDrawCell(data) {
         if (data.column.index === 0 && data.section === 'body') {
           doc.addImage(img, 'JPEG', data.cell.x + 2, data.cell.y + 85, 15, 10);
         }
@@ -355,5 +356,23 @@ export class HomeComponent implements OnInit {
 
   done(): void{
     PageUtil.click('');
+  }
+
+  toggleSidebar(): void {
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggler = document.getElementById('sidebarToggler');
+
+    if (sidebar && sidebarToggler) {
+      let sidebarMarginLeft = 0;
+      let sidebarTogglerDisplay = 'none';
+
+      if (sidebar.style.marginLeft === '0px') {
+        sidebarMarginLeft = -250;
+        sidebarTogglerDisplay = 'block';
+      }
+
+      sidebar.style.marginLeft = `${sidebarMarginLeft}px`;
+      sidebarToggler.style.display = sidebarTogglerDisplay;
+    }
   }
 }

@@ -8,12 +8,17 @@ body {
   background: #fafafa;
 }
 
-p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.7em;
-  color: #999;
+p{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #1D2B51;
+  opacity: 0.5;
+  margin-bottom: 5px;
 }
 
 a,
@@ -230,6 +235,7 @@ button.button:hover {
   border-radius: 20px;
   text-align: center;
   padding: 0;
+  pointer-events: none;
 }
 
 .page-num{
@@ -255,4 +261,104 @@ button.button:hover {
 .list-text
 {
   color: #CCFFFF;
+}
+
+select option:hover {
+  background-color: #27ACE7;
+  color: white;
+}
+
+select{
+  height: 50px;
+  background-color: #EDF3F3;
+}
+
+.goal-select{
+  width: 80%;
+  height: 70px;
+  background: #FFFFFF;
+  text-align: center;
+  border: 2px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.08);
+  border-radius: 16px;
+  white-space: normal;
+  color: #27ACE7;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.dropzone{
+  height: 130px;
+  padding: 2rem;
+  text-align: center;
+  border: dashed 2px grey;
+  background: rgba(237, 243, 243, 0.6);
+  border-radius: 16px;
+  position: relative;
+}
+
+.file{
+  opacity: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.underwriting tr {
+  height: 70px;
+  vertical-align: middle;
+}
+
+.underwriting tr td input {
+  background: #FFFFFF;
+  border: 1px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
+  border-radius: 16px;
+}
+
+.underwriting tr td textarea {
+  background: #FFFFFF;
+  border: 1px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
+  border-radius: 16px;
+}
+
+.goals{
+  width: 50%;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid #27ACE7;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.08);
+  border-radius: 16px;
+  white-space: normal;
+  color: #27ACE7;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.form-select{
+  overflow: hidden;
+  border:0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.steps{
+  border-radius: 16px;
+  border: none;
+  pointer-events: none;
+}
+
+.select-intake{
+  height: 40px;
+  background-color: white;
+  border-radius: 16px;
 }
