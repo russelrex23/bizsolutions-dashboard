@@ -17,6 +17,6 @@ export class AuthenticationService {
   }
 
   public authenticate(payload: GenericObject): Observable<Authorization> {
-    return this.httpRequestService.post('/auth/sign_in', payload);
+    return this.httpRequestService.post('/api/login', payload);
   }
 }

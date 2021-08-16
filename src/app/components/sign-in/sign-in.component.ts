@@ -58,10 +58,9 @@ export class SignInComponent implements OnInit {
     this.isLoggingIn = true;
     this.authenticationService.authenticate(this.signInFormGroup.value).subscribe(
       (authorization: Authorization) => {
-        console.log(authorization);
         this.isLoggingIn = false;
         localStorage.setItem('token', authorization.token);
-        NotificationUtil.success('Success');
+        NotificationUtil.success(authorization.message);
         this.routeService.navigate('/dashboard');
       }, (httpErrorResponse: HttpErrorResponse) => {
         if (httpErrorResponse.error.message) {
