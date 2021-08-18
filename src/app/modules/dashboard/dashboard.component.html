@@ -37,27 +37,27 @@
           <span class="page-num" *ngIf="!fourthStepDone">4</span>
           <i class="fa fa-check" *ngIf="fourthStepDone"></i>
         </button>
-        <span class="col">Underwriting <br> self-assessment</span>
+        <span class="col" style="padding-left: 5px;">Underwriting <br> Self-Assessment</span>
       </li>
       <li class="ms-4 mb-4">
         <button class="btn link page-container" id="pills-fifth-tab" data-bs-toggle="pill" data-bs-target="#pills-fifth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-          <span class="page-num" *ngIf="!fifthStepDone">5</span>
-          <i class="fa fa-check" *ngIf="fifthStepDone"></i>
+          <span class="page-num" *ngIf="!sixthStepDone">5</span>
+          <i class="fa fa-check" *ngIf="sixthStepDone"></i>
         </button>
-        Work plan
+        LCP intake
       </li>
       <li class="ms-4 mb-4">
         <button class="btn link page-container" id="pills-sixth-tab" data-bs-toggle="pill" data-bs-target="#pills-sixth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
           <span class="page-num" *ngIf="!sixthStepDone">6</span>
           <i class="fa fa-check" *ngIf="sixthStepDone"></i>
         </button>
-        LCP intake
+        LCP Enhancement
       </li>
       <li class="ms-4 mb-4">
         <button class="btn link page-container" id="pills-seventh-tab" data-bs-toggle="pill" data-bs-target="#pills-seventh" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
           <span class="page-num">7</span>
         </button>
-        LCP Enhancement
+        Work plan
       </li>
     </ul>
 
@@ -136,8 +136,8 @@
           <div class="row col-md-12">
             <div class="card mb-4">
               <div class="header m-4">
-                <h4 class="fw-bolder">Agreement contract</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo.</p>
+                <h4 class="fw-bolder">Contract Agreement</h4>
+                <p>Please take a brief moment to review and sign your Contract Agreement.</p>
               </div>
             </div>
             <div class="card">
@@ -147,7 +147,7 @@
                   <tr>
                     <th>
                       <div class="body text-center mb-5">
-                        <h3 class="modal-title fw-bolder text-dark">Agreement Contract</h3>
+                        <h3 class="modal-title fw-bolder text-dark">Contract Agreement</h3>
                       </div>
                     </th>
                   </tr>
@@ -204,7 +204,7 @@
                   </div>
                 </div>
                 <div class="text-center mt-5">
-                  <button class="btn btn-lg get-started w-50" [disabled]="!isChecked && !isSignatureDone" (click)="agree()">Submit Agreement</button>
+                  <button class="btn btn-lg get-started w-50" [disabled]="!isChecked && !isSignatureDone" (click)="agree()">Submit</button>
                 </div>
                 <i class="fa fa-download pointer m-5 mb-0 mt-3" aria-hidden="true" style="color: #66ace9;" (click)="downloadPDF()" *ngIf="isSignatureDone"> Click to export pdf</i>
               </div>
@@ -217,7 +217,7 @@
             <div class="card mb-4">
               <div class="header m-4">
                 <h4 class="fw-bolder">My Goal</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo.</p>
+                <p>Please take a brief moment to select your goal.  Some of your recommendations and experiences throughout the program will be adjusted based on your selection.</p>
               </div>
             </div>
             <div class="card mb-4">
@@ -243,8 +243,8 @@
           <div class="row col-md-12">
             <div class="card mb-4">
               <div class="header m-4">
-                <h4 class="fw-bolder">Import credit report</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo.</p>
+                <h4 class="fw-bolder">Import Credit Report</h4>
+                <p>Please begin importing your 3 credit reports.</p>
               </div>
             </div>
             <div class="card w-75 w-sm-100 mt-3 mb-4">
@@ -280,8 +280,8 @@
           <div class="row col-md-12">
             <div class="card mb-4">
               <div class="header m-4">
-                <h4 class="fw-bolder">Underwriting self-assessment</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo.</p>
+                <h4 class="fw-bolder">Underwriting Self-Assessment</h4>
+                <p>Please answer the following underwriting self-assessment questions.</p>
               </div>
             </div>
             <div class="card">
@@ -421,7 +421,7 @@
                         </tr>
                         <tr>
                           <th scope="row">7</th>
-                          <td>Enter your annual income</td>
+                          <td>(Applicable For<strong>&nbsp;Funding&nbsp;</strong>only) Enter your annual income</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
                               Suspendisse mollis purus ut
@@ -431,7 +431,7 @@
                         </tr>
                         <tr>
                           <th scope="row">8</th>
-                          <td>Enter your desired loan amount</td>
+                          <td>(Applicable For<strong>&nbsp;Funding&nbsp;</strong>only) Enter your desired loan amount</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
                               $ 100
@@ -441,7 +441,7 @@
                         </tr>
                         <tr>
                           <th scope="row">9</th>
-                          <td>Enter desired loan terms (max of 5 years)</td>
+                          <td>(Applicable For<strong>&nbsp;Funding&nbsp;</strong>only) Enter desired loan terms (max of 5 years)</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
                               4 Year
@@ -671,35 +671,6 @@
         </div>
 
         <div class="tab-pane fade" id="pills-fifth" role="tabpanel" aria-labelledby="pills-home-tab">
-          <div class="row col-md-12">
-            <div class="card mb-4">
-              <div class="header m-4">
-                <h4 class="fw-bolder">Work Plan</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo.</p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="body m-4">
-                <h4 class="fw-bolder">Credit Analysis</h4>
-                <hr>
-                <div class="col m-4 mb-5">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo. Aliquam metus metus, ullamcorper vitae facilisis in, pretium non nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis commodo tortor auctor laoreet. Nulla vel urna nec justo aliquam iaculis nec vitae tortor. Mauris ut metus non augue dapibus elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique mauris odio, vel tempor augue aliquet a. Quisque mattis ultricies orci, quis maximus ex condimentum sed.
-
-                    Donec sed neque commodo, elementum dolor vitae, vehicula nulla. Morbi vel commodo lectus. Morbi mollis tempus lorem id condimentum. Proin tempor in felis quis blandit. Sed bibendum ac leo at convallis. Ut nec leo eu mi mollis hendrerit. Aenean hendrerit lectus at posuere consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat.
-                  </p>
-                </div>
-                <div class="col mb-4 mt-5">
-                  <button class="btn btn-lg get-started" (click)="sixthStep();">Accept</button>
-                </div>
-                <p>By clicking <strong>Submit and Continue</strong> you accept our <span class="text-primary">Terms & Conditions</span> and <span class="text-primary">Privacy Policy.</span></p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="pills-sixth" role="tabpanel" aria-labelledby="pills-home-tab">
           <div class="row col-md-12">
             <div class="card mb-4">
               <div class="header m-4">
@@ -1879,7 +1850,7 @@
                       </div>
 
                       <div class="text-end mt-5">
-                        <button class="button" type="button" (click)="seventhStep();">Continue</button>
+                        <button class="button" type="button" (click)="sixthStep();">Continue</button>
                       </div>
                     </div>
                   </div>
@@ -1890,12 +1861,17 @@
           </div>
         </div>
 
-        <div class="tab-pane fade" id="pills-seventh" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="tab-pane fade" id="pills-sixth" role="tabpanel" aria-labelledby="pills-home-tab">
           <div class="row col-md-12">
             <div class="card mb-4">
               <div class="header m-4">
                 <h4 class="fw-bolder">LCP Enhancement</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo.</p>
+                <p style="text-align: justify">The LCP Enhancement component to the program is the main feature of the program.
+                  This is where you create payment experiences with credit vendors, and in turn, these credit vendors report your payment experience to the credit bureaus, thereby enhancing your credit profile.
+                  Please take a moment to sort through the list of credit vendors for each respective Tier and select the accounts you would like added to your credit profile.
+                  Based on your selection, the respective accounts will be added to your profile on your behalf.
+                  Please note that for all credit vendor accounts that require a purchase to be made, you will later have the option of either choosing on your end, the item to be purchased, or requesting that the item be chosen on your behalf, using the “best-match” approach.
+                </p>
               </div>
             </div>
             <div class="card mb-4">
@@ -1937,7 +1913,7 @@
                     </div>
                   </div>
                   <div class="card col p-0 m-2 border-0" style="border-radius: 16px;">
-                    <div class="text-primary pointer" style="margin-top: 50px;">
+                    <div class="text-primary pointer" style="margin-top: 50px;" (click)="showTier()">
                       + add more
                     </div>
                   </div>
@@ -2011,7 +1987,36 @@
                 <hr>
               </div>
               <div class="col text-end mb-4">
-                <a href="/dashboard/home"><button class="btn btn-lg get-started">Confirm</button></a>
+                <button class="btn btn-lg get-started" (click)="seventhStep();">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-seventh" role="tabpanel" aria-labelledby="pills-home-tab">
+          <div class="row col-md-12">
+            <div class="card mb-4">
+              <div class="header m-4">
+                <h4 class="fw-bolder">Work Plan</h4>
+                <p>Based on your selected goal and the information provided, below is a detailed work plan, uniquely designed just for you, listing all of the steps that will need to be taken for you to reach your goal.  Please review and Accept.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="body m-4">
+                <h4 class="fw-bolder">Credit Analysis</h4>
+                <hr>
+                <div class="col m-4 mb-5">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo. Aliquam metus metus, ullamcorper vitae facilisis in, pretium non nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis commodo tortor auctor laoreet. Nulla vel urna nec justo aliquam iaculis nec vitae tortor. Mauris ut metus non augue dapibus elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique mauris odio, vel tempor augue aliquet a. Quisque mattis ultricies orci, quis maximus ex condimentum sed.
+
+                    Donec sed neque commodo, elementum dolor vitae, vehicula nulla. Morbi vel commodo lectus. Morbi mollis tempus lorem id condimentum. Proin tempor in felis quis blandit. Sed bibendum ac leo at convallis. Ut nec leo eu mi mollis hendrerit. Aenean hendrerit lectus at posuere consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat.
+                  </p>
+                </div>
+                <div class="col mb-4 mt-5">
+                  <a href="/dashboard/home"><button class="btn btn-lg get-started">Accept</button></a>
+                </div>
+                <p>By clicking<strong>&nbsp;Submit and Continue&nbsp;</strong>you accept our<span class="text-primary">&nbsp;Terms & Conditions&nbsp;</span>and<span class="text-primary">&nbsp;Privacy Policy.</span></p>
+
               </div>
             </div>
           </div>
@@ -2028,6 +2033,7 @@
 <div id="showIdentityIq" class="modal fade" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-md">
     <div class="modal-content">
+      <form [formGroup]="identityIqCredGroup">
       <div class="modal-header" style="border-bottom: 0;">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -2035,20 +2041,21 @@
         <h5 class="modal-title fw-bolder mb-5">Please enter your IdentityIQ Credentials</h5>
         <div class="col mb-4">
           <p>Username</p>
-          <input type="text" class="form-control">
+          <input formControlName="userName" id="userName" type="text" class="form-control">
         </div>
         <div class="col mb-4">
           <p>Password</p>
-          <input type="text" class="form-control">
+          <input formControlName="password" id="password" type="text" class="form-control">
         </div>
         <div class="col mb-4">
           <p>Last 4 digit of SSN</p>
-          <input type="text" class="form-control">
+          <input formControlName="ssn" id="ssn" type="text" class="form-control">
         </div>
       </div>
       <div class="text-center mb-5">
-        <button class="btn btn-lg get-started w-75" (click)="fourthStep()">Import my Credit Report</button>
+        <button [disabled]="!identityIqCredGroup.valid" class="btn btn-lg get-started w-75" (click)="fourthStep()">Import my Credit Report</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -2067,10 +2074,10 @@
           <a href="https://member.identityiq.com/help-you-to-save-money.aspx?offercode=431136US" target="_blank"><button class="btn btn-lg get-started w-75">Create an Identity IQ account</button></a>
         </div>
         <div class="col mb-4">
-          <button class="btn btn-lg get-started w-75" (click)="creditReportCredentials()" style="font-size: 18px;">Give credentials of other provider</button>
+          <button class="btn btn-lg get-started w-75" (click)="creditReportCredentials()" style="font-size: 13px;">Provide credentials of a different credit report provider</button>
         </div>
         <div class="col mb-4">
-          <button class="btn btn-lg get-started w-75" (click)="uploadDocument()">Upload report</button>
+          <button class="btn btn-lg get-started w-75" (click)="uploadDocument()" style="font-size: 13px;">Upload PDF copies of credit reports</button>
         </div>
       </div>
     </div>
@@ -2089,7 +2096,7 @@
       </div>
       <div class="modal-body m-5 mt-0 mb-0 text-start" style="padding-left: 10%; padding-right: 10%;">
         <h5 class="modal-title fw-bolder">Upload document</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <p>Please upload a PDF copy of your credit reports.</p>
         <div class="row mt-5">
           <div class="col-md-6">
             <div class="form-check">
@@ -2114,8 +2121,8 @@
           <div class="col" *ngIf="type == 1">
             <div class="dropzone" *ngIf="!fileToUpload">
               <input class="file" type="file" [multiple]="false" id="file" (change)="handleFileInput($event.target.files)" style="border-radius: 0">
-              <div class="col" style="display: inline-block;">
-                <p>drag file here or <span class="text-primary">browse</span></p>
+              <div class="col" style="display: inline-block; margin-top: 20px;">
+                <p>drag file here or <span class="text-primary">&nbsp;browse</span></p>
               </div>
             </div>
             <div class="row m-5 mb-5 mt-0" *ngIf="fileToUpload" style="margin-left: 90px!important; margin-right: 130px!important; background: rgba(237, 243, 243, 0.6); height: 40px;">
@@ -2242,7 +2249,7 @@
             <img class="pe-2" src="/assets/images/img-ssl.png">
           </div>
         </div>
-        <p>By clicking <strong>Submit and Continue</strong> you accept our <span class="text-primary">Terms & Conditions</span> and <span class="text-primary">Privacy Policy.</span></p>
+        <p>By clicking<strong>&nbsp;Submit and Continue&nbsp;</strong> you accept our <span class="text-primary">&nbsp;Terms & Conditions&nbsp;</span> and <span class="text-primary">&nbsp;Privacy Policy.</span></p>
       </div>
     </div>
   </div>
@@ -2261,8 +2268,7 @@
         <div class="col mb-4">
           <img class="pe-2" src="/assets/images/transaction-complete.png"></div>
         <div class="col mb-4 m-5">
-          Your credentials have been submitted and
-          will be reviewed by our Solutionist.
+          Your credentials have been submitted and a credit analysis will be provided to you soon.
         </div>
         <div class="col mb-4">
           <button class="btn btn-lg get-started w-75" (click)="fourthStep()">Continue</button>
@@ -2413,7 +2419,7 @@
                     <div class="col">
                       <h5>DISCLAIMER</h5>
                     </div>
-                    <h5 style="font-size: 14px;">Prices may be changed at any time without further notice.</h5>
+                    <h5 style="font-size: 14px;">Cost is ONLY AN ESTIMATE.  It was derived based on the average minimum purchase amount, any associated membership or annual fees, the estimated taxes, and/or shipping fees.   Depending on the actual item purchased and your shipping location, the final cost can be more or less than the listed estimated cost.</h5>
                   </div>
                 </div>
               </div>

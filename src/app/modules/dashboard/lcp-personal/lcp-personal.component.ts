@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import {PageUtil} from '../../../utils';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { ViewportScroller } from '@angular/common';
 import {Observable, of} from 'rxjs';
 
 @Component({
@@ -117,7 +118,12 @@ export class LcpPersonalComponent implements OnInit {
     { y: '2012', a: 100, b: 90 }
   ];
 
-  constructor() { }
+  pageYoffset = 0;
+  @HostListener('window:scroll', ['$event']) onScroll(event){
+    this.pageYoffset = window.pageYOffset;
+  }
+
+  constructor(private scroll: ViewportScroller) { }
 
   ngOnInit(): void {
   }
@@ -144,6 +150,7 @@ export class LcpPersonalComponent implements OnInit {
   }
 
   showHutton(): void{
+    this.scroll.scrollToPosition([0 , 0]);
     this.hutton = true;
   }
 

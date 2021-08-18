@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NotificationUtil} from '../../utils';
 import {HttpErrorResponse} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
-import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, Validators, FormGroup} from '@angular/forms';
 import {RouteService} from '../../services/route.service';
 import {Account} from '../../models/account';
 import {AccountService} from '../../services/account.service';
@@ -20,11 +20,17 @@ export class RegistrationComponent implements OnInit {
   private API_URL = environment.apiUrl;
   private SITE = environment.site;
 
-  signUpFormGroup = this.fb.group({
+  signUpFormGroup =  new FormGroup({
     email: new FormControl(''),
-    password: new FormControl('', Validators.required),
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required)
+  });
+
+  paymentFormGroup =  new FormGroup({
+    cardNumber: new FormControl('', Validators.required),
+    expirationDate: new FormControl('', Validators.required),
+    cvv: new FormControl('', Validators.required),
+    cardHolderName: new FormControl('', Validators.required)
   });
   isSigningUp = false;
   errorMessage = '';
@@ -32,6 +38,7 @@ export class RegistrationComponent implements OnInit {
   user = {
     email: ''
   };
+  product = '';
 
   constructor(private fb: FormBuilder, private routeService: RouteService,
               private accountService: AccountService,
@@ -39,9 +46,9 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params => {
-      const token = params.token;
-      this.user = jwt_decode(token);
+      this.product = params.product;
     });
+    console.log(this.product);
   }
 
   userUpdate(): void {
@@ -73,6 +80,10 @@ export class RegistrationComponent implements OnInit {
     PageUtil.showModal('showSecondaryLcpPersonal');
   }
 
+  hideSecondaryLCP(): void {
+    PageUtil.hideModal('showSecondaryLcpPersonal');
+  }
+
   showSecondaryLCPDetails(): void {
     PageUtil.hideModal('showSecondaryLcpPersonal');
     PageUtil.showModal('showSecondaryLcpPersonalDetails');
@@ -83,10 +94,23 @@ export class RegistrationComponent implements OnInit {
   }
 
   nextFirst(): void{
+    PageUtil.hideModal('showSecondaryLcpPersonalDetails');
     PageUtil.click('pills-second-tab');
   }
 
   nextSecond(): void{
     PageUtil.click('pills-third-tab');
+  }
+
+  oneTime(): void{
+    PageUtil.click('one-tab');
+  }
+
+  threeTime(): void{
+    PageUtil.click('three-tab');
+  }
+
+  sevenTime(): void{
+    PageUtil.click('seven-tab');
   }
 }

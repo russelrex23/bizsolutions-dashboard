@@ -264,3 +264,7 @@ button.button:hover {
 .btn-close{
   font-size: 10px;
 }
+
+.pointer-none{
+  pointer-events: none;
+}

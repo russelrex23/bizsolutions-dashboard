@@ -362,3 +362,7 @@ select{
   background-color: white;
   border-radius: 16px;
 }
+
+/*.row{*/
+/*  --bs-gutter-x: 0;*/
+/*}*/

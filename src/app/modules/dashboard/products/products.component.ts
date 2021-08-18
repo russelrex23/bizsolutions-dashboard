@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import {PageUtil} from '../../../utils';
+import { ViewportScroller } from '@angular/common';
 import {AngularEditorConfig} from "@kolkov/angular-editor";
 
 @Component({
@@ -56,6 +57,7 @@ export class ProductsComponent implements OnInit {
       },
     ],
     uploadUrl: 'v1/image',
+
     // @ts-ignore
     upload: (file: File) => {
       this.fileToUpload = file;
@@ -99,7 +101,12 @@ export class ProductsComponent implements OnInit {
     { label: 'Sales03', value: 20 },
   ];
 
-  constructor() { }
+  pageYoffset = 0;
+  @HostListener('window:scroll', ['$event']) onScroll(event){
+    this.pageYoffset = window.pageYOffset;
+  }
+
+  constructor(private scroll: ViewportScroller) { }
 
   ngOnInit(): void {
   }
@@ -113,6 +120,7 @@ export class ProductsComponent implements OnInit {
   }
 
   showULine(): void{
+    this.scroll.scrollToPosition([0 , 0]);
     this.ULine = true;
   }
 

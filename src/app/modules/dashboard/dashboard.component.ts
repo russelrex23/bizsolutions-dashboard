@@ -6,6 +6,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import {SignaturePad} from 'angular2-signaturepad';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,12 @@ import {SignaturePad} from 'angular2-signaturepad';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  identityIqCredGroup =  new FormGroup({
+    userName: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    ssn: new FormControl('', Validators.required)
+  });
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -75,7 +82,7 @@ export class DashboardComponent implements OnInit {
       data: 'Get "Lender Compliant" for the purpose of a business deal (e.g. Government Contract, Prospective Partnership, New Business Launch, etc.)'
     },
     {
-      data: 'Other: PLEASE SPECIFY'
+      data: 'Other (Please specify)'
     }
   ];
 
