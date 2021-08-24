@@ -21,6 +21,16 @@ p{
   margin-bottom: 5px;
 }
 
+.sub-text{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  color: #1D2B51;
+  opacity: 0.5;
+  margin-bottom: 5px;
+}
+
 a,
 a:hover,
 a:focus {
@@ -238,6 +248,17 @@ button.button:hover {
   pointer-events: none;
 }
 
+.page-circle-num{
+  width: 32px;
+  height: 32px;
+  color: #1D2B51;
+  background: #EDF3F3;
+  border-radius: 20px;
+  text-align: center;
+  padding: 0;
+  pointer-events: none;
+}
+
 .page-num{
   font-family: Rubik, sans-serif;
   font-style: normal;
@@ -270,7 +291,7 @@ select option:hover {
 
 select{
   height: 50px;
-  background-color: #EDF3F3;
+  /*background-color: #EDF3F3;*/
 }
 
 .goal-select{
@@ -313,6 +334,25 @@ select{
   vertical-align: middle;
 }
 
+.border-side-radius{
+  background: white;
+  border-top-right-radius: 16px !important;
+  border-bottom-right-radius: 16px !important;
+}
+
+.border-left-side-radius{
+  background: white;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+input{
+  background: #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
+  border-radius: 16px;
+}
+
 .underwriting tr td input {
   background: #FFFFFF;
   border: 1px solid #27ACE7;
@@ -330,11 +370,14 @@ select{
 }
 
 .goals{
-  width: 50%;
+  width: 100px;
+  height: 45px;
+  /*width: 50%;*/
   cursor: pointer;
   text-align: center;
   border: 2px solid #27ACE7;
   box-sizing: border-box;
+  background: white;
   box-shadow: 0px 6px 2px -4px rgba(14, 14, 44, 0.08);
   border-radius: 16px;
   white-space: normal;
@@ -363,6 +406,118 @@ select{
   border-radius: 16px;
 }
 
-/*.row{*/
-/*  --bs-gutter-x: 0;*/
-/*}*/
+.row-no-bs{
+  --bs-gutter-x: 0;
+}
+
+.pl-pr-0{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.w-90-m-auto{
+  width: 90%;
+  margin: auto;
+}
+
+.title{
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #1D2B51;
+}
+
+.custom-text{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #261A30;
+}
+
+.add-more{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 0.03em;
+  color: #27ACE7;
+}
+
+.step{
+  /* 12/reg */
+
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: #CCFFFF;
+
+  opacity: 0.4;
+}
+
+.dot{
+  width: 5px;
+  height: 5px;
+  left: 27px;
+  background: #CCFFFF;
+  opacity: 0.2;
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.no-dot{
+  width: 5px;
+  height: 5px;
+  left: 27px;
+  background: transparent;
+  opacity: 0.2;
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.step-done{
+  /* button font */
+
+  background: #CCFFFF;
+  /* button font */
+
+  border: 2px solid #CCFFFF;
+  box-sizing: border-box;
+}
+
+.step-not-done.active{
+  border: 2px solid #CCFFFF;
+  background: #CCFFFF;
+}
+
+.step-not-done{
+  border: 2px solid #CCFFFF;
+  background: transparent;
+}
+
+.step-num{
+  color: #CCFFFF;
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.step-num-active{
+  font-family: Overpass, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+}

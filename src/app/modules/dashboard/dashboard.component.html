@@ -1,68 +1,177 @@
 <section class="wrapper">
   <!--Start On-boarding Sidebar-->
-  <nav id="sidebar" *ngIf="steps === 'on-boarding'">
+  <nav id="sidebar" *ngIf="steps === 'on-boarding'" style="position: relative;">
 
     <div class="navbar-brand">
-      <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="toggleSidebar()"><i class="lnr lnr-menu fa fa-chevron-circle-left" style="color: white; font-size: 20px;"></i></button>
+      <button type="button" class="btn-toggle-offcanvas btn btn-sm btn-default float-right" (click)="toggleSidebar()">
+        <img src="assets/images/arrow-blue-left.png"></button>
     </div>
 
     <h4 class="ps-3 pt-4 pb-4">Onboarding</h4>
 
     <hr class="hr-custom">
-    <p class="ps-3">Steps</p>
-    <ul class="nav nav-pills list-unstyled flex-column components pt-0 list-group" id="page-tab" role="tablist">
-      <li class="ms-4 mb-4">
-        <button class="btn link active page-container" id="pills-first-tab" data-bs-toggle="pill" data-bs-target="#pills-first" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-          <span class="page-num" *ngIf="!firstStepDone">1</span>
+    <ul class="nav nav-pills list-unstyled flex-column components pt-0 list-group" id="page-tab" role="tablist" style="border-bottom: 0; height: 1000px;">
+      <li class="ms-4">
+        <p class="ps-1 step">Steps</p>
+        <button *ngIf="!firstStepDone" class="btn step-not-done page-container" [ngClass]="{'active': !firstStepDone}" id="pills-first-tab" data-bs-toggle="pill" data-bs-target="#pills-first" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span [ngClass]="{'step-num-active': !firstStepDone}">1</span>
+        </button>
+        <button *ngIf="firstStepDone" class="btn step-done page-container" data-bs-toggle="pill" data-bs-target="#pills-first" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
           <i class="fa fa-check" *ngIf="firstStepDone"></i>
         </button>
-        Agreement Contract
+        Contract Agreement
+        <div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
       </li>
-      <li class="ms-4 mb-4">
-        <button class="btn link page-container" id="pills-second-tab" data-bs-toggle="pill" data-bs-target="#pills-second" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-          <span class="page-num" *ngIf="!secondStepDone">2</span>
-          <i class="fa fa-check" *ngIf="secondStepDone"></i>
+      <li class="ms-4">
+<!--        <button class="btn link page-container" id="pills-second-tab" data-bs-toggle="pill" data-bs-target="#pills-second" type="button" role="tab" aria-controls="pills-home" aria-selected="true">-->
+<!--          <span class="page-num" *ngIf="!secondStepDone">2</span>-->
+<!--          <i class="fa fa-check" *ngIf="secondStepDone"></i>-->
+<!--        </button>-->
+        <button *ngIf="!secondStepDone" class="btn step-not-done page-container" [ngClass]="{'active': firstStepDone}" id="pills-second-tab" data-bs-toggle="pill" data-bs-target="#pills-second" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="step-num" *ngIf="!secondStepDone && !firstStepDone">2</span>
+          <span [ngClass]="{'step-num-active': firstStepDone}" *ngIf="firstStepDone">2</span>
+        </button>
+        <button *ngIf="secondStepDone" class="btn step-done page-container">
+          <i class="fa fa-check" *ngIf="firstStepDone"></i>
         </button>
         My Goal
+        <div *ngIf="!firstStepDone">
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+        </div>
+        <div *ngIf="firstStepDone">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
       </li>
-      <li class="ms-4 mb-4">
-        <button class="btn link page-container" id="pills-third-tab" data-bs-toggle="pill" data-bs-target="#pills-third" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-          <span class="page-num" *ngIf="!thirdStepDone">3</span>
-          <i class="fa fa-check" *ngIf="thirdStepDone"></i>
+      <li class="ms-4">
+<!--        <button class="btn link page-container" id="pills-third-tab" data-bs-toggle="pill" data-bs-target="#pills-third" type="button" role="tab" aria-controls="pills-home" aria-selected="true">-->
+<!--          <span class="page-num" *ngIf="!thirdStepDone">3</span>-->
+<!--          <i class="fa fa-check" *ngIf="thirdStepDone"></i>-->
+<!--        </button>-->
+        <button *ngIf="!thirdStepDone" class="btn step-not-done page-container" [ngClass]="{'active': secondStepDone}" id="pills-third-tab" data-bs-toggle="pill" data-bs-target="#pills-third" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="step-num" *ngIf="!thirdStepDone && !secondStepDone">3</span>
+          <span [ngClass]="{'step-num-active': secondStepDone}" *ngIf="secondStepDone">3</span>
+        </button>
+        <button *ngIf="thirdStepDone" class="btn step-done page-container">
+          <i class="fa fa-check" *ngIf="secondStepDone"></i>
         </button>
         Import credit report
+        <div *ngIf="!secondStepDone">
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+        </div>
+        <div *ngIf="secondStepDone">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
       </li>
-      <li class="ms-4 mb-4 row">
-        <button class="btn link page-container col-1" id="pills-fourth-tab" data-bs-toggle="pill" data-bs-target="#pills-fourth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-          <span class="page-num" *ngIf="!fourthStepDone">4</span>
-          <i class="fa fa-check" *ngIf="fourthStepDone"></i>
+      <li class="ms-4 row">
+<!--        <button class="btn link page-container col-1" id="pills-fourth-tab" data-bs-toggle="pill" data-bs-target="#pills-fourth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">-->
+<!--          <span class="page-num" *ngIf="!fourthStepDone">4</span>-->
+<!--          <i class="fa fa-check" *ngIf="fourthStepDone"></i>-->
+<!--        </button>-->
+        <button *ngIf="!fourthStepDone" class="btn step-not-done page-container" [ngClass]="{'active': thirdStepDone}" id="pills-fourth-tab" data-bs-toggle="pill" data-bs-target="#pills-fourth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="step-num" *ngIf="!fourthStepDone && !thirdStepDone">4</span>
+          <span [ngClass]="{'step-num-active': thirdStepDone}" *ngIf="thirdStepDone">4</span>
+        </button>
+        <button *ngIf="fourthStepDone" class="btn step-done page-container">
+          <i class="fa fa-check" *ngIf="thirdStepDone"></i>
         </button>
         <span class="col" style="padding-left: 5px;">Underwriting <br> Self-Assessment</span>
+        <div *ngIf="!thirdStepDone">
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+        </div>
+        <div *ngIf="thirdStepDone" style="padding-left: 0;">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
       </li>
-      <li class="ms-4 mb-4">
-        <button class="btn link page-container" id="pills-fifth-tab" data-bs-toggle="pill" data-bs-target="#pills-fifth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-          <span class="page-num" *ngIf="!sixthStepDone">5</span>
-          <i class="fa fa-check" *ngIf="sixthStepDone"></i>
+      <li class="ms-4">
+<!--        <button class="btn link page-container" id="pills-fifth-tab" data-bs-toggle="pill" data-bs-target="#pills-fifth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">-->
+<!--          <span class="page-num" *ngIf="!sixthStepDone">5</span>-->
+<!--          <i class="fa fa-check" *ngIf="sixthStepDone"></i>-->
+<!--        </button>-->
+        <button *ngIf="!fifthStepDone" class="btn step-not-done page-container" [ngClass]="{'active': fourthStepDone}" id="pills-fifth-tab" data-bs-toggle="pill" data-bs-target="#pills-fifth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="step-num" *ngIf="!fifthStepDone && !fourthStepDone">5</span>
+          <span [ngClass]="{'step-num-active': fourthStepDone}" *ngIf="fourthStepDone">5</span>
+        </button>
+        <button *ngIf="fifthStepDone" class="btn step-done page-container">
+          <i class="fa fa-check" *ngIf="fourthStepDone"></i>
         </button>
         LCP intake
+        <div *ngIf="!fourthStepDone">
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+        </div>
+        <div *ngIf="fourthStepDone">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
       </li>
-      <li class="ms-4 mb-4">
-        <button class="btn link page-container" id="pills-sixth-tab" data-bs-toggle="pill" data-bs-target="#pills-sixth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-          <span class="page-num" *ngIf="!sixthStepDone">6</span>
-          <i class="fa fa-check" *ngIf="sixthStepDone"></i>
+      <li class="ms-4">
+<!--        <button class="btn link page-container" id="pills-sixth-tab" data-bs-toggle="pill" data-bs-target="#pills-sixth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">-->
+<!--          <span class="page-num" *ngIf="!sixthStepDone">6</span>-->
+<!--          <i class="fa fa-check" *ngIf="sixthStepDone"></i>-->
+<!--        </button>-->
+        <button *ngIf="!sixthStepDone" class="btn step-not-done page-container" [ngClass]="{'active': fifthStepDone}" id="pills-sixth-tab" data-bs-toggle="pill" data-bs-target="#pills-sixth" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="step-num" *ngIf="!sixthStepDone && !fifthStepDone">6</span>
+          <span [ngClass]="{'step-num-active': fifthStepDone}" *ngIf="fifthStepDone">6</span>
+        </button>
+        <button *ngIf="sixthStepDone" class="btn step-done page-container">
+          <i class="fa fa-check" *ngIf="fifthStepDone"></i>
         </button>
         LCP Enhancement
+        <div *ngIf="!fifthStepDone">
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+          <div class="no-dot"></div>
+        </div>
+        <div *ngIf="fifthStepDone">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
       </li>
-      <li class="ms-4 mb-4">
-        <button class="btn link page-container" id="pills-seventh-tab" data-bs-toggle="pill" data-bs-target="#pills-seventh" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-          <span class="page-num">7</span>
+      <li class="ms-4">
+<!--        <button class="btn link page-container" id="pills-seventh-tab" data-bs-toggle="pill" data-bs-target="#pills-seventh" type="button" role="tab" aria-controls="pills-home" aria-selected="true">-->
+<!--          <span class="page-num">7</span>-->
+<!--        </button>-->
+        <button *ngIf="!sixthStepDone" class="btn step-not-done page-container" [ngClass]="{'active': fifthStepDone}" id="pills-seventh-tab" data-bs-toggle="pill" data-bs-target="#pills-seventh" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+          <span class="step-num" *ngIf="!sixthStepDone && !fifthStepDone">7</span>
+          <span [ngClass]="{'step-num-active': fifthStepDone}" *ngIf="fifthStepDone">7</span>
+        </button>
+        <button *ngIf="sixthStepDone" class="btn step-done page-container">
+          <i class="fa fa-check" *ngIf="fifthStepDone"></i>
         </button>
         Work plan
       </li>
-    </ul>
-
-    <ul class="list-unstyled CTAs">
-      <li>
+      <li style="position: absolute;
+    bottom: 0;">
         <p class="m-0">powered by</p>
         <a class="text-start p-0" href="/">
           <img src="assets/images/landing/Subtract.png">
@@ -70,6 +179,16 @@
         </a>
       </li>
     </ul>
+
+<!--    <ul class="list-unstyled CTAs">-->
+<!--      <li>-->
+<!--        <p class="m-0">powered by</p>-->
+<!--        <a class="text-start p-0" href="/">-->
+<!--          <img src="assets/images/landing/Subtract.png">-->
+<!--          <img src="assets/images/landing/bizsolutions.png">-->
+<!--        </a>-->
+<!--      </li>-->
+<!--    </ul>-->
   </nav>
 
   <!--Start Sidebar-->
@@ -130,24 +249,24 @@
     </section>
     <!--End Template Content-->
     <!--Start Template Content-->
-    <section class="template-content">
-      <div class="tab-content container" id="pills-page-tab" *ngIf="steps === 'on-boarding'">
+    <section>
+      <div class="tab-content pl-pr-0 container" id="pills-page-tab" *ngIf="steps === 'on-boarding'">
         <div class="tab-pane fade show active" id="pills-first" role="tabpanel" aria-labelledby="pills-home-tab">
-          <div class="row col-md-12">
-            <div class="card mb-4">
+          <div class="row row-no-bs col-md-12">
+            <div class="card mb-4" style="border-radius: 0px">
               <div class="header m-4">
-                <h4 class="fw-bolder">Contract Agreement</h4>
+                <span class="title text-start">Contract Agreement</span>
                 <p>Please take a brief moment to review and sign your Contract Agreement.</p>
               </div>
             </div>
-            <div class="card">
+            <div class="card w-90-m-auto">
               <div class="body m-5">
                 <table id="my-table">
                   <thead>
                   <tr>
                     <th>
                       <div class="body text-center mb-5">
-                        <h3 class="modal-title fw-bolder text-dark">Contract Agreement</h3>
+                        <span class="title">Contract Agreement</span>
                       </div>
                     </th>
                   </tr>
@@ -191,20 +310,20 @@
                 </table>
                 <div class="container mb-4 ms-5" *ngIf="!isSignatureDone">
                   <div class="row">
+                    <div class="row" style="border: 1px solid; width: 62%;">
+                      <signature-pad  [options]="signaturePadOptions" (onEndEvent)="drawComplete()"></signature-pad>
+                    </div>
+                    <p>Please sign here</p>
                     <div class="col">
                       <button type="button" class="btn btn-secondary" (click)="clear()">Clear</button>
                     </div>
                     <div class="col">
-                      <button type="button" class="btn btn-success" (click)="saveSig()" [disabled]="!sigUrl">Save</button>
-                    </div>
-                    <p>Please sign here:</p>
-                    <div class="row" style="border: 1px solid; width: 62%;">
-                      <signature-pad  [options]="signaturePadOptions" (onEndEvent)="drawComplete()"></signature-pad>
+                      <button class="btn btn-lg get-started" style="width: 80px;" (click)="saveSig()" [disabled]="!sigUrl">Save</button>
                     </div>
                   </div>
                 </div>
                 <div class="text-center mt-5">
-                  <button class="btn btn-lg get-started w-50" [disabled]="!isChecked && !isSignatureDone" (click)="agree()">Submit</button>
+                  <button class="btn btn-lg get-started" style="width: 340px" [disabled]="!isChecked && !isSignatureDone" (click)="agree()">Submit</button>
                 </div>
                 <i class="fa fa-download pointer m-5 mb-0 mt-3" aria-hidden="true" style="color: #66ace9;" (click)="downloadPDF()" *ngIf="isSignatureDone"> Click to export pdf</i>
               </div>
@@ -213,23 +332,23 @@
         </div>
 
         <div class="tab-pane fade" id="pills-second" role="tabpanel" aria-labelledby="pills-home-tab">
-          <div class="row col-md-12">
+          <div class="row pl-pr-0 col-md-12">
             <div class="card mb-4">
               <div class="header m-4">
-                <h4 class="fw-bolder">My Goal</h4>
+                <span class="title">My Goal</span>
                 <p>Please take a brief moment to select your goal.  Some of your recommendations and experiences throughout the program will be adjusted based on your selection.</p>
               </div>
             </div>
-            <div class="card mb-4">
-              <h5 class="modal-title fw-bolder m-4">Select your Goal</h5>
-              <select [(ngModel)]="selectedObject" class="form-select" multiple style="height: 500px; border: none; padding-top: 20px">
-                <option class="container goal-select p-2 mb-2" *ngFor="let item of goals">
+            <div class="card w-90-m-auto mb-4">
+              <span class="title m-4">Select your Goal</span>
+              <select [(ngModel)]="selectedObject" class="form-select" multiple style="height: 600px; border: none; padding-top: 20px">
+                <option class="container goal-select p-2 mb-4 text-start" *ngFor="let item of goals">
                   {{item.data}}
                 </option>
               </select>
               <div class="row mb-4 mt-3">
                 <div class="col">
-                  <button class="btn btn-lg get-started" (click)="firstStep();">Back</button>
+                  <button class="btn btn-lg download-btn" (click)="firstStep();">Back</button>
                 </div>
                 <div class="col">
                   <button class="btn btn-lg get-started float-end" (click)="selectedGoal()">Save</button>
@@ -240,14 +359,14 @@
         </div>
 
         <div class="tab-pane fade" id="pills-third" role="tabpanel" aria-labelledby="pills-home-tab">
-          <div class="row col-md-12">
+          <div class="row pl-pr-0 col-md-12">
             <div class="card mb-4">
               <div class="header m-4">
                 <h4 class="fw-bolder">Import Credit Report</h4>
                 <p>Please begin importing your 3 credit reports.</p>
               </div>
             </div>
-            <div class="card w-75 w-sm-100 mt-3 mb-4">
+            <div class="card w-sm-100 mt-3 mb-4 ms-5" style="width: 60%;">
               <div class="header m-3 text-center">
                 <img class="pe-2" src="/assets/images/dashboard/identity-iq.png">
               </div>
@@ -258,17 +377,16 @@
               </div>
               <div class="row text-center mb-5">
                 <div class="col">
-                  <button class="button mb-3" style="width: 200px" (click)="showNoIdentityIqModal()">No</button>
-                  <div class="container" style="margin-left: 80px;">
-                    <p>I don’t have an existing<br>
-                      IdentityIQ account</p>
+                  <button class="btn btn-lg download-btn" (click)="showNoIdentityIqModal();">No</button>
+                  <div class="container">
+                    <span class="sub-text">I don’t have an existing <br> IdentityIQ account</span>
                   </div>
                 </div>
                 <div class="col">
                   <button class="btn btn-lg mb-3 get-started" style="width: 200px" (click)="showIdentityIqModal()">Yes</button>
-                  <div class="container" style="margin-left: 95px;">
-                    <p>I have an existing<br>
-                      IdentityIQ account</p>
+                  <div class="container">
+                    <span class="sub-text">I have an existing<br>
+                      IdentityIQ account</span>
                   </div>
                 </div>
               </div>
@@ -277,20 +395,20 @@
         </div>
 
         <div class="tab-pane fade" id="pills-fourth" role="tabpanel" aria-labelledby="pills-home-tab">
-          <div class="row col-md-12">
+          <div class="row pl-pr-0 col-md-12">
             <div class="card mb-4">
               <div class="header m-4">
                 <h4 class="fw-bolder">Underwriting Self-Assessment</h4>
                 <p>Please answer the following underwriting self-assessment questions.</p>
               </div>
             </div>
-            <div class="card">
+            <div class="card w-90-m-auto">
               <div class="row body text-start mb-5 m-3">
                 <div class="col-md-12">
                   <div class="header m-3">
                     <div class="row">
                       <div class="col">
-                        <h5 class="modal-title fw-bolder mb-4">Underwriting Self-Assessment</h5>
+                        <h5 class="modal-title fw-bolder mb-4" *ngIf="!editUnderwriting">Confirmation</h5>
                       </div>
                       <div class="col text-end me-3">
                         <a class="pointer" (click)="editUnderwriting = true" *ngIf="!editUnderwriting"><img src="/assets/images/dashboard/pencil.png"></a>
@@ -318,10 +436,14 @@
                         </thead>
                         <tbody>
                         <tr>
-                          <th scope="row">1</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">1</span>
+                            </button>
+                          </th>
                           <td>Is your name accurately reporting on all 3 credit bureaus?</td>
                           <td>
-                            <div class="text-center" *ngIf="!editUnderwriting">
+                            <div *ngIf="!editUnderwriting">
                               Yes
                             </div>
                             <select class="form-select" multiple *ngIf="editUnderwriting">
@@ -335,10 +457,14 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">2</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">2</span>
+                            </button>
+                          </th>
                           <td>Is your address accurately reporting on all 3 credit bureaus?</td>
                           <td>
-                            <div class="text-center" *ngIf="!editUnderwriting">
+                            <div *ngIf="!editUnderwriting">
                               No
                             </div>
                             <select class="form-select" multiple *ngIf="editUnderwriting">
@@ -352,10 +478,14 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">3</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">3</span>
+                            </button>
+                          </th>
                           <td>Does your credit file contain more than 1 previous address?</td>
                           <td>
-                            <div class="text-center" *ngIf="!editUnderwriting">
+                            <div *ngIf="!editUnderwriting">
                               Yes
                             </div>
                             <select class="form-select" multiple *ngIf="editUnderwriting">
@@ -369,10 +499,14 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">4</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">4</span>
+                            </button>
+                          </th>
                           <td>Do you currently own or rent your home?</td>
                           <td>
-                            <div class="text-center" *ngIf="!editUnderwriting">
+                            <div *ngIf="!editUnderwriting">
                               No
                             </div>
                             <select class="form-select" multiple *ngIf="editUnderwriting">
@@ -386,10 +520,14 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">5</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">5</span>
+                            </button>
+                          </th>
                           <td>Does your file have any fraud alerts or credit freezes?</td>
                           <td>
-                            <div class="text-center" *ngIf="!editUnderwriting">
+                            <div *ngIf="!editUnderwriting">
                               Yes
                             </div>
                             <select class="form-select" multiple *ngIf="editUnderwriting">
@@ -403,10 +541,14 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">6</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">6</span>
+                            </button>
+                          </th>
                           <td>Have you recently had any credit repair performed on your file?</td>
                           <td>
-                            <div class="text-center" *ngIf="!editUnderwriting">
+                            <div *ngIf="!editUnderwriting">
                               Yes
                             </div>
                             <select class="form-select" multiple *ngIf="editUnderwriting">
@@ -420,7 +562,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">7</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">7</span>
+                            </button>
+                          </th>
                           <td>(Applicable For<strong>&nbsp;Funding&nbsp;</strong>only) Enter your annual income</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -430,7 +576,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">8</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">8</span>
+                            </button>
+                          </th>
                           <td>(Applicable For<strong>&nbsp;Funding&nbsp;</strong>only) Enter your desired loan amount</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -440,7 +590,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">9</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">9</span>
+                            </button>
+                          </th>
                           <td>(Applicable For<strong>&nbsp;Funding&nbsp;</strong>only) Enter desired loan terms (max of 5 years)</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -450,7 +604,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">10</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">10</span>
+                            </button>
+                          </th>
                           <td>Do you need to create a website? Or Do you need assistance with your website?</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -467,7 +625,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">11</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">11</span>
+                            </button>
+                          </th>
                           <td>What is the goal of the web content? Is it to book a call, buy a product, get a quote?</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -477,7 +639,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">12</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">12</span>
+                            </button>
+                          </th>
                           <td>Who are your ideal customers? Please describe them in detail.</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -487,7 +653,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">13</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">13</span>
+                            </button>
+                          </th>
                           <td>Additional info about your ideal customers:
                             <br>
                             What are the age ranges of your customers? (Select all that apply)
@@ -498,7 +668,7 @@
                             </div>
                             <div *ngIf="editUnderwriting">
                               <span style="font-size: 13px; opacity: 0.5;">hold ctrl to multiple select that apply</span>
-                              <select class="form-select radio" multiple style="height: 210px;">
+                              <select class="form-select radio" multiple style="height: 210px; display: flex;">
                                 <option class="container goals p-2 mb-2">
                                   31 - 40
                                 </option>
@@ -508,7 +678,7 @@
                                 <option class="container goals p-2 mb-2">
                                   51 - 60
                                 </option>
-                                <option class="container goals p-2 mb-2">
+                                <option class="container goals p-2 mb-2" style="width: 150px">
                                   61 and above
                                 </option>
                               </select>
@@ -516,13 +686,16 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">14</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                            <span style="font-weight: 700">14</span>
+                          </button></th>
                           <td>Gender</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
                               Male
                             </div>
-                            <select class="form-select radio" multiple style="height: 100%;" *ngIf="editUnderwriting">
+                            <select class="form-select radio" multiple style="height: 100%; display: flex;" *ngIf="editUnderwriting">
                               <span style="font-size: 13px; opacity: 0.5;">select that apply</span>
                               <option class="container goals p-2 mb-2">
                                 Male
@@ -537,7 +710,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">15</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">15</span>
+                            </button>
+                          </th>
                           <td>Where do they live? (Optional)</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -547,7 +724,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">16</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">16</span>
+                            </button>
+                          </th>
                           <td>What is their typical life like? (Optional)</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -557,7 +738,10 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">17</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                            <span style="font-weight: 700">17</span>
+                          </button></th>
                           <td>What are your customers interested in? What websites, blogs, books, magazines, people, shows, movies, software, Facebook pages, causes, charities would your audience be mostly to engage with? Feel free to elaborate as many as you like.
                             (Optional)</td>
                           <td>
@@ -568,7 +752,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">15</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">18</span>
+                            </button>
+                          </th>
                           <td>Where do they live? (Optional)</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -578,7 +766,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">18</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">19</span>
+                            </button>
+                          </th>
                           <td>What are your ideal customer’s goals and values?</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -588,7 +780,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">19</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">20</span>
+                            </button>
+                          </th>
                           <td>What are your ideal customer's pain points and challenges? Describe what keeps them up at night.</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -598,7 +794,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">20</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">21</span>
+                            </button>
+                          </th>
                           <td>What will be their objections in buying your product/service? (Optional)</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -608,7 +808,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">21</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">22</span>
+                            </button>
+                          </th>
                           <td>What is the business all about? Please explain in detail what you do and how you provide value to your customers.</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -618,7 +822,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">22</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">23</span>
+                            </button>
+                          </th>
                           <td>What products/services do you sell? Kindly describe what the service is in detail.</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -628,7 +836,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">23</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">24</span>
+                            </button>
+                          </th>
                           <td>What benefits does your service give to your customers?</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -638,7 +850,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">24</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">25</span>
+                            </button>
+                          </th>
                           <td>Do you have any direct competitors offering the same service? If not, can you give us at least three of your closest competitors?</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -648,7 +864,11 @@
                           </td>
                         </tr>
                         <tr>
-                          <th scope="row">25</th>
+                          <th scope="row">
+                            <button class="btn link page-circle-num" type="button">
+                              <span style="font-weight: 700">26</span>
+                            </button>
+                          </th>
                           <td>What is your value proposition? What makes you unique from your competitors? What do customers get when they give you their money? This is also critical to our success, so feel free to elaborate.</td>
                           <td>
                             <div *ngIf="!editUnderwriting">
@@ -671,14 +891,14 @@
         </div>
 
         <div class="tab-pane fade" id="pills-fifth" role="tabpanel" aria-labelledby="pills-home-tab">
-          <div class="row col-md-12">
+          <div class="row pl-pr-0 col-md-12">
             <div class="card mb-4">
               <div class="header m-4">
                 <h4 class="fw-bolder">LCP Intake</h4>
                 <p>Please take a moment to complete the Intake Form.</p>
               </div>
             </div>
-            <div class="card mb-4">
+            <div class="card w-90-m-auto mb-4">
               <div class="body m-4">
                 <!--          <ul class="nav nav-tabs" id="myTab" role="tablist">-->
                 <!--            <li class="nav-item col-md-2 ms-5" role="presentation">-->
@@ -725,7 +945,11 @@
                         </div>
                         <div class="col-md-4">
                           <p>Date of birth (MM-DD-YYYY)</p>
-                          <input type="text" class="form-control" value="">
+                          <div class="input-group input-group-sm mb-3">
+                            <input type="password" class="form-control" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px; height: 40px">
+                            <span class="input-group-text pointer border-side-radius"><img src="/assets/images/calendar.png" class="" alt="..."></span>
+                          </div>
+<!--                          <input type="text" class="form-control" value="">-->
                         </div>
                       </div>
                       <div class="row clearfix mb-2 text-start">
@@ -735,7 +959,7 @@
                         </div>
                       </div>
                       <div class="text-end mt-5">
-                        <button class="button" type="button" (click)="stepTwo()">Next</button>
+                        <button class="btn btn-lg get-started" style="width: 150px;" type="button" (click)="stepTwo()">Next</button>
                       </div>
                     </div>
                   </div>
@@ -751,14 +975,14 @@
                         <div class="col-md-4 mb-2">
                           <p>Personal monthly income</p>
                           <div class="input-group">
-                            <span class="input-group-text">$</span>
+                            <span class="input-group-text border-left-side-radius">$</span>
                             <input type="text" class="form-control" value="">
                           </div>
                         </div>
                         <div class="col-md-4">
                           <p>Total household monthly income</p>
                           <div class="input-group">
-                            <span class="input-group-text">$</span>
+                            <span class="input-group-text border-left-side-radius">$</span>
                             <input type="text" class="form-control" value="">
                           </div>
                         </div>
@@ -771,7 +995,7 @@
                         <div class="col-md-4 mb-2">
                           <p>Monthly rent / Mortgage amount</p>
                           <div class="input-group">
-                            <span class="input-group-text">$</span>
+                            <span class="input-group-text border-left-side-radius">$</span>
                             <input type="text" class="form-control" value="">
                           </div>
                         </div>
@@ -811,7 +1035,7 @@
                           </select>
                         </div>
                       </div>
-                      <hr>
+                      <hr class="mt-4 mb-4">
                       <div class="row clearfix mb-2 text-start">
                         <div class="col-md-12">
                           <p>Employer Street Address</p>
@@ -856,10 +1080,10 @@
                       </div>
                       <div class="row mt-5">
                         <div class="col text-start">
-                          <button class="button" type="button" (click)="stepOne()">Back</button>
+                          <button class="btn btn-lg download-btn" style="width: 150px;" (click)="stepOne()">Back</button>
                         </div>
                         <div class="col text-end">
-                          <button class="button" type="button" (click)="stepThree()">Next</button>
+                          <button class="btn btn-lg get-started" style="width: 150px;" (click)="stepThree()">Next</button>
                         </div>
                       </div>
                     </div>
@@ -915,7 +1139,7 @@
                       <div class="row clearfix mb-2 text-start">
                         <div class="col-md-4">
                           <p>Expiration Date on the Card</p>
-                          <input type="text" class="form-control" value="MM/YYYY">
+                          <input type="text" class="form-control" placeholder="MM/YYYY">
                         </div>
                         <div class="col-md-4">
                           <p>CVC</p>
@@ -924,10 +1148,10 @@
                       </div>
                       <div class="row mt-5">
                         <div class="col text-start">
-                          <button class="button" type="button" (click)="stepTwo()">Back</button>
+                          <button class="btn btn-lg download-btn" style="width: 150px;" (click)="stepTwo()">Back</button>
                         </div>
                         <div class="col text-end">
-                          <button class="button" type="button" (click)="stepFour()">Next</button>
+                          <button class="btn btn-lg get-started" style="width: 150px;" (click)="stepFour()">Next</button>
                         </div>
                       </div>
                     </div>
@@ -978,14 +1202,14 @@
                           <input type="text" class="form-control" value="">
                         </div>
                       </div>
-                      <hr>
+                      <hr class="mt-4 mb-4">
                       <div class="header m-3 text-start">
                         <h4>Billing Address</h4>
                       </div>
                       <div class="row clearfix mb-4 ms-md-4 text-start">
                         <div class="col-md-4">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked (change)="billAdd($event)">
+                            <input class="form-check-input" type="checkbox" style="-webkit-transform: scale(1.5)" checked (change)="billAdd($event)">
                             <label class="form-check-label">
                               Same as Home Address
                             </label>
@@ -1041,7 +1265,7 @@
                       <div class="row clearfix mb-4 ms-md-4 text-start">
                         <div class="col-md-4">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" checked (change)="shipAdd($event)">
+                            <input class="form-check-input" type="checkbox" style="-webkit-transform: scale(1.5)" checked (change)="shipAdd($event)">
                             <label class="form-check-label">
                               Same as Home Address
                             </label>
@@ -1093,10 +1317,10 @@
                       <hr>
                       <div class="row mt-5">
                         <div class="col text-start">
-                          <button class="button" type="button" (click)="stepThree()">Back</button>
+                          <button class="btn btn-lg download-btn" style="width: 150px;"  (click)="stepThree()">Back</button>
                         </div>
                         <div class="col text-end">
-                          <button class="button" type="button" (click)="stepFive()">Next</button>
+                          <button class="btn btn-lg get-started" style="width: 150px;" (click)="stepFive()">Next</button>
                         </div>
                       </div>
                     </div>
@@ -1129,8 +1353,8 @@
                             <td>Business phone, is this a mobile or home phone?</td>
                             <td>
                               <div class="row">
-                                <div class="col">Yes</div>
-                                <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                                <div class="col ms-3">Yes</div>
+                                <div class="col text-end me-3"><img src="/assets/images/dashboard/pencil.png"></div>
                               </div>
                             </td>
                           </tr>
@@ -1141,8 +1365,8 @@
                             <td>Lorem ipsum dolor sit amet?</td>
                             <td>
                               <div class="row">
-                                <div class="col">Yes</div>
-                                <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                                <div class="col ms-3">Yes</div>
+                                <div class="col text-end me-3"><img src="/assets/images/dashboard/pencil.png"></div>
                               </div>
                             </td>
                           </tr>
@@ -1153,8 +1377,8 @@
                             <td>Lorem ipsum dolor sit amet?</td>
                             <td>
                               <div class="row">
-                                <div class="col">Yes</div>
-                                <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                                <div class="col ms-3">Yes</div>
+                                <div class="col text-end me-3"><img src="/assets/images/dashboard/pencil.png"></div>
                               </div>
                             </td>
                           </tr>
@@ -1165,8 +1389,8 @@
                             <td>Lorem ipsum dolor sit amet?</td>
                             <td>
                               <div class="row">
-                                <div class="col">Yes</div>
-                                <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                                <div class="col ms-3">Yes</div>
+                                <div class="col text-end me-3"><img src="/assets/images/dashboard/pencil.png"></div>
                               </div>
                             </td>
                           </tr>
@@ -1177,8 +1401,8 @@
                             <td>Lorem ipsum dolor sit amet?</td>
                             <td>
                               <div class="row">
-                                <div class="col">Yes</div>
-                                <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                                <div class="col ms-3">Yes</div>
+                                <div class="col text-end me-3"><img src="/assets/images/dashboard/pencil.png"></div>
                               </div>
                             </td>
                           </tr>
@@ -1189,8 +1413,8 @@
                             <td>Lorem ipsum dolor sit amet?</td>
                             <td>
                               <div class="row">
-                                <div class="col">Yes</div>
-                                <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                                <div class="col ms-3">Yes</div>
+                                <div class="col text-end me-3"><img src="/assets/images/dashboard/pencil.png"></div>
                               </div>
                             </td>
                           </tr>
@@ -1201,8 +1425,8 @@
                             <td>Lorem ipsum dolor sit amet?</td>
                             <td>
                               <div class="row">
-                                <div class="col">Yes</div>
-                                <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                                <div class="col ms-3">Yes</div>
+                                <div class="col text-end me-3"><img src="/assets/images/dashboard/pencil.png"></div>
                               </div>
                             </td>
                           </tr>
@@ -1213,8 +1437,8 @@
                             <td>Lorem ipsum dolor sit amet?</td>
                             <td>
                               <div class="row">
-                                <div class="col">Yes</div>
-                                <div class="col text-end"><img src="/assets/images/dashboard/pencil.png"></div>
+                                <div class="col ms-3">Yes</div>
+                                <div class="col text-end me-3"><img src="/assets/images/dashboard/pencil.png"></div>
                               </div>
                             </td>
                           </tr>
@@ -1323,10 +1547,10 @@
                       </div>
                       <div class="row mt-4">
                         <div class="col text-start">
-                          <button class="button" type="button" (click)="stepFour()">Back</button>
+                          <button class="btn btn-lg download-btn" style="width: 150px;" (click)="stepFour()">Back</button>
                         </div>
                         <div class="col text-end">
-                          <button class="button" type="button" (click)="stepSix();">Save</button>
+                          <button class="btn btn-lg get-started" style="width: 150px;" (click)="stepSix();">Save</button>
                         </div>
                       </div>
                     </div>
@@ -1874,16 +2098,17 @@
                 </p>
               </div>
             </div>
-            <div class="card mb-4">
-              <div class="body m-4">
+            <div class="card w-90-m-auto mb-4">
+              <div class="body mt-4 ms-2 me-2">
                 <div class="row">
                   <div class="col">
                     <strong>Tier 1</strong> <img class="ms-2" src="/assets/images/info-blue.png" alt="...">
                   </div>
                   <div class="col text-end">
-                    <strong>(Always Approx) $ 210</strong>
+                    <span class="custom-text">(Always Approx) $ 210</span>
                   </div>
                 </div>
+                <hr>
                 <div class="row">
                   <div class="card col p-0 m-2 pointer" style="border-radius: 16px;" (click)="showTier()">
                     <div class="card-header text-center" style="border-radius: 16px; height: 60px">
@@ -1913,8 +2138,8 @@
                     </div>
                   </div>
                   <div class="card col p-0 m-2 border-0" style="border-radius: 16px;">
-                    <div class="text-primary pointer" style="margin-top: 50px;" (click)="showTier()">
-                      + add more
+                    <div class="text-primary pointer text-center" style="margin-top: 50px;" (click)="showTier()">
+                      <span class="add-more">+ add more</span>
                     </div>
                   </div>
                 </div>
@@ -1924,7 +2149,7 @@
                     <strong>Tier 2</strong> <img class="ms-2" src="/assets/images/info-blue.png" alt="...">
                   </div>
                   <div class="col text-end">
-                    <strong>(Always Approx) $ 700</strong>
+                    <span class="custom-text">(Always Approx) $ 700</span>
                   </div>
                 </div>
                 <div class="row">
@@ -1942,7 +2167,7 @@
                       2 of 4
                     </div>
                     <div class="card-body text-primary text-center">
-                      + Choose vendor
+                      <span class="add-more">+ Choose vendor</span>
                     </div>
                   </div>
                 </div>
@@ -1952,7 +2177,7 @@
                     <strong>Tier 3</strong> <img class="ms-2" src="/assets/images/info-blue.png" alt="...">
                   </div>
                   <div class="col text-end">
-                    <strong>(Always Approx) $ 0</strong>
+                    <span class="custom-text">(Always Approx) $ 0</span>
                   </div>
                 </div>
                 <div class="row">
@@ -1961,7 +2186,7 @@
                       1 of 4
                     </div>
                     <div class="card-body text-primary text-center">
-                      + Choose vendor
+                      <span class="add-more">+ Choose vendor</span>
                     </div>
                   </div>
                 </div>
@@ -1971,7 +2196,7 @@
                     <strong>Tier 4</strong> <img class="ms-2" src="/assets/images/info-blue.png" alt="...">
                   </div>
                   <div class="col text-end">
-                    <strong>(Always Approx) $ 0</strong>
+                    <span class="custom-text">(Always Approx) $ 0</span>
                   </div>
                 </div>
                 <div class="row">
@@ -1980,32 +2205,35 @@
                       1 of 4
                     </div>
                     <div class="card-body text-primary text-center">
-                      + Choose vendor
+                      <span class="add-more">+ Choose vendor</span>
                     </div>
                   </div>
                 </div>
                 <hr>
               </div>
+              <div class="col text-end mb-2">
+                <span class="custom-text">Approx Total $ 280</span>
+              </div>
               <div class="col text-end mb-4">
-                <button class="btn btn-lg get-started" (click)="seventhStep();">Confirm</button>
+                <a href="/dashboard/home"><button class="btn btn-lg get-started">Confirm</button></a>
               </div>
             </div>
           </div>
         </div>
 
         <div class="tab-pane fade" id="pills-seventh" role="tabpanel" aria-labelledby="pills-home-tab">
-          <div class="row col-md-12">
+          <div class="row pl-pr-0 col-md-12">
             <div class="card mb-4">
               <div class="header m-4">
                 <h4 class="fw-bolder">Work Plan</h4>
                 <p>Based on your selected goal and the information provided, below is a detailed work plan, uniquely designed just for you, listing all of the steps that will need to be taken for you to reach your goal.  Please review and Accept.</p>
               </div>
             </div>
-            <div class="card">
+            <div class="card w-90-m-auto">
               <div class="body m-4">
                 <h4 class="fw-bolder">Credit Analysis</h4>
                 <hr>
-                <div class="col m-4 mb-5">
+                <div class="col mt-4 mb-5">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas nec sem sit amet commodo. Aliquam metus metus, ullamcorper vitae facilisis in, pretium non nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis commodo tortor auctor laoreet. Nulla vel urna nec justo aliquam iaculis nec vitae tortor. Mauris ut metus non augue dapibus elementum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tristique mauris odio, vel tempor augue aliquet a. Quisque mattis ultricies orci, quis maximus ex condimentum sed.
 
