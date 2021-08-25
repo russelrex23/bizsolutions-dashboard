@@ -57,10 +57,20 @@
                 <input type="text" formControlName="lastName" id="lastName" class="form-control mb-4" placeholder="last name">
 
                 <p class="card-text">Email address</p>
-                <input type="text" class="form-control mb-4" placeholder="email address" value="{{user.email}}" [disabled]="true">
+                <input type="text" class="form-control mb-4" placeholder="email address" value="{{confirmedEmail}}" [disabled]="true" *ngIf="product === undefined">
+                <input type="text" formControlName="email" id="email" class="form-control mb-4" placeholder="email address" value="" *ngIf="product !== undefined">
+                <span class="text-danger" *ngIf="emailConfirmation">An email confirmation has been sent, please check your inbox and confirm!</span>
               </div>
             </div>
-            <button [disabled]="!signUpFormGroup.valid" class="btn btn-lg get-started float-end mt-5 mb-3 d-sm-block d-none" (click)="nextFirst();">Next</button>
+            <button [disabled]="!signUpFormGroup.valid" class="btn btn-lg get-started float-end mt-5 mb-3 d-sm-block d-none" (click)="sendEmail();" *ngIf="product !== undefined">
+              <span *ngIf="!isSigningUp" style="color: #CCFFFF;">Next</span>
+              <div  *ngIf="isSigningUp"  class="spinner-border text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </button>
+              <button [disabled]="!signUpFormGroup.valid" class="btn btn-lg get-started float-end mt-5 mb-3 d-sm-block d-none" (click)="nextFirst();" *ngIf="product === undefined">
+                Next
+              </button>
             </form>
           </div>
         <div class="col-md-5">

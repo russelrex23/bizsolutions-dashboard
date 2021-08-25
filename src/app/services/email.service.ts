@@ -12,9 +12,8 @@ export class EmailService {
 
   constructor(private http: HttpClient, private httpRequestService: HttpRequestService) { }
 
-  public sendEmail(payload): Observable<any> {
-    console.log(payload);
-    return this.httpRequestService.post('/auth/sign-up', payload);
+  public  sendEmail(payload): Observable<any> {
+    return this.httpRequestService.post('/api/email/send-confirmation-email', payload);
   }
 
   // Get the status

@@ -8,6 +8,7 @@ import {Account} from '../../models/account';
 import {AccountService} from '../../services/account.service';
 import {ActivatedRoute} from '@angular/router';
 import {PageUtil} from '../../utils/page.util';
+import { EmailService } from '../../services/email.service';
 import jwt_decode from 'jwt-decode';
 
 @Component({
@@ -33,22 +34,49 @@ export class RegistrationComponent implements OnInit {
     cardHolderName: new FormControl('', Validators.required)
   });
   isSigningUp = false;
+  emailConfirmation = false;
   errorMessage = '';
   isLoading = false;
   user = {
     email: ''
   };
   product = '';
+  confirmedEmail = '';
 
   constructor(private fb: FormBuilder, private routeService: RouteService,
               private accountService: AccountService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private emailService: EmailService) { }
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params => {
       this.product = params.product;
+      this.confirmedEmail = params.confirmedEmail;
     });
-    console.log(this.product);
+  }
+
+  sendEmail(): void {
+    this.isSigningUp = true;
+    const userEmail = this.signUpFormGroup.value.email;
+    const payload = {
+      email: userEmail
+    };
+
+    this.emailService.sendEmail(payload).subscribe(
+      (response) => {
+        this.isSigningUp = false;
+        this.emailConfirmation = true;
+        this.signUpFormGroup.reset();
+      }, (httpErrorResponse: HttpErrorResponse) => {
+        if (httpErrorResponse.error.error) {
+          this.errorMessage = httpErrorResponse.error.error;
+        } else {
+          this.errorMessage = 'Can\'t connect to the server at the moment. Please check your internet connection and try again.';
+        }
+
+        this.isSigningUp = false;
+      }
+    );
   }
 
   userUpdate(): void {

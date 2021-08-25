@@ -42,19 +42,14 @@ export class SignUpComponent implements OnInit {
     this.isSigningUp = true;
     const userEmail = this.signUpFormGroup.value.email;
     const payload = {
-      email: userEmail,
-      password: '',
-      firstName: '',
-      lastName: '',
-      site: this.SITE
+      email: userEmail
     };
 
     this.emailService.sendEmail(payload).subscribe(
       (response) => {
-        console.log(response);
         this.isSigningUp = false;
         this.signUpFormGroup.reset();
-        NotificationUtil.success('Email successfully sent! Please check inbox for the email verification!');
+        NotificationUtil.success(response.success_message);
       }, (httpErrorResponse: HttpErrorResponse) => {
         if (httpErrorResponse.error.error) {
           this.errorMessage = httpErrorResponse.error.error;
