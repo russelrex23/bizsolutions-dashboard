@@ -431,6 +431,13 @@ input{
   color: #1D2B51;
 }
 
+.contract-title{
+  font-family: Rubik, sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
 .custom-text{
   font-family: Overpass, sans-serif;
   font-style: normal;

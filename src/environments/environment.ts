@@ -5,7 +5,7 @@
 export const environment = {
   site: 'http://localhost:4200',
   production: false,
-  apiUrl: 'http://bs-dev-api.paas.seethisnow.tech'
+  apiUrl: 'http://bs-staging-api.paas.seethisnow.tech'
 };
 
 /*

@@ -35,12 +35,17 @@
           <a class="nav-link scrollto header-texts" href="#contact">Contact</a>
         </li>
       </ul>
-      <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+      <ul class="nav navbar-nav ml-auto w-100 justify-content-end" *ngIf="status === undefined">
         <li class="nav-item me-4 ms-3">
           <a class="nav-link scrollto header-texts" href="/sign-in">Login</a>
         </li>
         <li class="nav-item me-4 ms-3">
           <button class="btn btn-lg sign-up-button" (click)="goToSignUp()">Sign up</button>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto w-100 justify-content-end" *ngIf="status === 'regSuccess'">
+        <li class="nav-item me-4 ms-3">
+          <p class="sub-welcome m-auto">Welcome {{fName}} {{lName}}!</p>
         </li>
       </ul>
     </div>
@@ -120,7 +125,7 @@
               </ul>
             </div>
             <div class="text-center text-md-start mt-3">
-              <a href="#lcp-personal"><button class="btn btn-lg get-started" (click)="showLcpPersonal()">Learn More</button></a>
+             <button class="btn btn-lg get-started" (click)="showLcpPersonal()">Learn More</button>
             </div>
           </div>
         </div>
@@ -178,7 +183,8 @@
         <div class="container-fluid text-center">
           <p class="fw-bold fs-1">$299 Enrollment Fee</p>
           <h3 class="fw-bold">$99 per month</h3>
-          <a href="/registration?product=lcp-personal"><button class="btn btn-lg get-started mt-3">Get Started</button></a>
+          <button class="btn btn-lg get-started mt-3" (click)="regPersonalTwo()" *ngIf="status === undefined">Get Started</button>
+          <button class="btn btn-lg get-started mt-3" (click)="regPersonal()" *ngIf="status !== undefined">Get Started</button>
           <br><br>
           <a href="#personal" (click)="hideLcpPersonal()"><i class="fa fa-angle-up fa-2x"></i></a>
         </div>
@@ -219,7 +225,7 @@
             </ul>
           </div>
           <div class="text-center text-md-start mt-3">
-            <a href="#lcp-corporate"><button class="btn btn-lg get-started" (click)="showLcpCorporate()">Learn More</button></a>
+            <button class="btn btn-lg get-started" (click)="showLcpCorporate()">Learn More</button>
           </div>
         </div>
       </div>
@@ -333,7 +339,8 @@
             </div>
           </div>
           <div class="container-fluid text-center">
-            <a href="/registration?product=lcp-corporate"><button class="btn btn-lg get-started mt-3">Get Started</button></a>
+            <button class="btn btn-lg get-started mt-3" (click)="regPersonalTwo()" *ngIf="status === undefined">Get Started</button>
+            <button class="btn btn-lg get-started mt-3" (click)="regCorporate()" *ngIf="status !== undefined">Get Started</button>
             <br><br>
             <a href="#corporate" (click)="hideLcpCorporate()"><i class="fa fa-angle-up fa-2x"></i></a>
           </div>
@@ -405,7 +412,8 @@
         <hr class="prod-divider">
         <br><br>
         <div class="container-fluid text-center">
-          <a href="/registration?product=lcp-corporate"><button class="btn btn-lg get-started mt-3">Get Started</button></a>
+          <button class="btn btn-lg get-started mt-3" (click)="regPersonalTwo()" *ngIf="status === undefined">Get Started</button>
+          <button class="btn btn-lg get-started mt-3" (click)="regCorporate()" *ngIf="status !== undefined">Get Started</button>
           <br><br>
           <a href="#fund" (click)="hideStrategic()"><i class="fa fa-angle-up fa-2x"></i></a>
         </div>

@@ -15,11 +15,15 @@ export class AccountService {
     return this.httpRequestService.post('/auth/register', payload);
   }
 
+  public registration(payload): Observable<any> {
+    return this.httpRequestService.post('/api/register', payload);
+  }
+
   /**
    * Update authenticated user info.
    * @param payload - info
    */
   public update(payload: GenericObject): Observable<Account> {
-    return this.httpRequestService.put('/user-update', payload);
+    return this.httpRequestService.put('/api/register', payload);
   }
 }

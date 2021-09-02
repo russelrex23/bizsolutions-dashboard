@@ -12,7 +12,7 @@ export class EmailService {
 
   constructor(private http: HttpClient, private httpRequestService: HttpRequestService) { }
 
-  public  sendEmail(payload): Observable<any> {
+  public sendEmail(payload): Observable<any> {
     return this.httpRequestService.post('/api/email/send-confirmation-email', payload);
   }
 

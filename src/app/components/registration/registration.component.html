@@ -14,7 +14,66 @@
   </a>
 </div>
 
-<div class="container" style="margin-top: 10%;">
+
+<div class="container" style="margin-top: 10%;" *ngIf="step === 'register'">
+  <div class="row col-md-12">
+    <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title mb-5">Registration</h5>
+          <div class="row">
+            <div class="forms col-md-6">
+              <p class="card-text">Email address</p>
+              <input type="text" [(ngModel)]="rEmail" class="form-control mb-4" placeholder="email address" value="{{confirmedEmail}}">
+            </div>
+          </div>
+
+          <form [formGroup]="registrationFormGroup">
+          <div class="row">
+            <div class="forms col-md-6">
+              <p class="card-text">First name</p>
+              <input type="text" formControlName="fName" id="fName" class="form-control mb-4" placeholder="first name">
+            </div>
+
+            <div class="forms col-md-6">
+              <p class="card-text">Last name</p>
+              <input type="text" formControlName="lName" id="lName" class="form-control mb-4" placeholder="last name">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="forms col-md-6">
+              <p class="card-text">Password</p>
+              <input type="password" formControlName="pass" id="pass" class="form-control mb-4" placeholder="password">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="forms col-md-6">
+              <p class="card-text">Confirm Password</p>
+              <input type="password" formControlName="cPass" id="cPass" class="form-control mb-4" placeholder="confirm password">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="forms col-md-6">
+              <span class="text-danger">{{errorMessage}}</span>
+            </div>
+          </div>
+          </form>
+
+          <button class="btn btn-lg get-started float-end mb-3 d-sm-block d-none" (click)="registration()">
+            <span *ngIf="!isRegister"  style="color: #CCFFFF;">Submit</span>
+            <div *ngIf="isRegister" class="spinner-border text-dark" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </button>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="margin-top: 10%;" *ngIf="step !== 'register'">
   <div class="row col-md-12">
     <div class="col-md-6 checkout">
       Checkout
@@ -46,28 +105,46 @@
     <div class="tab-pane fade show active" id="pills-first" role="tabpanel" aria-labelledby="pills-home-tab">
       <div class="row col-md-12">
           <div class="col-md-7 mb-4">
-            <form [formGroup]="signUpFormGroup">
-            <div class="card" style="width: 100%;">
-              <div class="card-body">
-                <h5 class="card-title mb-5">Personal Information</h5>
-                <p class="card-text">First name</p>
-                <input type="text" formControlName="firstName" id="firstName" class="form-control mb-4" placeholder="first name">
+            <div *ngIf="product !== ''">
+              <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title mb-5">Personal Information</h5>
+                  <p class="card-text">First name</p>
+                  <input type="text" class="form-control mb-4" value="{{fName}}" placeholder="first name">
 
-                <p class="card-text">Last name</p>
-                <input type="text" formControlName="lastName" id="lastName" class="form-control mb-4" placeholder="last name">
+                  <p class="card-text">Last name</p>
+                  <input type="text" class="form-control mb-4" value="{{lName}}" placeholder="last name">
 
-                <p class="card-text">Email address</p>
-                <input type="text" class="form-control mb-4" placeholder="email address" value="{{confirmedEmail}}" [disabled]="true" *ngIf="product === undefined">
-                <input type="text" formControlName="email" id="email" class="form-control mb-4" placeholder="email address" value="" *ngIf="product !== undefined">
-                <span class="text-danger" *ngIf="emailConfirmation">An email confirmation has been sent, please check your inbox and confirm!</span>
+                  <p class="card-text">Email address</p>
+                  <input type="text" class="form-control mb-4" placeholder="email address" value="{{email}}" [disabled]="true">
+                </div>
               </div>
+              <button class="btn btn-lg get-started float-end mt-5 d-sm-block d-none" (click)="nextFirst();">
+                Next
+              </button>
             </div>
-            <button [disabled]="!signUpFormGroup.valid" class="btn btn-lg get-started float-end mt-5 mb-3 d-sm-block d-none" (click)="sendEmail();" *ngIf="product !== undefined">
-              <span *ngIf="!isSigningUp" style="color: #CCFFFF;">Next</span>
-              <div  *ngIf="isSigningUp"  class="spinner-border text-dark" role="status">
-                <span class="visually-hidden">Loading...</span>
+            <form [formGroup]="signUpFormGroup" *ngIf="product === ''">
+              <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title mb-5">Personal Information</h5>
+                  <p class="card-text">First name</p>
+                  <input type="text" formControlName="firstName" id="firstName" class="form-control mb-4" placeholder="first name">
+
+                  <p class="card-text">Last name</p>
+                  <input type="text" formControlName="lastName" id="lastName" class="form-control mb-4" placeholder="last name">
+
+                  <p class="card-text">Email address</p>
+                  <input type="text" class="form-control mb-4" placeholder="email address" value="{{confirmedEmail}}" [disabled]="true" *ngIf="product === undefined">
+                  <input type="text" formControlName="email" id="email" class="form-control mb-4" placeholder="email address" value="" *ngIf="product !== undefined">
+                  <span class="text-danger" *ngIf="emailConfirmation">An email confirmation has been sent, please check your inbox and confirm!</span>
+                </div>
               </div>
-            </button>
+              <button [disabled]="!signUpFormGroup.valid" class="btn btn-lg get-started float-end mt-5 mb-3 d-sm-block d-none" (click)="sendEmail();" *ngIf="product !== undefined">
+                <span *ngIf="!isSigningUp" style="color: #CCFFFF;">Next</span>
+                <div  *ngIf="isSigningUp"  class="spinner-border text-dark" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </button>
               <button [disabled]="!signUpFormGroup.valid" class="btn btn-lg get-started float-end mt-5 mb-3 d-sm-block d-none" (click)="nextFirst();" *ngIf="product === undefined">
                 Next
               </button>
@@ -183,7 +260,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="tab-pane fade" id="two-time" role="tabpanel" aria-labelledby="pills-profile-tab">
+                      <div class="tab-pane fade" id="three-time" role="tabpanel" aria-labelledby="pills-profile-tab">
                         <div class="card-body" style="padding: 0px 20px 20px 20px">
                           <div class="row">
                             <div class="col">
@@ -201,7 +278,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="tab-pane fade" id="three-time" role="tabpanel" aria-labelledby="pills-contact-tab">
+                      <div class="tab-pane fade" id="seven-time" role="tabpanel" aria-labelledby="pills-contact-tab">
                         <div class="card-body" style="padding: 0px 20px 20px 20px">
                           <div class="row">
                             <div class="col">
@@ -325,12 +402,6 @@
                       </div>
                     </div>
                   </div>
-<!--                  <div class="col">-->
-<!--                    <p class="card-text">3 Monthly payments</p>-->
-<!--                  </div>-->
-<!--                  <div class="col">-->
-<!--                    <h5 class="card-title-price m-3 float-end">$2,117<sup class="fs-6">/mo</sup></h5>-->
-<!--                  </div>-->
                 </div>
               </div>
               <div *ngIf="product === 'lcp-personal'">

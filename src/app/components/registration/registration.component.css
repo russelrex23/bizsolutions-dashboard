@@ -208,6 +208,20 @@ hr.divider {
   border-radius: 16px;
 }
 
+.card-body>form>.row>.forms>input{
+  border: 1px solid #EDF3F3;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
+  border-radius: 16px;
+}
+
+.card-body>.row>.forms>input{
+  border: 1px solid #EDF3F3;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px -4px rgba(236, 239, 244, 0.7);
+  border-radius: 16px;
+}
+
 .card-text{
   /* 14/bold */
 

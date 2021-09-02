@@ -33,15 +33,30 @@ export class RegistrationComponent implements OnInit {
     cvv: new FormControl('', Validators.required),
     cardHolderName: new FormControl('', Validators.required)
   });
+
   isSigningUp = false;
+  isRegister = false;
   emailConfirmation = false;
-  errorMessage = '';
+  errorMessage = ''
+  successMessage = '';
   isLoading = false;
   user = {
     email: ''
   };
   product = '';
   confirmedEmail = '';
+  step = '';
+  rEmail = '';
+  fName = '';
+  lName = '';
+  email = '';
+
+  registrationFormGroup =  new FormGroup({
+    fName: new FormControl('', Validators.required),
+    lName: new FormControl('', Validators.required),
+    pass: new FormControl('', Validators.required),
+    cPass: new FormControl('', Validators.required)
+  });
 
   constructor(private fb: FormBuilder, private routeService: RouteService,
               private accountService: AccountService,
@@ -52,6 +67,11 @@ export class RegistrationComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       this.product = params.product;
       this.confirmedEmail = params.confirmedEmail;
+      this.step = params.step;
+      this.rEmail = this.confirmedEmail;
+      this.fName = params.fName;
+      this.lName = params.lName;
+      this.email = params.email;
     });
   }
 
@@ -79,14 +99,28 @@ export class RegistrationComponent implements OnInit {
     );
   }
 
-  userUpdate(): void {
-    this.isSigningUp = true;
+  registration(): void {
+    this.isRegister = true;
     this.signUpFormGroup.value.email = this.user.email;
-    this.accountService.update(this.signUpFormGroup.value).subscribe(
-      (account: Account) => {
-        this.isSigningUp = false;
-        NotificationUtil.success('Account Successfully Updated');
-        this.routeService.navigate('/sign-in');
+    const payload = {
+      fName: this.registrationFormGroup.value.fName,
+      lName: this.registrationFormGroup.value.lName,
+      email: this.rEmail,
+      password: this.registrationFormGroup.value.pass
+    };
+
+    if (this.registrationFormGroup.value.pass !== this.registrationFormGroup.value.cPass){
+      this.errorMessage = 'Password and Confirm Password are not match!';
+      this.isRegister = false;
+      return;
+    }
+
+    this.accountService.registration(payload).subscribe(
+      (response) => {
+        this.isRegister = false;
+        window.location.href = '?status=regSuccess&fName=' + this.registrationFormGroup.value.fName
+          + '&lName=' + this.registrationFormGroup.value.lName
+          + '&email=' + this.rEmail;
       }, (httpErrorResponse: HttpErrorResponse) => {
         if (httpErrorResponse.error.message) {
           NotificationUtil.error(httpErrorResponse.error.message);

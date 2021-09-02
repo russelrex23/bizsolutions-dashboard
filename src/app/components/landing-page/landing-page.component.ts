@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {RouteService} from '../../services/route.service';
 import { LandingPage } from './landing-page';
+import { PageUtil } from '../../utils';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -18,16 +20,27 @@ export class LandingPageComponent implements OnInit {
   isProduct = true;
   isLoading = false;
 
-  constructor(private routeService: RouteService) { }
+  constructor(private routeService: RouteService, private activatedRoute: ActivatedRoute,) { }
 
   title = 'Biz Solutions';
+  status = '';
+  fName = '';
+  lName = '';
+  email = '';
 
   ngOnInit(): void {
     this.isLoading = true;
     setTimeout(() => {
       this.isLoading = false;
-      this.routeService.navigate('/');
+      // this.routeService.navigate('/');
     }, 1000);
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.status = params.status;
+      this.fName = params.fName;
+      this.lName = params.lName;
+      this.email = params.email;
+    });
   }
 
   goToSignUp(): void {
@@ -105,5 +118,21 @@ export class LandingPageComponent implements OnInit {
     this.isProduct = false;
     this.isLcpCorporate = false;
     this.isLcpPersonal = false;
+  }
+
+  regPersonal(): void {
+    window.location.href = '/registration?product=lcp-personal&&fName=' + this.fName
+      + '&lName=' + this.lName
+      + '&email=' + this.email;
+  }
+
+  regPersonalTwo(): void {
+    window.location.href = '/sign-up';
+  }
+
+  regCorporate(): void {
+    window.location.href = '/registration?product=lcp-corporate&&fName=' + this.fName
+      + '&lName=' + this.lName
+      + '&email=' + this.email;
   }
 }
